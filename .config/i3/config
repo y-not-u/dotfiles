@@ -240,7 +240,7 @@ bindsym $mod+f exec nautilus --new-window
 exec --no-startup-id ibus-daemon -d -x
 
 # nature scrolling
-exec_always --no-startup-id xinput set-prop "13" "libinput Natural Scrolling Enabled" 1
+exec --no-startup-id xinput set-prop "13" "libinput Natural Scrolling Enabled" 1
 
 # Lock screen
 bindsym $mod+0 exec --no-startup-id loginctl lock-session 

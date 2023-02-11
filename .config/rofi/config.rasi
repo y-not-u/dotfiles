@@ -1,0 +1,5 @@
+configuration {
+  show-icons: true;
+  dpi: 192;
+}
+@theme "dracula"
