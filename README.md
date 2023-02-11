@@ -1,4 +1,4 @@
-# Dotfiles for Linux
+## Dotfiles for Linux
 
 ## Installed App
 - i3wm
@@ -12,3 +12,5 @@
 - Flameshot
 - Neovim
 - Rofi
+
+![](screenshots/desktop.png)
