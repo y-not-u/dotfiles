@@ -219,7 +219,7 @@ smart_gaps off
 exec_always feh --bg-scale $HOME/Pictures/wallhaven-e7j33o.jpg
 
 # picom transparent window
-exec --no-startup-id picom --config $HOME/.config/picom/picom.conf -b
+exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf -b
 
 bindsym $mod+Shift+minus move scratchpad
 
