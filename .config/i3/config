@@ -235,12 +235,15 @@ bindsym $mod+shift+Return exec xfce4-terminal --drop-down
 # nemo file manager
 for_window [instance="org.gnome.Nautilus"] floating enable
 bindsym $mod+f exec nautilus --new-window
+for_window [instance="copyq"] floating enable
 
 # ibus input method
 exec --no-startup-id ibus-daemon -d -x
 
 # Lock screen
-bindsym $mod+0 exec --no-startup-id loginctl lock-session 
+bindsym $mod+Escape exec --no-startup-id loginctl lock-session 
+# Suspend
+bindsym $mod+Shift+Escape exec --no-startup-id systemctl suspend
 
 # conky display system info on the screen
 exec --no-startup-id conky -c $HOME/.config/conky/conky.conf
