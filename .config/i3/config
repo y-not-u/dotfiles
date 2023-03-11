@@ -34,9 +34,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i $HOME/Pictures/
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# popups
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="task_dialog"] floating enable
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -57,7 +54,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec GLFW_IM_MODULE=ibus kitty
 
 # kill focused window
-bindsym $mod+q kill
+bindsym $mod+Shift+q kill
 
 bindsym $mod+d exec --no-startup-id rofi -dpi 192 -show drun
 # start dmenu (a program launcher)
@@ -116,7 +113,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -144,7 +141,7 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
-#bindsym $mod+0 workspace number $ws10
+bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -156,9 +153,9 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
-#bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+0 move container to workspace number $ws10
 
-bindsym $mod+Tab workspace next
+bindsym $mod+Tab focus next
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -215,14 +212,7 @@ gaps inner 12
 gaps outer 2
 smart_gaps off
 
-# feh set background image
-exec_always feh --bg-scale $HOME/Pictures/wallhaven-e7j33o.jpg
-
-# picom transparent window
-exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf -b
-
 bindsym $mod+Shift+minus move scratchpad
-
 # show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
@@ -232,20 +222,33 @@ bindsym Print --release exec flameshot gui
 # dropdown terminal
 bindsym $mod+shift+Return exec xfce4-terminal --drop-down
 
+# floating mode
+# popups
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
 # nemo file manager
 for_window [instance="org.gnome.Nautilus"] floating enable
-bindsym $mod+f exec nautilus --new-window
+for_window [title="File Transfer*"] floating enable
+for_window [title="Recorder"] floating enable border normal
+#for_window [class="^mpv$"] fullscreen disable, floating enable, resize set 640 480, move position center
 for_window [instance="copyq"] floating enable
 
-# ibus input method
-exec --no-startup-id ibus-daemon -d -x
+bindsym $mod+f exec nautilus --new-window
 
 # Lock screen
 bindsym $mod+Escape exec --no-startup-id loginctl lock-session 
 # Suspend
 bindsym $mod+Shift+Escape exec --no-startup-id systemctl suspend
+# logout
+bindsym $mod+Shift+Delete exec --no-startup-id i3 exit logout
 
+# Autostart applications
 # conky display system info on the screen
 exec --no-startup-id conky -c $HOME/.config/conky/conky.conf
-
 exec --no-startup-id bash $HOME/Tools/Scripts/natural_scrolling.sh
+# ibus input method
+exec --no-startup-id ibus-daemon -d -x
+# feh set background image
+exec_always feh --bg-scale $HOME/Pictures/Wallpapers/wallhaven-2049.jpg
+# picom transparent window
+exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf -b
