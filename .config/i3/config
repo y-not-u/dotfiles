@@ -252,3 +252,5 @@ exec --no-startup-id ibus-daemon -d -x
 exec_always feh --bg-scale $HOME/Pictures/Wallpapers/wallhaven-2049.jpg
 # picom transparent window
 exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf -b
+# xautolock 30min
+exec --no-startup-id xautolock -time 30 -locker "systemctl suspend" -notify 30 -notifier "notify-send 'System will suspend in 30 seconds'"
