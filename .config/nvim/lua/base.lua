@@ -7,7 +7,7 @@ opt.encoding='utf-8'
 opt.hidden=true
 opt.swapfile=false
 opt.title=true
-opt.cmdheight=2
+opt.cmdheight=1
 opt.signcolumn="yes"
 opt.ignorecase=true -- case insensitive
 opt.smartindent=true
@@ -28,5 +28,6 @@ opt.writebackup=false
 opt.termguicolors=true
 opt.colorcolumn="80"
 opt.scrolloff=999
+opt.clipboard="unnamedplus"
 
 opt.guifont="agave Nerd Font Mono r"
