@@ -232,6 +232,7 @@ for_window [title="File Transfer*"] floating enable
 for_window [title="Recorder"] floating enable border normal
 #for_window [class="^mpv$"] fullscreen disable, floating enable, resize set 640 480, move position center
 for_window [instance="copyq"] floating enable
+for_window [title="Peek"] floating enable
 
 bindsym $mod+f exec nautilus --new-window
 
@@ -246,6 +247,7 @@ bindsym $mod+Shift+Delete exec --no-startup-id i3 exit logout
 # conky display system info on the screen
 exec --no-startup-id conky -c $HOME/.config/conky/conky.conf
 exec --no-startup-id bash $HOME/Tools/Scripts/natural_scrolling.sh
+exec --no-startup-id copyq
 # ibus input method
 exec --no-startup-id ibus-daemon -d -x
 # feh set background image
