@@ -5,27 +5,33 @@
 - polybar
 - Conky
 - picom
-- feh
 - Dunst
 - xfce4-terminal
 - mpv Media Player
 - Flameshot
-- Neovim
 - Rofi
-- nvm
-- ranger
-- fcitx
 - rime
 - Alactritty
-- btop
-- cmatrix
 - Visual Studio Code
 - CopyQ
-- gh
-- neofetch
 - firefox
 - vivaldi
 - dbeaver-ce
 - Plex
+
+## CLI
+- neofetch
+- lsd
+- ranger
+- docker
+- telnet
+- gh
+- cmatrix
+- nvm
+- pnpm
+- Neovim
+- btop
+- feh
+- fcitx
 
 ![](screenshots/desktop.png)
