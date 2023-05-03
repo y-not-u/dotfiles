@@ -108,18 +108,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-[ -f ~/.lazyshell.zsh ] && source ~/.lazyshell.zsh
-
-# aliases
-[[ -f ~/.aliases ]] && source ~/.aliases
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export GTK_IM_MODULE=fcitx5
-export QT_IM_MODULE=fcitx5
-export XMODIFIERS="@im=fcitx5"
-export IMSETTINGS_MODULE=fcitx5
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -132,3 +122,6 @@ export PATH="$PNPM_HOME:$PATH"
 
 export PATH="$PATH:$HOME/.local/bin"
 export EDITOR=/usr/bin/nvim
+
+# aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
