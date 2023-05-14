@@ -4,7 +4,7 @@
 `gnome-keyring wlroots`
 
 ## Apps
-`cmatrix neovim git firefox mpv dbeaver-ce alacritty`
+`neofetch cmatrix neovim git firefox mpv dbeaver-ce alacritty`
 
 ## Installed App
 - i3wm
