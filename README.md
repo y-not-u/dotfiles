@@ -4,7 +4,9 @@
 `gnome-keyring wlroots`
 
 ## Apps
-`neofetch cmatrix neovim git firefox mpv dbeaver-ce alacritty`
+`firefox mpv dbeaver-ce alacritty kdeconnect swaync`
+
+`neofetch lsd cmatrix neovim git mpvpaper ranger telnet btop`
 
 ## Installed App
 - i3wm
