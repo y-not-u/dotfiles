@@ -116,3 +116,5 @@ esac
 # pnpm end
 
 eval $(thefuck --alias) 
+
+source "$HOME/.cargo/env"
