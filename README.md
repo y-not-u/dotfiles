@@ -16,8 +16,8 @@
 `gnome-keyring wlroots`
 
 ## Apps
-`firefox mpv dbeaver-ce alacritty kdeconnect swaync`
+`firefox mpv dbeaver-ce alacritty kdeconnect swaync eog`
 
-`neofetch lsd cmatrix neovim git mpvpaper ranger telnet btop`
+`neofetch lsd cmatrix neovim git mpvpaper ranger telnet btop grim slurp`
 
 ![](screenshots/desktop.png)
