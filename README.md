@@ -13,11 +13,12 @@
 - Browser: Firefox
 
 ## Dependencies
-`gnome-keyring wlroots`
+`gnome-keyring wlroots python-pip go rust waybar-hyprland`
 
 ## Apps
-`firefox mpv dbeaver-ce alacritty kdeconnect swaync eog`
+`firefox mpv dbeaver-ce alacritty kdeconnect swaync eog freeoffice`
 
-`neofetch lsd cmatrix neovim git mpvpaper ranger telnet btop grim slurp`
+## CLI
+`neofetch lsd cmatrix neovim git mpvpaper ranger telnet btop grim slurp ripgrep fzf`
 
 ![](screenshots/desktop.png)
