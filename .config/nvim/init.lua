@@ -13,29 +13,28 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Example using a list of specs with the default options
 vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
 require("lazy").setup({
-  { "folke/which-key.nvim", lazy = true },
-  { "folke/neoconf.nvim", cmd = "Neoconf" },
+  { "folke/which-key.nvim", lazy = true }, -- show shortcuts
+  { "folke/neoconf.nvim", cmd = "Neoconf" }, -- unknown
   {
-    cmd = "Telescope",
+    cmd = "Telescope", -- find files
     keys = {
       { "<leader>p", ":Telescope find_files<CR>", desc = "find files" }
     },
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
-  { "lukas-reineke/indent-blankline.nvim" },
+  { "lukas-reineke/indent-blankline.nvim" }, -- show indent
   { 
-    "numToStr/Comment.nvim",
+    "numToStr/Comment.nvim", -- gcc comment
     -- lazy = true,
     config = function()
       require("Comment").setup()
     end
   },
-  { "nvim-tree/nvim-web-devicons", lazy = true },
+  { "nvim-tree/nvim-web-devicons", lazy = true }, -- icons
   {
     "nvim-neorg/neorg",
     -- lazy-load on filetype
@@ -48,7 +47,7 @@ require("lazy").setup({
     },
   },
   { 
-    "preservim/nerdtree",
+    "preservim/nerdtree", -- file tree
     lazy = true,
     cmd = "NERDTree",
     keys = {
@@ -56,7 +55,7 @@ require("lazy").setup({
     }
   },
   {
-    'glepnir/dashboard-nvim',
+    'glepnir/dashboard-nvim', -- start dashboard
     event = 'VimEnter',
     config = function()
       require('dashboard').setup {
@@ -93,7 +92,7 @@ require("lazy").setup({
     end
   },
   { 
-    "junegunn/fzf.vim",
+    "junegunn/fzf.vim", -- fzf fuzzy find files and contents
     lazy = true,
     cmd = 'Rg',
     keys = {
@@ -102,9 +101,9 @@ require("lazy").setup({
     dependencies = { "junegunn/fzf" }
   },
   {
-    "vim-airline/vim-airline"
+    "vim-airline/vim-airline", -- status bar
   },
-  { 'rose-pine/neovim', name = 'rose-pine' },
+  { 'rose-pine/neovim', name = 'rose-pine' }, -- color scheme
   { 
     "TimUntersberger/neogit",
     cmd = "Neogit",
@@ -112,7 +111,30 @@ require("lazy").setup({
       { "<leader>g", ":Neogit<CR>", desc = "Neogit" }
     },
     dependencies = { 'nvim-lua/plenary.nvim' }
-  }
+  },
+  { 
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = { "javascript", "typescript", "python", "tsx", "css", "scss", "json", "lua", "html" },
+        sync_install = false,
+        auto_install = true,
+        highlight = {
+          enable = true,
+          disable = { "c", "rust" },
+          disable = function(lang, buf)
+            local max_filesize = 100 * 1024 -- 100 KB
+            local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+            if ok and stats and stats.size > max_filesize then
+              return true
+            end
+          end,
+          additional_vim_regex_highlighting = false,
+        },
+      })
+    end
+  },
 })
 
 vim.cmd('colorscheme rose-pine')
