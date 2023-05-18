@@ -16,7 +16,7 @@
 `gnome-keyring wlroots python-pip go rust waybar-hyprland`
 
 ## Apps
-`firefox mpv dbeaver-ce alacritty kdeconnect swaync eog freeoffice`
+`firefox mpv dbeaver-ce alacritty kdeconnect swaync eog freeoffice wlogout`
 
 ## CLI
 `neofetch lsd cmatrix neovim git mpvpaper ranger telnet btop grim slurp ripgrep fzf`

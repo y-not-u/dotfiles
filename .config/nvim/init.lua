@@ -91,7 +91,7 @@ require("lazy").setup({
       }
     end
   },
-  { 
+  {
     "junegunn/fzf.vim", -- fzf fuzzy find files and contents
     lazy = true,
     cmd = 'Rg',
@@ -103,8 +103,17 @@ require("lazy").setup({
   {
     "vim-airline/vim-airline", -- status bar
   },
-  { 'rose-pine/neovim', name = 'rose-pine' }, -- color scheme
-  { 
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    config = function ()
+      require('rose-pine').setup({
+        dim_nc_background = true,
+        disable_background = true,
+      })
+    end
+  }, -- color scheme
+  {
     "TimUntersberger/neogit",
     cmd = "Neogit",
     keys = {
@@ -112,7 +121,7 @@ require("lazy").setup({
     },
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
-  { 
+  {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
