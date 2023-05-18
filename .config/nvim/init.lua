@@ -139,9 +139,31 @@ require("lazy").setup({
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
     config = function() 
-      local lsp = require("lsp-zero")
-      lsp.preset("recommended")
+      local lsp = require("lsp-zero").preset("recommended")
+      lsp.ensure_installed({
+        'tsserver', -- js / ts
+        'eslint',
+        'html',
+        'tailwindcss',
+        'volar', -- vue
+        'pyright', -- python
+        'lua_ls', -- lua
+      })
+      lsp.set_sign_icons({
+        error = '✘',
+        warn = '▲',
+        hint = '⚑',
+        info = '»'
+      })
+      
       lsp.setup()
+
+      local cmp = require('cmp')
+      cmp.setup({
+        mapping = {
+          ['<CR>'] = cmp.mapping.confirm({select = true}),
+        }
+      })
     end,
     dependencies = {
       -- LSP Support
@@ -159,7 +181,15 @@ require("lazy").setup({
       {'hrsh7th/cmp-nvim-lsp'}, -- Required
       {'L3MON4D3/LuaSnip'},     -- Required
     }
+  },
+  {
+    "airblade/vim-gitgutter",
   }
 })
 
 vim.cmd('colorscheme rose-pine')
+
+vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>d[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>d]', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>dd', '<cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
