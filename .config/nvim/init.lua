@@ -101,4 +101,18 @@ require("lazy").setup({
     },
     dependencies = { "junegunn/fzf" }
   },
+  {
+    "vim-airline/vim-airline"
+  },
+  { 'rose-pine/neovim', name = 'rose-pine' },
+  { 
+    "TimUntersberger/neogit",
+    cmd = "Neogit",
+    keys = {
+      { "<leader>g", ":Neogit<CR>", desc = "Neogit" }
+    },
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  }
 })
+
+vim.cmd('colorscheme rose-pine')
