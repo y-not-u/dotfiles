@@ -11,6 +11,7 @@
 - Notification Daemon: SwayNotificationCenter
 - Shell: zsh
 - Browser: Firefox
+- Font: Hack Nerd Font
 
 ## Dependencies
 `gnome-keyring wlroots python-pip go rust waybar-hyprland`
