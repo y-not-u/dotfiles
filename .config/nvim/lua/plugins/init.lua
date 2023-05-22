@@ -49,7 +49,6 @@ require("lazy").setup({
     keys = {
       { "<leader>f",  ":Telescope find_files<CR>", desc = "find files" },
       { "<leader>gs", ":Telescope git_status<CR>", desc = "status" },
-      { "<leader>gc", ":Telescope git_status<CR>", desc = "commits" }
     },
     'nvim-telescope/telescope.nvim',
     tag = '0.1.1',
@@ -69,7 +68,10 @@ require("lazy").setup({
     -- lazy = true,
     config = function()
       require("Comment").setup()
-    end
+    end,
+    keys = {
+      { "<C-\\>", "<Plug>(comment_toggle_linewise_current)", desc = "comment" },
+    },
   },
 
   -- icons
@@ -174,12 +176,24 @@ require("lazy").setup({
     build = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = { "javascript", "typescript", "python", "tsx", "css", "scss", "json", "lua", "html" },
+        ensure_installed = {
+          "javascript",
+          "typescript",
+          "python",
+          "tsx",
+          "css",
+          "scss",
+          "json",
+          "lua",
+          "html",
+          "bash",
+          "markdown",
+          "vim",
+        },
         sync_install = false,
         auto_install = true,
         highlight = {
           enable = true,
-          disable = { "c", "rust" },
           disable = function(lang, buf)
             local max_filesize = 100 * 1024 -- 100 KB
             local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
@@ -192,6 +206,23 @@ require("lazy").setup({
       })
     end
   },
+
+  -- NULL LS
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      local null_ls = require("null-ls")
+      null_ls.setup({
+        sources = {
+          null_ls.builtins.formatting.stylua,
+          null_ls.builtins.formatting.prettier,
+          null_ls.builtins.diagnostics.eslint,
+          null_ls.builtins.completion.spell,
+        },
+      })
+    end
+  },
+
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
@@ -222,9 +253,12 @@ require("lazy").setup({
         },
         servers = {
           ['lua_ls'] = { 'lua' },
-          ['null-ls'] = { 'html', 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact',
-            'typescript.tsx', 'css', 'json', 'tsx' },
-          ['tsserver'] = { 'typescriptreact' }
+          ['null-ls'] = { 'html',
+            'javascript', 'javascriptreact', 'javascript.jsx',
+            'typescript', 'typescriptreact', 'typescript.tsx', 'tsx',
+            'css', 'scss',
+            'json',
+          },
         }
       })
 
@@ -250,11 +284,9 @@ require("lazy").setup({
       { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },            -- Required
-      { 'hrsh7th/cmp-nvim-lsp' },        -- Required
-      { 'L3MON4D3/LuaSnip' },            -- Required
-      "jose-elias-alvarez/null-ls.nvim", -- NULL LS
-      "jay-babu/mason-null-ls.nvim",     -- NULL LS + Mason Support
+      { 'hrsh7th/nvim-cmp' },     -- Required
+      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+      { 'L3MON4D3/LuaSnip' },     -- Required
     }
   },
 
@@ -300,7 +332,28 @@ require("lazy").setup({
   {
     "akinsho/bufferline.nvim",
     config = function()
-      require('bufferline').setup()
-    end
+      require('bufferline').setup {
+        options = {
+          show_close_icon = false,
+          show_buffer_close_icons = false,
+          hover = { enabled = true, reveal = { 'close' } },
+          diagnostics_indicator = function(count, level)
+            local icon = level:match("error") and " " or ""
+            return " " .. icon .. count
+          end
+        },
+      }
+    end,
+    keys = {
+      { "<leader>b[", ":bprev<CR>",                  desc = "buffer before" },
+      { "<leader>b]", ":bnext<CR>",                  desc = "buffer next" },
+      { "<leader>b1", ":BufferLineGoToBuffer 1<CR>", desc = "buffer 1" },
+      { "<leader>b2", ":BufferLineGoToBuffer 2<CR>", desc = "buffer 2" },
+      { "<leader>b3", ":BufferLineGoToBuffer 3<CR>", desc = "buffer 3" },
+      { "<leader>b4", ":BufferLineGoToBuffer 4<CR>", desc = "buffer 4" },
+      { "<leader>b5", ":BufferLineGoToBuffer 5<CR>", desc = "buffer 5" },
+      { "<leader>b6", ":BufferLineGoToBuffer 6<CR>", desc = "buffer 6" },
+      { "<leader>b7", ":BufferLineGoToBuffer 7<CR>", desc = "buffer 7" },
+    }
   },
 })
