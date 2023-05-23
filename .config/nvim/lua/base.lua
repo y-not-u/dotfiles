@@ -12,7 +12,7 @@ opt.title = true
 -- opt.cmdheight=0
 opt.signcolumn = "yes"
 opt.ignorecase = true -- case insensitive
-opt.smartindent = true
+-- opt.smartindent = true
 opt.relativenumber = true
 opt.number = true
 opt.hlsearch = true
@@ -30,6 +30,5 @@ opt.writebackup = false
 opt.colorcolumn = "80"
 opt.scrolloff = 999
 opt.clipboard = "unnamedplus"
-
 
 cmd 'au TextYankPost * silent! lua vim.highlight.on_yank({ higroup = "IncSearch", timeout = 250 })'
