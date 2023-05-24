@@ -14,7 +14,7 @@
 - Font: Hack Nerd Font
 
 ## Dependencies
-`gnome-keyring wlroots python-pip go rust waybar-hyprland`
+`gnome-keyring wlroots python-pip go rust waybar-hyprland otf-font-awesome`
 
 ## Apps
 `firefox mpv dbeaver-ce alacritty kdeconnect swaync eog freeoffice wlogout`

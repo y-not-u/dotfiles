@@ -75,9 +75,6 @@ require("lazy").setup({
     config = function()
       require("Comment").setup()
     end,
-    keys = {
-      { "<C-\\>", "<Plug>(comment_toggle_linewise_current)", desc = "comment" },
-    },
   },
 
   -- icons
@@ -137,7 +134,7 @@ require("lazy").setup({
     lazy = true,
     cmd = "Neotree",
     keys = {
-      { "<leader>e", ":Neotree action=focus toggle git_status reveal<CR>", desc = "file explor" }
+      { "<leader>e", ":Neotree action=focus toggle reveal<CR>", desc = "file explor" }
     }
   },
 
@@ -401,4 +398,25 @@ require("lazy").setup({
       { "<leader>b7", ":BufferLineGoToBuffer 7<CR>", desc = "buffer 7" },
     }
   },
+
+  -- toggleterm
+  {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    lazy = true,
+    cmd = "ToggleTerm",
+    config = function()
+      require("toggleterm").setup({
+        open_mapping = [[<c-\>]],
+        shade_terminals = false,
+        -- add --login so ~/.zprofile is loaded
+        -- https://vi.stackexchange.com/questions/16019/neovim-terminal-not-reading-bash-profile/16021#16021
+        shell = "zsh --login",
+      })
+    end,
+    keys = {
+      { [[<C-\>]] },
+    },
+  },
+
 })
