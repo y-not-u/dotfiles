@@ -20,6 +20,6 @@
 `firefox mpv dbeaver-ce alacritty kdeconnect swaync eog freeoffice wlogout`
 
 ## CLI
-`neofetch lsd cmatrix neovim git mpvpaper ranger telnet btop grim slurp ripgrep fzf`
+`neofetch lsd cmatrix neovim git mpvpaper ranger telnet btop grim slurp ripgrep fzf lazygit`
 
 ![](screenshots/desktop.png)

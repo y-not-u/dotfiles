@@ -44,8 +44,10 @@ require("lazy").setup({
     end,
   },                                                  -- show shortcuts
   { "folke/neoconf.nvim",          cmd = "Neoconf" }, -- unknown
+
+  -- search files
   {
-    cmd = "Telescope",                                -- find files
+    cmd = "Telescope",
     keys = {
       { "<leader>f",  ":Telescope find_files<CR>", desc = "find files" },
       { "<leader>gs", ":Telescope git_status<CR>", desc = "status" },
@@ -54,6 +56,8 @@ require("lazy").setup({
     tag = '0.1.1',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
+
+  -- display indents
   {
     "lukas-reineke/indent-blankline.nvim",
     opts = {
@@ -62,9 +66,11 @@ require("lazy").setup({
       show_trailing_blankline_indent = false,
       show_current_context = false,
     }
-  },                         -- show indent
+  },
+
+  -- gcc comment
   {
-    "numToStr/Comment.nvim", -- gcc comment
+    "numToStr/Comment.nvim",
     -- lazy = true,
     config = function()
       require("Comment").setup()
@@ -76,18 +82,6 @@ require("lazy").setup({
 
   -- icons
   { "nvim-tree/nvim-web-devicons", lazy = true },
-
-  {
-    "nvim-neorg/neorg",
-    -- lazy-load on filetype
-    ft = "norg",
-    -- options for neorg. This will automatically call `require("neorg").setup(opts)`
-    opts = {
-      load = {
-        ["core.defaults"] = {},
-      },
-    },
-  },
 
   -- neo tree file explor
   {
