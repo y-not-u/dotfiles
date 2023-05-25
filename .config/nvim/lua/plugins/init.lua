@@ -49,8 +49,8 @@ require("lazy").setup({
   {
     cmd = "Telescope",
     keys = {
-      { "<leader>f",  ":Telescope find_files<CR>", desc = "find files" },
-      { "<leader>gs", ":Telescope git_status<CR>", desc = "status" },
+      { "<leader>f",  "<cmd>Telescope find_files<CR>", desc = "find files" },
+      { "<leader>bl", "<cmd>Telescope buffers<CR>",    desc = "list buffers" },
     },
     'nvim-telescope/telescope.nvim',
     tag = '0.1.1',
@@ -72,9 +72,7 @@ require("lazy").setup({
   {
     "numToStr/Comment.nvim",
     -- lazy = true,
-    config = function()
-      require("Comment").setup()
-    end,
+    config = true
   },
 
   -- icons
@@ -190,8 +188,15 @@ require("lazy").setup({
 
   -- status bar
   {
-    "vim-airline/vim-airline",
+    "nvim-lualine/lualine.nvim",
+    config = true
   },
+
+  -- todo
+  { "folke/todo-comments.nvim", opts = {} },
+
+  -- auto tag
+  { "windwp/nvim-ts-autotag",   config = true },
 
   -- color scheme
   {
@@ -419,4 +424,13 @@ require("lazy").setup({
     },
   },
 
+  {
+    "folke/trouble.nvim",
+    lazy = true,
+    opts = {
+    },
+    keys = {
+      { "<leader>dd", "<cmd>TroubleToggle<CR>", desc = "list troubles" },
+    },
+  }
 })
