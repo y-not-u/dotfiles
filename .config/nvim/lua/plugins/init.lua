@@ -42,19 +42,24 @@ require("lazy").setup({
       wk.setup(opts)
       wk.register(opts.defaults)
     end,
-  },                                                  -- show shortcuts
+  },
+
   { "folke/neoconf.nvim",          cmd = "Neoconf" }, -- unknown
+
+  { 'nvim-lua/plenary.nvim' },
+
+  -- icons
+  { "nvim-tree/nvim-web-devicons", lazy = true },
 
   -- search files
   {
     cmd = "Telescope",
     keys = {
-      { "<leader>f",  "<cmd>Telescope find_files<CR>", desc = "find files" },
-      { "<leader>bl", "<cmd>Telescope buffers<CR>",    desc = "list buffers" },
+      { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "find files" },
+      { "<leader>fb", "<cmd>Telescope buffers<CR>",    desc = "find and switch buffers" },
     },
     'nvim-telescope/telescope.nvim',
     tag = '0.1.1',
-    dependencies = { 'nvim-lua/plenary.nvim' }
   },
 
   -- display indents
@@ -75,8 +80,6 @@ require("lazy").setup({
     config = true
   },
 
-  -- icons
-  { "nvim-tree/nvim-web-devicons", lazy = true },
 
   -- neo tree file explor
   {
@@ -181,7 +184,7 @@ require("lazy").setup({
     lazy = true,
     cmd = 'Rg',
     keys = {
-      { "<leader>/", ":Rg<CR>", desc = "search contents" }
+      { "<leader>fg", ":Rg<CR>", desc = "search contents" }
     },
     dependencies = { "junegunn/fzf" }
   },
@@ -217,7 +220,6 @@ require("lazy").setup({
     keys = {
       { "<leader>gg", ":Neogit<CR>", desc = "Neogit" }
     },
-    dependencies = { 'nvim-lua/plenary.nvim' }
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -370,7 +372,6 @@ require("lazy").setup({
       { "<leader>ca", ":Lspsaga code_action<CR>", desc = "Code action" }
     },
     dependencies = {
-      { "nvim-tree/nvim-web-devicons" },
       { "nvim-treesitter/nvim-treesitter" }
     }
   },
