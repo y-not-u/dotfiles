@@ -76,8 +76,9 @@ require("lazy").setup({
   -- gcc comment
   {
     "numToStr/Comment.nvim",
-    -- lazy = true,
-    config = true
+    config = true,
+    lazy = true,
+    event = "BufAdd",
   },
 
 
@@ -196,10 +197,20 @@ require("lazy").setup({
   },
 
   -- todo
-  { "folke/todo-comments.nvim", opts = {} },
+  {
+    "folke/todo-comments.nvim",
+    opts = {},
+    lazy = true,
+    event = "BufAdd",
+  },
 
   -- auto tag
-  { "windwp/nvim-ts-autotag",   config = true },
+  {
+    "windwp/nvim-ts-autotag",
+    config = true,
+    lazy = true,
+    event = "BufAdd",
+  },
 
   -- color scheme
   {
@@ -435,13 +446,31 @@ require("lazy").setup({
     },
   },
 
+  -- show pretty diagnostics
   {
     "folke/trouble.nvim",
     lazy = true,
-    opts = {
-    },
+    opts = {},
     keys = {
       { "<leader>dd", "<cmd>TroubleToggle<CR>", desc = "list troubles" },
     },
+  },
+
+  -- show minimap
+  {
+    "petertriho/nvim-scrollbar",
+    lazy = true,
+    event = "BufAdd",
+    config = true,
+  },
+
+  -- CSS colorize
+  {
+    "norcalli/nvim-colorizer.lua",
+    lazy = true,
+    event = "BufAdd",
+    config = function()
+      require('colorizer').setup()
+    end,
   }
 })
