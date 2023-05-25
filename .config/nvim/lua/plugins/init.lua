@@ -472,5 +472,12 @@ require("lazy").setup({
     config = function()
       require('colorizer').setup()
     end,
+  },
+
+  -- emmet
+  {
+    "mattn/emmet-vim",
+    lazy = true,
+    event = "BufAdd",
   }
 })
