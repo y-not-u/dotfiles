@@ -382,16 +382,26 @@ require("lazy").setup({
     config = function()
       require('bufferline').setup {
         options = {
+          always_show_bufferline = true,
           show_close_icon = false,
           show_buffer_close_icons = false,
           hover = { enabled = true, reveal = { 'close' } },
+          diagnostics = "nvim_lsp",
           diagnostics_indicator = function(count, level)
             local icon = level:match("error") and " " or ""
             return " " .. icon .. count
-          end
+          end,
+          numbers = "ordinal",
+          offsets = { {
+            filetype = "neo-tree",
+            text = "File Explorer",
+            highlight = "Directory",
+            text_align = "left"
+          } }
         },
       }
     end,
+    event = 'BufAdd',
     keys = {
       { "<leader>b[", ":bprev<CR>",                  desc = "buffer before" },
       { "<leader>b]", ":bnext<CR>",                  desc = "buffer next" },
