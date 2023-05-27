@@ -8,18 +8,20 @@
     "height": 0,
     "modules-left": [
         "clock",
-        // "cpu",
-        // "memory",
         "custom/weather",
         "wlr/workspaces"
     ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
         "tray",
-        "custom/updates",
+        "custom/checkupdates",
+        "cpu",
+        "memory",
+        "network",
+        "network#speed",
         // "custom/language",
-        "pulseaudio",
-        "pulseaudio#microphone"
+        "pulseaudio"
+        // "pulseaudio#microphone"
     ],
 
     "hyprland/window": {
@@ -32,29 +34,47 @@
         "on-click": "activate",
         "format": "{icon}",
         "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
             "urgent": "",
             "active": "",
             "default": ""
           }
     },
-    // "cpu": {
-    //     "interval": 10,
-    //     "format": " {}%",
-    //     "max-length": 10,
-    //     "on-click": ""
-    // },
-    // "memory": {
-    //     "interval": 30,
-    //     "format": " {}%",
-    //     "format-alt":" {used:0.1f}G",
-    //     "max-length": 10
-    // },
-    "custom/updates": {
+    "network": {
+      "interface": "eno1",
+      "format": "{ifname}",
+      "format-wifi": " {essid} ({signalStrength}%)",
+      "format-ethernet": " {ipaddr}/{cidr}",
+      "format-disconnected": "", //An empty format will hide the module.
+      "tooltip-format": " {ifname} via {gwaddr}",
+      "tooltip-format-wifi": " {essid} ({signalStrength}%)",
+      "tooltip-format-ethernet": " {ifname}",
+      "tooltip-format-disconnected": "Disconnected",
+      "max-length": 50
+    },
+    "network#speed": {
+      "interval": 1,
+      "interface": "eno1",
+      "format": "󰅧 {bandwidthUpBytes} 󰅢 {bandwidthDownBytes}",
+      "max-length": 50
+    },
+    "cpu": {
+        "interval": 10,
+        "format": " {}%",
+        "max-length": 10,
+        "on-click": ""
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "format-alt":" {used:0.1f}G",
+        "max-length": 10
+    },
+    "custom/checkupdates": {
         "exec": "checkupdates | wc -l",
         "interval": 7200,
         "format": " {}"

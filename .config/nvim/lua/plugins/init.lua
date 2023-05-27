@@ -313,7 +313,8 @@ require("lazy").setup({
         },
         servers = {
           ['lua_ls'] = { 'lua' },
-          ['null-ls'] = { 'html',
+          ['null-ls'] = {
+            'html',
             'javascript', 'javascriptreact', 'javascript.jsx',
             'typescript', 'typescriptreact', 'typescript.tsx', 'tsx',
             'css', 'scss',
