@@ -5,7 +5,7 @@ map('n', '<leader>d[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = tr
 map('n', '<leader>d]', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
 
 -- save as root
-map("c", "w!!", "w !sudo tee % >/dev/null<CR>:e!<CR><CR>", { noremap = true })
+map("c", "w!!", "w !sudo tee % >/dev/null<CR>:e!<CR><CR>", { noremap = true, silent = true })
 
 -- open vim config
 map("n", "<Leader>rc", ":e $MYVIMRC<CR>", { noremap = true })

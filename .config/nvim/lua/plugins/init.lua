@@ -416,6 +416,7 @@ require("lazy").setup({
     keys = {
       { "<leader>b[", ":bprev<CR>",                  desc = "buffer before" },
       { "<leader>b]", ":bnext<CR>",                  desc = "buffer next" },
+      { "<leader>bd", ":bd<CR>",                     desc = "buffer close" },
       { "<leader>b1", ":BufferLineGoToBuffer 1<CR>", desc = "buffer 1" },
       { "<leader>b2", ":BufferLineGoToBuffer 2<CR>", desc = "buffer 2" },
       { "<leader>b3", ":BufferLineGoToBuffer 3<CR>", desc = "buffer 3" },
