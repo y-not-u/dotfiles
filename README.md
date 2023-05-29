@@ -14,12 +14,12 @@
 - Font: Hack Nerd Font
 
 ## Dependencies
-`gnome-keyring wlroots python-pip go rust waybar-hyprland otf-font-awesome`
+`gnome-keyring wlroots python-pip go rust waybar-hyprland otf-font-awesome gvfs-smb`
 
 ## Apps
 `firefox mpv dbeaver-ce alacritty kdeconnect swaync eog freeoffice wlogout swayosd gnome-calculator whitesur-gtk-theme lxappearance`
 
 ## CLI
-`neofetch lsd cmatrix neovim git mpvpaper ranger telnet btop grim slurp ripgrep fzf lazygit tldr`
+`neofetch lsd cmatrix neovim git mpvpaper ranger telnet btop grim slurp ripgrep fzf lazygit tldr speedtest-rs`
 
 ![](screenshots/desktop.png)

@@ -103,6 +103,20 @@ require("lazy").setup({
             },
           },
         },
+        filesystem = {
+          filtered_items = {
+            visible = true,
+            show_hidden_count = true,
+            hide_dotfiles = true,
+            hide_gitignored = false,
+            hide_by_name = {
+              '.git',
+              '.DS_Store',
+              'thumbs.db',
+            },
+            never_show = {},
+          },
+        },
         document_symbols = {
           kinds = {
             File = { icon = "󰈙", hl = "Tag" },
@@ -400,7 +414,7 @@ require("lazy").setup({
           hover = { enabled = true, reveal = { 'close' } },
           diagnostics = "nvim_lsp",
           diagnostics_indicator = function(count, level)
-            local icon = level:match("error") and " " or ""
+            local icon = level:match("error") and " " or " "
             return " " .. icon .. count
           end,
           numbers = "ordinal",

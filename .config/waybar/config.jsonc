@@ -17,7 +17,7 @@
         "custom/checkupdates",
         "cpu",
         "memory",
-        "network",
+        // "network",
         "network#speed",
         // "custom/language",
         "pulseaudio"
@@ -25,7 +25,8 @@
     ],
 
     "hyprland/window": {
-        "format": "{}"
+        "format": "{}",
+        "max-length": 120
     },
     "wlr/workspaces": {
         "on-scroll-up": "hyprctl dispatch workspace e+1",
