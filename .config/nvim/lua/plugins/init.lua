@@ -44,8 +44,7 @@ require("lazy").setup({
     end,
   },
 
-  { "folke/neoconf.nvim",          cmd = "Neoconf" }, -- unknown
-
+  -- lua function
   { 'nvim-lua/plenary.nvim' },
 
   -- icons
@@ -61,7 +60,7 @@ require("lazy").setup({
     },
     opts = {
       defaults = {
-        prompt_prefix = "🔍",
+        prompt_prefix = "🔍 ",
         file_ignore_patterns = {
           "node_modules", "build", "dist", "yarn.lock", ".git/"
         },
@@ -96,9 +95,8 @@ require("lazy").setup({
     "numToStr/Comment.nvim",
     config = true,
     lazy = true,
-    event = "BufAdd",
+    event = "BufEnter",
   },
-
 
   -- neo tree file explor
   {
@@ -231,9 +229,8 @@ require("lazy").setup({
   -- todo
   {
     "folke/todo-comments.nvim",
-    opts = {},
     lazy = true,
-    event = "BufAdd",
+    event = "BufEnter",
   },
 
   -- auto tag
@@ -412,7 +409,7 @@ require("lazy").setup({
     lazy = true,
     keys = {
       { "<leader>o",  ":Lspsaga outline<CR>",     desc = "Toggle outline" },
-      { "<C-e>",      ":Lspsaga term_toggle<CR>", desc = "Floating terminal" },
+      { "<C-t>",      ":Lspsaga term_toggle<CR>", desc = "Floating terminal" },
       { "<leader>ca", ":Lspsaga code_action<CR>", desc = "Code action" }
     },
     dependencies = {
@@ -513,5 +510,31 @@ require("lazy").setup({
     "mattn/emmet-vim",
     lazy = true,
     event = "BufAdd",
-  }
+  },
+
+  -- run jest
+  {
+    "mattkubej/jest.nvim",
+    lazy = true,
+    cmd = {
+      "Jest",
+      "JestFile",
+      "JestSingle"
+    }
+  },
+
+  -- toggle code block
+  {
+    "Wansmer/treesj",
+    keys = {
+      { "J", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
+    },
+    opts = { use_default_keymaps = false, max_join_length = 150 },
+  },
+
+  -- increment / decrement
+  {
+    "monaqa/dial.nvim",
+    keys = { "<C-a>", { "<C-x>", mode = "n" } },
+  },
 })

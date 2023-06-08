@@ -26,7 +26,7 @@
 
     "hyprland/window": {
         "format": "{}",
-        "max-length": 80
+        "max-length": 60
     },
     "wlr/workspaces": {
         "on-scroll-up": "hyprctl dispatch workspace e+1",
