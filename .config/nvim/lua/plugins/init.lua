@@ -209,17 +209,6 @@ require("lazy").setup({
     end
   },
 
-  -- fzf fuzzy find files and contents
-  -- {
-  --   "junegunn/fzf.vim",
-  --   lazy = true,
-  --   cmd = 'Rg',
-  --   keys = {
-  --     { "<leader>fg", ":Rg<CR>", desc = "search contents" }
-  --   },
-  --   dependencies = { "junegunn/fzf" }
-  -- },
-
   -- status bar
   {
     "nvim-lualine/lualine.nvim",
@@ -254,13 +243,7 @@ require("lazy").setup({
     end
   },
 
-  {
-    "TimUntersberger/neogit",
-    cmd = "Neogit",
-    keys = {
-      { "<leader>gg", ":Neogit<CR>", desc = "Neogit" }
-    },
-  },
+  -- colorscheme for codes
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -344,8 +327,8 @@ require("lazy").setup({
           ['lua_ls'] = { 'lua' },
           ['null-ls'] = {
             'html',
-            'javascript', 'javascriptreact', 'javascript.jsx',
-            'typescript', 'typescriptreact', 'typescript.tsx', 'tsx',
+            'javascript', 'javascriptreact',
+            'typescript', 'typescriptreact',
             'css', 'scss',
             'json',
           },
@@ -382,7 +365,19 @@ require("lazy").setup({
 
   -- git status
   {
-    "airblade/vim-gitgutter",
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require('gitsigns').setup({
+        current_line_blame = true
+      })
+    end
+  },
+
+  {
+    "kdheepak/lazygit.nvim",
+    keys = {
+      { "<leader>gg", ":LazyGit<CR>", desc = "Toggle LazyGit" },
+    }
   },
 
   {
@@ -408,9 +403,12 @@ require("lazy").setup({
     end,
     lazy = true,
     keys = {
-      { "<leader>o",  ":Lspsaga outline<CR>",     desc = "Toggle outline" },
-      { "<C-t>",      ":Lspsaga term_toggle<CR>", desc = "Floating terminal" },
-      { "<leader>ca", ":Lspsaga code_action<CR>", desc = "Code action" }
+      { "<leader>o",  ":Lspsaga outline<CR>",               desc = "Toggle outline" },
+      { "<C-t>",      ":Lspsaga term_toggle<CR>",           desc = "Floating terminal" },
+      { "<leader>ca", ":Lspsaga code_action<CR>",           desc = "Code action" },
+      { "<leader>do", ":Lspsaga show_line_diagnostics<CR>", desc = "Show diagnostics" },
+      { "<leader>dd", ":Lspsaga show_buf_diagnostics<CR>",  desc = "Show diagnostics" },
+      { "<leader>gr", ":Lspsaga rename<CR>",                desc = "Rename" }
     },
     dependencies = {
       { "nvim-treesitter/nvim-treesitter" }
@@ -477,21 +475,11 @@ require("lazy").setup({
     },
   },
 
-  -- show pretty diagnostics
-  {
-    "folke/trouble.nvim",
-    lazy = true,
-    opts = {},
-    keys = {
-      { "<leader>dd", "<cmd>TroubleToggle<CR>", desc = "list troubles" },
-    },
-  },
-
   -- show minimap
   {
     "petertriho/nvim-scrollbar",
     lazy = true,
-    event = "BufAdd",
+    event = "BufEnter",
     config = true,
   },
 
@@ -505,13 +493,6 @@ require("lazy").setup({
     end,
   },
 
-  -- emmet
-  {
-    "mattn/emmet-vim",
-    lazy = true,
-    event = "BufAdd",
-  },
-
   -- run jest
   {
     "mattkubej/jest.nvim",
@@ -521,15 +502,6 @@ require("lazy").setup({
       "JestFile",
       "JestSingle"
     }
-  },
-
-  -- toggle code block
-  {
-    "Wansmer/treesj",
-    keys = {
-      { "J", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
-    },
-    opts = { use_default_keymaps = false, max_join_length = 150 },
   },
 
   -- increment / decrement

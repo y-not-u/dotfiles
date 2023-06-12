@@ -1,10 +1,7 @@
 local map = vim.api.nvim_set_keymap
 
-map('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
-map('n', '<leader>d[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
-map('n', '<leader>d]', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
 map('n', '<leader>q', '<cmd>qa!<CR>', { noremap = true, silent = true })
-map('n', '<leader>w', '<cmd>wq!<CR>', { noremap = true, silent = true })
+map('n', '<leader>w', '<cmd>w<CR>', { noremap = true, silent = true })
 
 -- save as root
 map("c", "w!!", "w !sudo tee % >/dev/null<CR>:e!<CR><CR>", { noremap = true, silent = true })
