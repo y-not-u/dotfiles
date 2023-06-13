@@ -306,6 +306,7 @@ require("lazy").setup({
       lsp.ensure_installed({
         'tsserver', -- js / ts
         'eslint',   -- js / ts
+        'cssls',    -- css/less/scss
         'html',
         'tailwindcss',
         'volar',   -- vue
