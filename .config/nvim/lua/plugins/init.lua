@@ -436,6 +436,7 @@ require("lazy").setup({
             filetype = "neo-tree",
             text = "File Explorer",
             highlight = "Directory",
+            padding = 1,
             text_align = "left"
           } }
         },
@@ -508,18 +509,35 @@ require("lazy").setup({
   -- increment / decrement
   {
     "monaqa/dial.nvim",
-    keys = { "<C-a>", { "<C-x>", mode = "n" } },
+    keys = {
+      { "<C-a>", "<Plug>(dial-increment)" },
+      { "<C-x>", "<Plug>(dial-decrement)" }
+    }
   },
 
   -- jump to any words
   {
     "phaazon/hop.nvim",
+    event = "BufRead",
     config = function()
       require('hop').setup()
     end,
     keys = {
-      { "vo", "<cmd>HopWordCurrentLine<CR>", desc = "show jump words in current line" },
-      { "vO", "<cmd>HopWord<CR>",            desc = "show jump words in current buffer" },
+      { "s", "<cmd>HopWordCurrentLine<CR>", desc = "show jump words in current line" },
+      { "S", "<cmd>HopWord<CR>",            desc = "show jump words in current buffer" },
+    }
+  },
+
+  -- lazy.nvim
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
     }
   }
 })
