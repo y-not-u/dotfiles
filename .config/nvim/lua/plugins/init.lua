@@ -510,4 +510,16 @@ require("lazy").setup({
     "monaqa/dial.nvim",
     keys = { "<C-a>", { "<C-x>", mode = "n" } },
   },
+
+  -- jump to any words
+  {
+    "phaazon/hop.nvim",
+    config = function()
+      require('hop').setup()
+    end,
+    keys = {
+      { "vo", "<cmd>HopWordCurrentLine<CR>", desc = "show jump words in current line" },
+      { "vO", "<cmd>HopWord<CR>",            desc = "show jump words in current buffer" },
+    }
+  }
 })
