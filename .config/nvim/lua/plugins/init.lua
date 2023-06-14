@@ -119,18 +119,28 @@ require("lazy").setup({
             },
           },
         },
+        close_if_last_window = true,
+        window = {
+          width = 30,
+        },
+        buffers = {
+          follow_current_file = true,
+        },
         filesystem = {
+          follow_current_file = true,
           filtered_items = {
             visible = true,
             show_hidden_count = true,
-            hide_dotfiles = true,
+            hide_dotfiles = false,
             hide_gitignored = false,
             hide_by_name = {
-              '.git',
-              '.DS_Store',
-              'thumbs.db',
+              ".git",
+              "node_modules"
             },
-            never_show = {},
+            never_show = {
+              ".DS_Store",
+              "thumbs.db",
+            },
           },
         },
         document_symbols = {
@@ -160,7 +170,6 @@ require("lazy").setup({
             { source = "git_status", display_name = " 󰊢 Git " },
           },
         },
-        -- Other options ...
       })
     end,
     lazy = true,
