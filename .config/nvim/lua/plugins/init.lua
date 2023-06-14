@@ -548,32 +548,23 @@ require("lazy").setup({
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {},
+    opts = {
+      cmdline = {
+        format = {
+          cmdline = { icon = ">" },
+          search_down = { icon = "🔍⌄" },
+          search_up = { icon = "🔍⌃" },
+          filter = { icon = "$" },
+          lua = { icon = "☾" },
+          help = { icon = "?" },
+        },
+      },
+      messages = {
+        view_search = false
+      }
+    },
     dependencies = {
       "MunifTanjim/nui.nvim",
     }
-  },
-
-  -- autosave
-  {
-    "Pocco81/auto-save.nvim",
-    config = function()
-      require("auto-save").setup()
-    end,
-  },
-
-  -- pick up where you left off
-  {
-    "ethanholz/nvim-lastplace",
-    event = "BufRead",
-    config = function()
-      require("nvim-lastplace").setup({
-        lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
-        lastplace_ignore_filetype = {
-          "gitcommit", "gitrebase", "svn", "hgcommit",
-        },
-        lastplace_open_folds = true,
-      })
-    end,
   },
 })
