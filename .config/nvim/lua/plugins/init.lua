@@ -251,6 +251,7 @@ require("lazy").setup({
         dim_nc_background = true,
         disable_background = true,
       })
+      vim.cmd([[colorscheme rose-pine]])
     end
   },
 
@@ -537,7 +538,7 @@ require("lazy").setup({
     "rcarriga/nvim-notify",
     config = function()
       require('notify').setup({
-        background_color = '#FAFAFA'
+        background_colour = '#FAFAFA'
       })
     end,
   },
