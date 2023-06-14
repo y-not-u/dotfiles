@@ -95,7 +95,7 @@ require("lazy").setup({
     "numToStr/Comment.nvim",
     config = true,
     lazy = true,
-    event = "BufEnter",
+    event = "BufRead",
   },
 
   -- neo tree file explor
@@ -218,8 +218,10 @@ require("lazy").setup({
   -- todo
   {
     "folke/todo-comments.nvim",
-    lazy = true,
-    event = "BufEnter",
+    event = "BufRead",
+    config = function()
+      require("todo-comments").setup()
+    end,
   },
 
   -- auto tag
@@ -477,12 +479,15 @@ require("lazy").setup({
     },
   },
 
-  -- show minimap
   {
-    "petertriho/nvim-scrollbar",
-    lazy = true,
-    event = "BufEnter",
-    config = true,
+    'wfxr/minimap.vim',
+    build = "cargo install --locked code-minimap",
+    -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
+    config = function()
+      vim.cmd("let g:minimap_width = 10")
+      vim.cmd("let g:minimap_auto_start = 1")
+      vim.cmd("let g:minimap_auto_start_win_enter = 1")
+    end,
   },
 
   -- CSS colorize
@@ -506,15 +511,6 @@ require("lazy").setup({
     }
   },
 
-  -- increment / decrement
-  {
-    "monaqa/dial.nvim",
-    keys = {
-      { "<C-a>", "<Plug>(dial-increment)" },
-      { "<C-x>", "<Plug>(dial-decrement)" }
-    }
-  },
-
   -- jump to any words
   {
     "phaazon/hop.nvim",
@@ -528,16 +524,45 @@ require("lazy").setup({
     }
   },
 
-  -- lazy.nvim
+  {
+    "rcarriga/nvim-notify",
+    config = function()
+      require('notify').setup({
+        background_color = '#FAFAFA'
+      })
+    end,
+  },
+
+  -- beautiful notify and cmd prompt
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {
-      -- add any options here
-    },
+    opts = {},
     dependencies = {
       "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
     }
-  }
+  },
+
+  -- autosave
+  {
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup()
+    end,
+  },
+
+  -- pick up where you left off
+  {
+    "ethanholz/nvim-lastplace",
+    event = "BufRead",
+    config = function()
+      require("nvim-lastplace").setup({
+        lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
+        lastplace_ignore_filetype = {
+          "gitcommit", "gitrebase", "svn", "hgcommit",
+        },
+        lastplace_open_folds = true,
+      })
+    end,
+  },
 })
