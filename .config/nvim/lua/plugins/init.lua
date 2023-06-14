@@ -245,7 +245,8 @@ require("lazy").setup({
   {
     'rose-pine/neovim',
     name = 'rose-pine',
-    lazy = true,
+    lazy = false,
+    priority = 1000,
     config = function()
       require('rose-pine').setup({
         dim_nc_background = true,
