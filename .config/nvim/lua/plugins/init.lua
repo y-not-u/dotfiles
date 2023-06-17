@@ -535,36 +535,14 @@ require("lazy").setup({
     }
   },
 
+  -- notify
   {
     "rcarriga/nvim-notify",
     config = function()
       require('notify').setup({
         background_colour = '#FAFAFA'
       })
+      vim.notify = require("notify")
     end,
-  },
-
-  -- beautiful notify and cmd prompt
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    opts = {
-      cmdline = {
-        format = {
-          cmdline = { icon = ">" },
-          search_down = { icon = "🔍⌄" },
-          search_up = { icon = "🔍⌃" },
-          filter = { icon = "$" },
-          lua = { icon = "☾" },
-          help = { icon = "?" },
-        },
-      },
-      messages = {
-        view_search = false
-      }
-    },
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-    }
   },
 })

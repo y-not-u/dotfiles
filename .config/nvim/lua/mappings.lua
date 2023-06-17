@@ -1,6 +1,7 @@
 local map = vim.api.nvim_set_keymap
 
-map('n', '<leader>q', '<cmd>qa!<CR>', { noremap = true, silent = true })
+map('n', '<leader>qq', '<cmd>q<CR>', { noremap = true, silent = true })
+map('n', '<leader>qa', '<cmd>qa!<CR>', { noremap = true, silent = true })
 map('n', '<leader>w', '<cmd>w<CR>', { noremap = true, silent = true })
 
 -- save as root
