@@ -545,4 +545,23 @@ require("lazy").setup({
       vim.notify = require("notify")
     end,
   },
+
+  {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup {}
+      require('telescope').load_extension('projects')
+    end,
+    keys = {
+      { "<leader>fp", "<cmd>Telescope projects<CR>", desc = "list all projects" },
+    }
+  },
+
+  -- a smooth scrolling
+  {
+    "karb94/neoscroll.nvim",
+    config = function()
+      require('neoscroll').setup()
+    end
+  }
 })
