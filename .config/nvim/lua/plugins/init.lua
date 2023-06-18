@@ -57,6 +57,7 @@ require("lazy").setup({
       { "<leader>ff", "<cmd>Telescope find_files no_ignore=true hidden=true<CR>", desc = "find files" },
       { "<leader>fb", "<cmd>Telescope buffers<CR>",                               desc = "find and switch buffers" },
       { "<leader>fg", "<cmd>Telescope live_grep<CR>",                             desc = "find and grep files" },
+      { "<leader>ft", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME,BUG<CR>",       desc = "find and grep files" },
     },
     opts = {
       defaults = {
@@ -84,9 +85,12 @@ require("lazy").setup({
     "lukas-reineke/indent-blankline.nvim",
     opts = {
       char = "│",
-      filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+      filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason", "terminal", "text",
+        "markdown", "git" },
       show_trailing_blankline_indent = false,
       show_current_context = false,
+      use_treesitter = true,
+      show_first_indent_level = true,
     }
   },
 
@@ -418,7 +422,7 @@ require("lazy").setup({
     lazy = true,
     keys = {
       { "<leader>o",  ":Lspsaga outline<CR>",               desc = "Toggle outline" },
-      { "<C-t>",      ":Lspsaga term_toggle<CR>",           desc = "Floating terminal" },
+      -- { "<C-t>",      ":Lspsaga term_toggle<CR>",           desc = "Floating terminal" },
       { "<leader>ca", ":Lspsaga code_action<CR>",           desc = "Code action" },
       { "<leader>do", ":Lspsaga show_line_diagnostics<CR>", desc = "Show diagnostics" },
       { "<leader>dd", ":Lspsaga show_buf_diagnostics<CR>",  desc = "Show diagnostics" },
@@ -468,26 +472,6 @@ require("lazy").setup({
       { "<leader>b6", ":BufferLineGoToBuffer 6<CR>", desc = "buffer 6" },
       { "<leader>b7", ":BufferLineGoToBuffer 7<CR>", desc = "buffer 7" },
     }
-  },
-
-  -- toggleterm
-  {
-    'akinsho/toggleterm.nvim',
-    version = "*",
-    lazy = true,
-    cmd = "ToggleTerm",
-    config = function()
-      require("toggleterm").setup({
-        open_mapping = [[<c-\>]],
-        shade_terminals = false,
-        -- add --login so ~/.zprofile is loaded
-        -- https://vi.stackexchange.com/questions/16019/neovim-terminal-not-reading-bash-profile/16021#16021
-        shell = "zsh --login",
-      })
-    end,
-    keys = {
-      { [[<C-\>]] },
-    },
   },
 
   -- CSS colorize
@@ -562,7 +546,6 @@ require("lazy").setup({
       codewindow.apply_default_keybinds()
     end,
   },
-
 
   {
     "VonHeikemen/fine-cmdline.nvim",
