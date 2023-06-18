@@ -490,17 +490,6 @@ require("lazy").setup({
     },
   },
 
-  {
-    'wfxr/minimap.vim',
-    build = "cargo install --locked code-minimap",
-    -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
-    config = function()
-      vim.cmd("let g:minimap_width = 10")
-      vim.cmd("let g:minimap_auto_start = 1")
-      vim.cmd("let g:minimap_auto_start_win_enter = 1")
-    end,
-  },
-
   -- CSS colorize
   {
     "norcalli/nvim-colorizer.lua",
@@ -562,6 +551,33 @@ require("lazy").setup({
     "karb94/neoscroll.nvim",
     config = function()
       require('neoscroll').setup()
+    end
+  },
+
+  {
+    'gorbit99/codewindow.nvim',
+    config = function()
+      local codewindow = require('codewindow')
+      codewindow.setup()
+      codewindow.apply_default_keybinds()
+    end,
+  },
+
+
+  {
+    "VonHeikemen/fine-cmdline.nvim",
+    keys = {
+      { ":", '<cmd>FineCmdline<CR>', desc = "show cmdline" }
+    }
+  },
+
+  {
+    'rmagatti/auto-session',
+    config = function()
+      require("auto-session").setup {
+        log_level = "error",
+        auto_session_suppress_dirs = { "~/", "~/workspace" },
+      }
     end
   }
 })
