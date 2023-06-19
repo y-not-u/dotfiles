@@ -5,9 +5,6 @@ map('n', '<leader>qa', '<cmd>qa!<CR>', { noremap = true, silent = true })
 map('n', '<leader>w', '<cmd>w<CR>', { noremap = true, silent = true })
 map('n', '<leader>r', '<cmd>so %<CR>', { noremap = true })
 
-map('n', '<C-t>', ':Term<CR>', { noremap = true })
-map('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
-
 -- save as root
 map("c", "w!!", "w !sudo tee % >/dev/null<CR>:e!<CR><CR>", { noremap = true, silent = true })
 

@@ -232,9 +232,7 @@ require("lazy").setup({
   {
     "folke/todo-comments.nvim",
     event = "BufRead",
-    config = function()
-      require("todo-comments").setup()
-    end,
+    config = true
   },
 
   -- auto tag
@@ -422,7 +420,6 @@ require("lazy").setup({
     lazy = true,
     keys = {
       { "<leader>o",  ":Lspsaga outline<CR>",               desc = "Toggle outline" },
-      -- { "<C-t>",      ":Lspsaga term_toggle<CR>",           desc = "Floating terminal" },
       { "<leader>ca", ":Lspsaga code_action<CR>",           desc = "Code action" },
       { "<leader>do", ":Lspsaga show_line_diagnostics<CR>", desc = "Show diagnostics" },
       { "<leader>dd", ":Lspsaga show_buf_diagnostics<CR>",  desc = "Show diagnostics" },
@@ -430,6 +427,16 @@ require("lazy").setup({
     },
     dependencies = {
       { "nvim-treesitter/nvim-treesitter" }
+    }
+  },
+
+  {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    config = true,
+    keys = {
+      { "<C-t>", "<cmd>ToggleTerm<CR>",      desc = "toggle terminal" },
+      { "<C-t>", "<Esc><cmd>ToggleTerm<CR>", mode = "t",              desc = "toggle terminal" }
     }
   },
 
