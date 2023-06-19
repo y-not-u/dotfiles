@@ -408,8 +408,8 @@ require("lazy").setup({
   -- markdown preview need to build first
   {
     "iamcco/markdown-preview.nvim",
-    lazy = true,
-    ft = "md"
+    build = 'cd app && yarn install',
+    ft = "markdown",
   },
 
   -- lsp ui
