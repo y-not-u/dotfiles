@@ -245,16 +245,12 @@ require("lazy").setup({
 
   -- color scheme
   {
-    'rose-pine/neovim',
-    name = 'rose-pine',
+    "catppuccin/nvim",
+    name = "catppuccin",
     lazy = false,
     priority = 1000,
     config = function()
-      require('rose-pine').setup({
-        dim_nc_background = true,
-        disable_background = true,
-      })
-      vim.cmd([[colorscheme rose-pine]])
+      vim.cmd([[colorscheme catppuccin]])
     end
   },
 
@@ -443,30 +439,41 @@ require("lazy").setup({
   -- buffer
   {
     "akinsho/bufferline.nvim",
-    config = function()
-      require('bufferline').setup {
-        options = {
-          always_show_bufferline = true,
-          show_close_icon = false,
-          show_buffer_close_icons = false,
-          hover = { enabled = true, reveal = { 'close' } },
-          diagnostics = "nvim_lsp",
-          diagnostics_indicator = function(count, level)
-            local icon = level:match("error") and " " or " "
-            return " " .. icon .. count
-          end,
-          numbers = "ordinal",
-          offsets = { {
-            filetype = "neo-tree",
-            text = "File Explorer",
-            highlight = "Directory",
-            padding = 1,
-            text_align = "left"
-          } }
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {
+      options = {
+        always_show_bufferline = true,
+        show_close_icon = false,
+        show_buffer_close_icons = false,
+        separator_style = "slant",     -- | "thick" | "thin" | { 'any', 'any' },
+        close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
+        hover = {
+          enabled = true,
+          delay = 0,
+          reveal = { "close" },
         },
-      }
-    end,
-    event = 'BufAdd',
+        diagnostics = "nvim_lsp",
+        diagnostics_indicator = function(count, level)
+          local icon = level:match("error") and " " or " "
+          return " " .. icon .. count
+        end,
+        numbers = "ordinal",
+        offsets = {
+          {
+            filetype = "neo-tree",
+            text = "EXPLORER",
+            text_align = "center",
+            separator = true, -- set to `true` if clear background of neo-tree
+          },
+          {
+            filetype = "NvimTree",
+            text = "EXPLORER",
+            text_align = "center",
+            separator = true,
+          },
+        },
+      },
+    },
     keys = {
       { "<leader>b[", ":bprev<CR>",                  desc = "buffer before" },
       { "<leader>b]", ":bnext<CR>",                  desc = "buffer next" },
@@ -569,5 +576,15 @@ require("lazy").setup({
         auto_session_suppress_dirs = { "~/", "~/workspace" },
       }
     end
+  },
+
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+    },
+    opts = {},
   }
 })
