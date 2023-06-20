@@ -646,6 +646,12 @@ require("lazy").setup({
         }
       }
     }
+  },
+
+  -- comment
+  {
+    "danymat/neogen",
+    config = true,
   }
 
 })
