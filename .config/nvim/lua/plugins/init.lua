@@ -88,7 +88,8 @@ require("lazy").setup({
       filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason", "terminal", "text",
         "markdown", "git" },
       show_trailing_blankline_indent = false,
-      show_current_context = false,
+      show_current_context = true,
+      show_current_context_start = true,
       use_treesitter = true,
       show_first_indent_level = true,
     }
