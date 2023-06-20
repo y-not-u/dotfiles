@@ -552,6 +552,7 @@ require("lazy").setup({
     end
   },
 
+  -- mini code map
   {
     'gorbit99/codewindow.nvim',
     config = function()
@@ -561,6 +562,7 @@ require("lazy").setup({
     end,
   },
 
+  -- nice cmdline
   {
     "VonHeikemen/fine-cmdline.nvim",
     keys = {
@@ -568,6 +570,8 @@ require("lazy").setup({
     }
   },
 
+
+  -- autosave session
   {
     'rmagatti/auto-session',
     config = function()
@@ -578,6 +582,7 @@ require("lazy").setup({
     end
   },
 
+  -- vscode like breadcrum
   {
     "utilyre/barbecue.nvim",
     name = "barbecue",
@@ -586,5 +591,61 @@ require("lazy").setup({
       "SmiteshP/nvim-navic",
     },
     opts = {},
+  },
+
+  -- smart column
+  {
+    "m4xshen/smartcolumn.nvim",
+    opts = {}
+  },
+
+  {
+    "RutaTang/compter.nvim",
+    config = true,
+    opts = {
+      templates = {
+        -- for number
+        {
+          pattern = [[-\?\d\+]],
+          priority = 0,
+          increase = function(content)
+            content = tonumber(content)
+            return content + 1, true
+          end,
+          decrease = function(content)
+            content = tonumber(content)
+            return content - 1, true
+          end,
+        },
+        -- for boolean
+        {
+          pattern = [[\<\(true\|false\|TRUE\|FALSE\|True\|False\)\>]],
+          priority = 100,
+          increase = function(content)
+            local switch = {
+              ["true"] = "false",
+              ["false"] = "true",
+              ["True"] = "False",
+              ["False"] = "True",
+              ["TRUE"] = "FALSE",
+              ["FALSE"] = "TRUE",
+            }
+            return switch[content], true
+          end,
+          decrease = function(content)
+            local switch = {
+              ["true"] = "false",
+              ["false"] = "true",
+              ["True"] = "False",
+              ["False"] = "True",
+              ["TRUE"] = "FALSE",
+              ["FALSE"] = "TRUE",
+            }
+            return switch[content], true
+          end,
+        }
+      }
+    }
   }
+
 })
