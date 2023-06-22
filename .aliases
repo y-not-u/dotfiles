@@ -1,7 +1,14 @@
 alias ls='lsd'
 alias gpush="git push"
 alias gpull="git pull"
-alias proxy="export http_proxy=http://127.0.0.1:7890 && export https_proxy=http://127.0.0.1:7890"
 alias unproxy="unset http_proxy https_proxy"
 alias pn="pnpm"
 alias pnpx="pnpm dlx"
+alias s="proxychains4"
+
+function proxy() {
+  export http_proxy=http://127.0.0.1:7890 https_proxy=http://127.0.0.1:7890
+  export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
+  all_proxy=socks5://127.0.0.1:7890
+  echo -e "🚀 已开启代理",$(curl -s myip.ipip.net)
+}
