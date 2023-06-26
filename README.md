@@ -5,7 +5,7 @@
 
 - OS: ArchLinux
 - Compositor: Hyprland
-- Terminal Emulator: Alacritty
+- Terminal Emulator: Wezterm
 - Status Bar: waybar
 - App Launcher: Rofi
 - Notification Daemon: SwayNotificationCenter
@@ -17,7 +17,7 @@
 `gnome-keyring wlroots python-pip go rust waybar-hyprland otf-font-awesome gvfs-smb bind`
 
 ## Apps
-`firefox mpv dbeaver-ce alacritty kdeconnect swaync eog freeoffice wlogout swayosd gnome-calculator whitesur-gtk-theme lxappearance nautilus`
+`firefox mpv dbeaver-ce wezterm kdeconnect swaync eog freeoffice wlogout swayosd gnome-calculator whitesur-gtk-theme lxappearance nautilus`
 
 ## CLI
 `neofetch lsd cmatrix neovim git mpvpaper ranger telnet btop grim slurp ripgrep fzf lazygit tldr speedtest-rs ncdu`

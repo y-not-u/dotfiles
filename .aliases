@@ -5,6 +5,7 @@ alias unproxy="unset http_proxy https_proxy all_proxy"
 alias pn="pnpm"
 alias pnpx="pnpm dlx"
 alias s="proxychains4"
+alias ra="ranger"
 
 function proxy() {
   export http_proxy=http://127.0.0.1:7890 https_proxy=http://127.0.0.1:7890
