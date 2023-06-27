@@ -52,12 +52,14 @@ require("lazy").setup({
 
   -- search files
   {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.1',
     cmd = "Telescope",
     keys = {
-      { "<leader>ff", "<cmd>Telescope find_files no_ignore=true hidden=true<CR>", desc = "find files" },
-      { "<leader>fb", "<cmd>Telescope buffers<CR>",                               desc = "find and switch buffers" },
-      { "<leader>fg", "<cmd>Telescope live_grep<CR>",                             desc = "find and grep files" },
-      { "<leader>ft", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME,BUG<CR>",       desc = "find and grep files" },
+      { "<leader>ff", "<cmd>Telescope find_files<CR>",                      desc = "find files" },
+      { "<leader>fb", "<cmd>Telescope buffers<CR>",                         desc = "find and switch buffers" },
+      { "<leader>fg", "<cmd>Telescope live_grep<CR>",                       desc = "find and grep files" },
+      { "<leader>ft", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME,BUG<CR>", desc = "find and grep files" },
     },
     opts = {
       defaults = {
@@ -66,18 +68,12 @@ require("lazy").setup({
           "node_modules", "build", "dist", "yarn.lock", ".git/"
         },
       },
-      ripgrep_arguments = {
-        'rg',
-        '--hidden',
-        '--no-heading',
-        '--with-filename',
-        '--line-number',
-        '--column',
-        '--smart-case'
+      pickers = {
+        find_files = {
+          find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
+        }
       },
     },
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.1',
   },
 
   -- display indents
