@@ -124,7 +124,7 @@ require("lazy").setup({
             },
           },
         },
-        close_if_last_window = true,
+        close_if_last_window = false,
         window = {
           width = 30,
         },
@@ -478,7 +478,7 @@ require("lazy").setup({
     keys = {
       { "<leader>b[", ":bprev<CR>",                  desc = "buffer before" },
       { "<leader>b]", ":bnext<CR>",                  desc = "buffer next" },
-      { "<leader>bd", ":bdelete!<CR>",               desc = "buffer close" },
+      { "<leader>bd", ":bdelete<CR>",                desc = "buffer delete" },
       { "<leader>b1", ":BufferLineGoToBuffer 1<CR>", desc = "buffer 1" },
       { "<leader>b2", ":BufferLineGoToBuffer 2<CR>", desc = "buffer 2" },
       { "<leader>b3", ":BufferLineGoToBuffer 3<CR>", desc = "buffer 3" },
