@@ -8,6 +8,9 @@ map('n', '<leader>r', '<cmd>so %<CR>', { noremap = true })
 -- buffer
 map('n', '[b', '<cmd>bp<CR>', { noremap = true })
 map('n', ']b', '<cmd>bn<CR>', { noremap = true })
+map('n', '[[', '<cmd>bp<CR>', { noremap = true })
+map('n', ']]', '<cmd>bn<CR>', { noremap = true })
+
 
 -- save as root
 map("c", "w!!", "w !sudo tee % >/dev/null<CR>:e!<CR><CR>", { noremap = true, silent = true })
