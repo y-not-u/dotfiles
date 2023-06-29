@@ -1,4 +1,3 @@
-local cmd = vim.cmd
 local g = vim.g
 local opt = vim.opt
 
@@ -30,6 +29,3 @@ opt.writebackup = false
 opt.colorcolumn = "80"
 opt.scrolloff = 999
 opt.clipboard = "unnamedplus"
-
--- highlight the line on yank
-cmd 'au TextYankPost * silent! lua vim.highlight.on_yank({ higroup = "IncSearch", timeout = 250 })'

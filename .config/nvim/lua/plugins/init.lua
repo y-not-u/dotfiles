@@ -79,16 +79,19 @@ require("lazy").setup({
   -- display indents
   {
     "lukas-reineke/indent-blankline.nvim",
-    opts = {
-      char = "│",
-      filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason", "terminal", "text",
-        "markdown", "git" },
-      show_trailing_blankline_indent = false,
-      show_current_context = true,
-      show_current_context_start = true,
-      use_treesitter = true,
-      show_first_indent_level = true,
-    }
+    config = function()
+      vim.cmd [[highlight IndentBlanklineContextChar guifg=#56B6C2 gui=nocombine]]
+
+      require("indent_blankline").setup({
+        filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason", "terminal", "text",
+          "markdown", "git" },
+        show_trailing_blankline_indent = false,
+        show_current_context = true,
+        show_current_context_start = true,
+        use_treesitter = true,
+        show_first_indent_level = true,
+      })
+    end,
   },
 
   -- gcc comment
@@ -303,6 +306,7 @@ require("lazy").setup({
     end
   },
 
+  -- lsp
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
@@ -382,6 +386,7 @@ require("lazy").setup({
     end
   },
 
+  -- lazygit
   {
     "kdheepak/lazygit.nvim",
     keys = {
@@ -389,11 +394,12 @@ require("lazy").setup({
     }
   },
 
+  -- auto pairs
   {
     "windwp/nvim-autopairs",
     lazy = true,
     event = "InsertEnter",
-    config = function() require("nvim-autopairs").setup {} end
+    config = true,
   },
 
   -- markdown preview need to build first
@@ -423,6 +429,7 @@ require("lazy").setup({
     }
   },
 
+  -- terminal
   {
     'akinsho/toggleterm.nvim',
     version = "*",
@@ -444,11 +451,6 @@ require("lazy").setup({
         show_buffer_close_icons = false,
         separator_style = "slant",     -- | "thick" | "thin" | { 'any', 'any' },
         close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
-        hover = {
-          enabled = true,
-          delay = 0,
-          reveal = { "close" },
-        },
         diagnostics = "nvim_lsp",
         diagnostics_indicator = function(count, level)
           local icon = level:match("error") and " " or " "
@@ -490,9 +492,7 @@ require("lazy").setup({
     "norcalli/nvim-colorizer.lua",
     lazy = true,
     event = "BufAdd",
-    config = function()
-      require('colorizer').setup()
-    end,
+    config = true
   },
 
   -- run jest
@@ -530,6 +530,7 @@ require("lazy").setup({
     end,
   },
 
+  -- projects
   {
     "ahmedkhalf/project.nvim",
     config = function()
@@ -544,9 +545,7 @@ require("lazy").setup({
   -- a smooth scrolling
   {
     "karb94/neoscroll.nvim",
-    config = function()
-      require('neoscroll').setup()
-    end
+    config = true
   },
 
   -- mini code map
@@ -567,14 +566,13 @@ require("lazy").setup({
     }
   },
 
-
   -- autosave session
   {
     'rmagatti/auto-session',
     config = function()
       require("auto-session").setup {
         log_level = "error",
-        auto_session_suppress_dirs = { "~/", "~/workspace" },
+        auto_session_suppress_dirs = { "~/workspace", "~/Workspace" },
       }
     end
   },
@@ -596,6 +594,7 @@ require("lazy").setup({
     opts = {}
   },
 
+  -- increase / decrease
   {
     "RutaTang/compter.nvim",
     config = true,
