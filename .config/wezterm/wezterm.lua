@@ -1,7 +1,11 @@
 local wezterm = require 'wezterm'
+local mux = wezterm.mux
+local act = wezterm.action
 
 return {
   automatically_reload_config = true,
+
+  color_scheme = 'Hardcore',
 
   -- font
   font = wezterm.font_with_fallback({
@@ -23,4 +27,19 @@ return {
 
   window_background_opacity = 0.9,
   term = "xterm-256color",
+
+  inactive_pane_hsb = {
+    saturation = 0.8,
+    brightness = 0.7
+  },
+
+  use_dead_keys = false,
+  scrollback_lines = 5000,
+
+  -- keys
+  keys = {
+    { key = 'Enter', mods = 'CMD',       action = act.ActivateCopyMode },
+    { key = 'd',     mods = 'CMD',       action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
+    { key = 'd',     mods = 'SHIFT|CMD', action = act.SplitVertical { domain = 'CurrentPaneDomain' }, }
+  }
 }
