@@ -449,8 +449,7 @@ require("lazy").setup({
         always_show_bufferline = true,
         show_close_icon = false,
         show_buffer_close_icons = false,
-        separator_style = "slant",     -- | "thick" | "thin" | { 'any', 'any' },
-        close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
+        separator_style = "thin", -- "slant" | "thick" | "thin" | { 'any', 'any' },
         diagnostics = "nvim_lsp",
         diagnostics_indicator = function(count, level)
           local icon = level:match("error") and " " or " "
@@ -648,6 +647,20 @@ require("lazy").setup({
   {
     "danymat/neogen",
     config = true,
-  }
+  },
 
+  -- transparent
+  {
+    "xiyaowong/transparent.nvim",
+    opts = {
+      groups = { -- table: default groups
+        'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
+        'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
+        'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
+        'SignColumn', 'CursorLineNr', 'EndOfBuffer',
+      },
+      extra_groups = {},   -- table: additional groups that should be cleared
+      exclude_groups = {}, -- table: groups you don't want to clear
+    }
+  }
 })

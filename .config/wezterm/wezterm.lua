@@ -5,7 +5,9 @@ local act = wezterm.action
 return {
   automatically_reload_config = true,
 
-  color_scheme = 'Hardcore',
+  -- color scheme
+  term = "xterm-256color",
+  color_scheme = 'DanQing',
 
   -- font
   font = wezterm.font_with_fallback({
@@ -25,8 +27,59 @@ return {
   hide_tab_bar_if_only_one_tab = true,
   use_ime = true,
 
+  -- window
   window_background_opacity = 0.9,
-  term = "xterm-256color",
+  window_background_gradient = {
+    -- Can be "Vertical" or "Horizontal".  Specifies the direction
+    -- in which the color gradient varies.  The default is "Horizontal",
+    -- with the gradient going from left-to-right.
+    -- Linear and Radial gradients are also supported; see the other
+    -- examples below
+    orientation = 'Vertical',
+
+    -- Specifies the set of colors that are interpolated in the gradient.
+    -- Accepts CSS style color specs, from named colors, through rgb
+    -- strings and more
+    colors = {
+      '#0f0c29',
+      '#302b63',
+      '#24243e',
+    },
+
+    -- Instead of specifying `colors`, you can use one of a number of
+    -- predefined, preset gradients.
+    -- A list of presets is shown in a section below.
+    -- preset = "Warm",
+
+    -- Specifies the interpolation style to be used.
+    -- "Linear", "Basis" and "CatmullRom" as supported.
+    -- The default is "Linear".
+    interpolation = 'Linear',
+
+    -- How the colors are blended in the gradient.
+    -- "Rgb", "LinearRgb", "Hsv" and "Oklab" are supported.
+    -- The default is "Rgb".
+    blend = 'Rgb',
+
+    -- To avoid vertical color banding for horizontal gradients, the
+    -- gradient position is randomly shifted by up to the `noise` value
+    -- for each pixel.
+    -- Smaller values, or 0, will make bands more prominent.
+    -- The default value is 64 which gives decent looking results
+    -- on a retina macbook pro display.
+    -- noise = 64,
+
+    -- By default, the gradient smoothly transitions between the colors.
+    -- You can adjust the sharpness by specifying the segment_size and
+    -- segment_smoothness parameters.
+    -- segment_size configures how many segments are present.
+    -- segment_smoothness is how hard the edge is; 0.0 is a hard edge,
+    -- 1.0 is a soft edge.
+
+    -- segment_size = 11,
+    -- segment_smoothness = 0.0,
+  },
+
 
   inactive_pane_hsb = {
     saturation = 0.8,
@@ -41,5 +94,42 @@ return {
     { key = 'Enter', mods = 'CMD',       action = act.ActivateCopyMode },
     { key = 'd',     mods = 'CMD',       action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
     { key = 'd',     mods = 'SHIFT|CMD', action = act.SplitVertical { domain = 'CurrentPaneDomain' }, }
-  }
+  },
+
+  mouse_bindings = {
+    -- Scrolling up while holding CTRL increases the font size
+    {
+      event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+      mods = 'CTRL',
+      action = act.IncreaseFontSize,
+    },
+
+    -- Scrolling down while holding CTRL decreases the font size
+    {
+      event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+      mods = 'CTRL',
+      action = act.DecreaseFontSize,
+    },
+
+    -- Bind 'Up' event of CTRL-Click to open hyperlinks
+    {
+      event = { Up = { streak = 1, button = 'Left' } },
+      mods = 'CTRL',
+      action = act.OpenLinkAtMouseCursor,
+    },
+    -- Disable the 'Down' event of CTRL-Click to avoid weird program behaviors
+    {
+      event = { Down = { streak = 1, button = 'Left' } },
+      mods = 'CTRL',
+      action = act.Nop,
+    },
+
+    -- Change the default click behavior so that it only selects
+    -- text and doesn't open hyperlinks
+    {
+      event = { Up = { streak = 1, button = 'Left' } },
+      mods = 'NONE',
+      action = act.CompleteSelection 'ClipboardAndPrimarySelection',
+    },
+  },
 }
