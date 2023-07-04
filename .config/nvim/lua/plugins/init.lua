@@ -449,7 +449,7 @@ require("lazy").setup({
         always_show_bufferline = true,
         show_close_icon = false,
         show_buffer_close_icons = false,
-        separator_style = "thin", -- "slant" | "thick" | "thin" | { 'any', 'any' },
+        separator_style = "thick", -- "slant" | "thick" | "thin" | { 'any', 'any' },
         diagnostics = "nvim_lsp",
         diagnostics_indicator = function(count, level)
           local icon = level:match("error") and " " or " "
@@ -505,56 +505,29 @@ require("lazy").setup({
     }
   },
 
-  -- jump to any words
-  {
-    "phaazon/hop.nvim",
-    event = "BufRead",
-    config = function()
-      require('hop').setup()
-    end,
-    keys = {
-      { "s", "<cmd>HopWordCurrentLine<CR>", desc = "show jump words in current line" },
-      { "S", "<cmd>HopWord<CR>",            desc = "show jump words in current buffer" },
-    }
-  },
-
   -- notify
   {
     "rcarriga/nvim-notify",
     config = function()
-      require('notify').setup({
-        background_colour = '#FAFAFA'
+      local notify = require("notify")
+      notify.setup({
+        background_colour = "NotifyBackground",
+        fps = 30,
+        level = 2,
+        minimum_width = 50,
+        render = "compact",
+        stages = "fade",
+        timeout = 5000,
+        top_down = true
       })
-      vim.notify = require("notify")
+      vim.notify = notify
     end,
-  },
-
-  -- projects
-  {
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require("project_nvim").setup {}
-      require('telescope').load_extension('projects')
-    end,
-    keys = {
-      { "<leader>fp", "<cmd>Telescope projects<CR>", desc = "list all projects" },
-    }
   },
 
   -- a smooth scrolling
   {
     "karb94/neoscroll.nvim",
     config = true
-  },
-
-  -- mini code map
-  {
-    'gorbit99/codewindow.nvim',
-    config = function()
-      local codewindow = require('codewindow')
-      codewindow.setup()
-      codewindow.apply_default_keybinds()
-    end,
   },
 
   -- nice cmdline
@@ -662,5 +635,38 @@ require("lazy").setup({
       extra_groups = {},   -- table: additional groups that should be cleared
       exclude_groups = {}, -- table: groups you don't want to clear
     }
+  },
+
+  -- jump
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    opts = {},
+    keys = {
+      {
+        "s",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").jump()
+        end,
+        desc = "Flash",
+      },
+      {
+        "S",
+        mode = { "n", "o", "x" },
+        function()
+          require("flash").treesitter()
+        end,
+        desc = "Flash Treesitter",
+      },
+      {
+        "R",
+        mode = { "o", "x" },
+        function()
+          require("flash").treesitter_search()
+        end,
+        desc = "Flash Treesitter Search",
+      },
+    },
   }
 })
