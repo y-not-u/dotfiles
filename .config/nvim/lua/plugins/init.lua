@@ -59,13 +59,31 @@ require("lazy").setup({
       { "<leader>ff", "<cmd>Telescope find_files<CR>",                      desc = "find files" },
       { "<leader>fb", "<cmd>Telescope buffers<CR>",                         desc = "find and switch buffers" },
       { "<leader>fg", "<cmd>Telescope live_grep<CR>",                       desc = "find and grep files" },
+      { "<leader>fp", "<cmd>Telescope projects<CR>",                        desc = "find and projects" },
       { "<leader>ft", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME,BUG<CR>", desc = "find and grep files" },
     },
     opts = {
       defaults = {
         prompt_prefix = "🔍 ",
+        dynamic_preview_title = true,
         file_ignore_patterns = {
-          "node_modules", "build", "dist", "yarn.lock", ".git/"
+          ".idea/",
+          ".git/",
+          "kitex_gen/",
+          "node_modules/",
+          "vendor/",
+          "target/",
+          "build/",
+          "output/",
+          ".gradle/",
+          "dist",
+          -- specific file
+          "%.class",
+          "%.jar",
+          "%.so",
+          "%.a",
+          "%.o",
+          "%.out",
         },
       },
       pickers = {
@@ -83,8 +101,19 @@ require("lazy").setup({
       vim.cmd [[highlight IndentBlanklineContextChar guifg=#56B6C2 gui=nocombine]]
 
       require("indent_blankline").setup({
-        filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason", "terminal", "text",
-          "markdown", "git" },
+        filetype_exclude = {
+          "help",
+          "alpha",
+          "dashboard",
+          "neo-tree",
+          "Trouble",
+          "lazy",
+          "mason",
+          "terminal",
+          "text",
+          "markdown",
+          "git"
+        },
         show_trailing_blankline_indent = false,
         show_current_context = true,
         show_current_context_start = true,
@@ -187,34 +216,46 @@ require("lazy").setup({
   {
     'glepnir/dashboard-nvim', -- start dashboard
     event = 'VimEnter',
+    keys = { { '<leader>n', '<cmd>Dashboard<CR>', desc = 'Open dashboard-nvim' } },
     config = function()
       require('dashboard').setup {
-        theme = 'hyper',
+        theme = 'doom',
+        shortcut_type = 'number',
         config = {
           week_header = {
             enable = true,
           },
-          shortcut = {
+          center = {
             { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
             {
               icon = ' ',
               icon_hl = '@variable',
               desc = 'Files',
               group = 'Label',
-              action = 'Telescope find_files',
               key = 'f',
+              action = 'Telescope find_files',
             },
             {
-              desc = ' Apps',
+              icon = ' ',
+              desc = 'Apps',
               group = 'DiagnosticHint',
-              action = 'Telescope app',
               key = 'a',
+              action = 'Telescope projects',
             },
             {
-              desc = ' dotfiles',
-              group = 'Number',
-              action = 'Telescope dotfiles',
+              icon = ' ',
+              desc = 'Dotfiles',
               key = 'd',
+              action = ':cd ~/.config/nvim | e ~/.config/nvim/init.lua',
+            },
+            {
+              icon = ' ',
+              icon_hl = 'Title',
+              desc = 'Quit Neovim',
+              desc_hl = 'String',
+              key = 'q',
+              key_hl = 'Number',
+              action = ':qa',
             },
           },
         },
@@ -276,6 +317,7 @@ require("lazy").setup({
         },
         sync_install = false,
         auto_install = true,
+        indent = { enable = true },
         highlight = {
           enable = true,
           disable = function(lang, buf)
@@ -508,10 +550,11 @@ require("lazy").setup({
   -- notify
   {
     "rcarriga/nvim-notify",
+    event = { 'BufReadPost', 'BufNewFile' },
     config = function()
       local notify = require("notify")
       notify.setup({
-        background_colour = "NotifyBackground",
+        background_colour = "#000000",
         fps = 30,
         level = 2,
         minimum_width = 50,
@@ -541,12 +584,15 @@ require("lazy").setup({
   -- autosave session
   {
     'rmagatti/auto-session',
-    config = function()
-      require("auto-session").setup {
-        log_level = "error",
-        auto_session_suppress_dirs = { "~/workspace", "~/Workspace" },
-      }
-    end
+    opts = {
+      log_level = "error",
+      auto_session_suppress_dirs = { "~/workspace", "~/Workspace" },
+    }
+  },
+
+  {
+    "olimorris/persisted.nvim",
+    config = true
   },
 
   -- vscode like breadcrum
@@ -563,7 +609,14 @@ require("lazy").setup({
   -- smart column
   {
     "m4xshen/smartcolumn.nvim",
-    opts = {}
+    opts = {
+      disabled_filetypes = {
+        "help", "text", "markdown",
+        "NvimTree", "lazy", "mason", "help",
+        "neo-tree",
+        "dashboard"
+      }
+    }
   },
 
   -- increase / decrease
@@ -658,5 +711,40 @@ require("lazy").setup({
         desc = "Flash",
       },
     },
-  }
+  },
+
+  {
+    'gelguy/wilder.nvim'
+  },
+
+  -- scrollbar
+  {
+    'petertriho/nvim-scrollbar',
+    config = true,
+    opts = {
+      excluded_filetypes = {
+        "cmp_docs",
+        "cmp_menu",
+        "noice",
+        "prompt",
+        "TelescopePrompt",
+        'Telescope',
+        'dashboard',
+        'neo-tree'
+      },
+    }
+  },
+
+  {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require('project_nvim').setup {
+        detection_methods = { "pattern" },
+        patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "pom.xml" },
+      }
+      require('telescope').load_extension('projects')
+    end,
+    event = "VimEnter",
+    cmd = "Telescope projects",
+  },
 })
