@@ -456,8 +456,20 @@ require("lazy").setup({
     event = "LspAttach",
     config = true,
     opts = {
+      symbol_in_winbar = {
+        enable = false
+      },
       rename = {
         in_select = false,
+        keys = {
+          quit = '<Esc>'
+        }
+      },
+      code_action = {
+        show_server_name = true,
+        keys = {
+          quit = '<Esc>'
+        }
       },
       definition = {
         quit = '<Esc>'
