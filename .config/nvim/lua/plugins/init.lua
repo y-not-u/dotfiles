@@ -453,22 +453,18 @@ require("lazy").setup({
 
   -- lsp ui
   {
-    "glepnir/lspsaga.nvim",
+    "nvimdev/lspsaga.nvim",
     event = "LspAttach",
-    config = function()
-      require("lspsaga").setup({})
-    end,
+    config = true,
     lazy = true,
     keys = {
       { "<leader>o",  ":Lspsaga outline<CR>",               desc = "Toggle outline" },
       { "<leader>ca", ":Lspsaga code_action<CR>",           desc = "Code action" },
       { "<leader>do", ":Lspsaga show_line_diagnostics<CR>", desc = "Show diagnostics" },
       { "<leader>dd", ":Lspsaga show_buf_diagnostics<CR>",  desc = "Show diagnostics" },
-      { "<leader>gr", ":Lspsaga rename<CR>",                desc = "Rename" }
+      { "<leader>gr", ":Lspsaga rename<CR>",                desc = "Rename" },
+      { "<leader>gd", ":Lspsaga goto_definition<CR>",       desc = "Goto definition" }
     },
-    dependencies = {
-      { "nvim-treesitter/nvim-treesitter" }
-    }
   },
 
   -- terminal
@@ -728,13 +724,13 @@ require("lazy").setup({
         "noice",
         "prompt",
         "TelescopePrompt",
-        'Telescope',
         'dashboard',
         'neo-tree'
       },
     }
   },
 
+  -- project manager
   {
     "ahmedkhalf/project.nvim",
     config = function()
@@ -747,4 +743,5 @@ require("lazy").setup({
     event = "VimEnter",
     cmd = "Telescope projects",
   },
+
 })
