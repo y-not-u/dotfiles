@@ -455,7 +455,14 @@ require("lazy").setup({
     "nvimdev/lspsaga.nvim",
     event = "LspAttach",
     config = true,
-    lazy = true,
+    opts = {
+      rename = {
+        in_select = false,
+      },
+      definition = {
+        quit = '<Esc>'
+      }
+    },
     keys = {
       { "<leader>o",  ":Lspsaga outline<CR>",               desc = "Toggle outline" },
       { "<leader>ca", ":Lspsaga code_action<CR>",           desc = "Code action" },
