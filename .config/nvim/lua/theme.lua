@@ -1,5 +1,5 @@
 vim.opt.termguicolors = true
-vim.opt.guifont = "Hack Nerd Font"
+vim.opt.guifont = "Hack Nerd Font:h16"
 vim.o.guicursor = table.concat({
   "n-v-c:block-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",
   "i-ci:ver25-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",
