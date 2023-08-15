@@ -6,6 +6,8 @@ alias pn="pnpm"
 alias pnpx="pnpm dlx"
 alias s="proxychains4"
 alias ra="ranger"
+alias nv="neovide"
+alias lg='lazygit'
 
 function proxy() {
   export http_proxy=http://127.0.0.1:7890 https_proxy=http://127.0.0.1:7890
