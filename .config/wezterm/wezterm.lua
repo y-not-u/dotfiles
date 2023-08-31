@@ -13,7 +13,7 @@ return {
   font = wezterm.font_with_fallback({
     "Hack Nerd Font"
   }),
-  font_size = 15,
+  font_size = 18,
   line_height = 1.2,
   cell_width = 0.9,
 
