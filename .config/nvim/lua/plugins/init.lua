@@ -46,6 +46,7 @@ require("lazy").setup({
 
   -- lua function
   { 'nvim-lua/plenary.nvim' },
+  { 'hrsh7th/nvim-cmp' }, -- Required
 
   -- icons
   { "nvim-tree/nvim-web-devicons", lazy = true },
@@ -410,7 +411,6 @@ require("lazy").setup({
       { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },     -- Required
       { 'hrsh7th/cmp-nvim-lsp' }, -- Required
       { 'L3MON4D3/LuaSnip' },     -- Required
     }
@@ -765,4 +765,10 @@ require("lazy").setup({
     cmd = "Telescope projects",
   },
 
+  {
+    "jcdickinson/codeium.nvim",
+    config = function()
+      require("codeium").setup({})
+    end
+  },
 })
