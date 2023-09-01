@@ -70,9 +70,4 @@ return {
       { "<leader>gd", ":Lspsaga goto_definition<CR>",       desc = "Goto definition" }
     },
   },
-  -- AI
-  {
-    'Exafunction/codeium.vim',
-    event = 'BufEnter'
-  }
 }
