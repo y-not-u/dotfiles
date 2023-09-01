@@ -25,7 +25,7 @@ return {
     },
     config = function(_, opts)
       vim.o.timeout = true
-      vim.o.timeoutlen = 300
+      vim.o.timeoutlen = 500
       local wk = require("which-key")
       wk.setup(opts)
       wk.register(opts.defaults)

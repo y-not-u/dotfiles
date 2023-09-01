@@ -77,8 +77,9 @@ return {
   -- display indents
   {
     "lukas-reineke/indent-blankline.nvim",
+    event = { 'BufReadPost', 'BufNewFile' },
     config = function()
-      vim.cmd [[highlight IndentBlanklineContextChar guifg=#56B6C2 gui=nocombine]]
+      vim.cmd [[highlight IndentBlanklineContextChar guifg=#f97316 gui=nocombine]]
 
       require("indent_blankline").setup({
         filetype_exclude = {

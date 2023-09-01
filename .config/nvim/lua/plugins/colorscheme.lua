@@ -3,6 +3,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    event = { 'BufReadPost', 'BufNewFile' },
     config = function()
       require("nvim-treesitter.configs").setup({
         ensure_installed = {
@@ -15,6 +16,7 @@ return {
           "json",
           "lua",
           "html",
+          "toml",
           "bash",
           "markdown",
           "vim",
@@ -45,5 +47,5 @@ return {
     config = function()
       vim.cmd([[colorscheme catppuccin]])
     end
-  },
+  }
 }

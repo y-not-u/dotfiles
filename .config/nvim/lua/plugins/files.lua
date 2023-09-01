@@ -8,7 +8,7 @@ return {
       { "<leader>ff", "<cmd>Telescope find_files<CR>",                      desc = "find files" },
       { "<leader>fb", "<cmd>Telescope buffers<CR>",                         desc = "find and switch buffers" },
       { "<leader>fg", "<cmd>Telescope live_grep<CR>",                       desc = "find and grep files" },
-      { "<leader>fp", "<cmd>Telescope projects<CR>",                        desc = "find and projects" },
+      { "<leader>fr", "<cmd>Telescope oldfiles<CR>",                        desc = "find recent files" },
       { "<leader>ft", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME,BUG<CR>", desc = "find and grep files" },
     },
     opts = {
