@@ -1,7 +1,7 @@
 return {
   {
     'hrsh7th/nvim-cmp',
-    event = "InsertEnter",
+    event = "VeryLazy",
     commit = "6c84bc75c64f778e9f1dcb798ed41c7fcb93b639", -- lock update (break codeium)
     config = function()
       local cmp = require("cmp")
@@ -40,11 +40,11 @@ return {
   },
   {
     "jcdickinson/codeium.nvim",
-      event = "VeryLazy",
-      dependencies = {
-          "nvim-lua/plenary.nvim",
-          "hrsh7th/nvim-cmp",
-      },
-      config = true
+    event = "VeryLazy",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = true
   },
 }

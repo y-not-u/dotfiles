@@ -8,6 +8,9 @@ return {
     end,
     dependencies = {
       "williamboman/mason-lspconfig.nvim",
+    },
+    keys = {
+      { "<C-f>", "<cmd>lua vim.lsp.buf.format()<CR>", desc = "format the buffer" },
     }
   },
   {
@@ -61,7 +64,7 @@ return {
       }
     },
     keys = {
-      { "K",  ":Lspsaga hover_doc<CR>",             desc = "Toggle hover doc" },
+      { "K",          ":Lspsaga hover_doc<CR>",             desc = "Toggle hover doc" },
       { "<leader>o",  ":Lspsaga outline<CR>",               desc = "Toggle outline" },
       { "<leader>ca", ":Lspsaga code_action<CR>",           desc = "Code action" },
       { "<leader>do", ":Lspsaga show_line_diagnostics<CR>", desc = "Show diagnostics" },
