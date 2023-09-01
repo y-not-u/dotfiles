@@ -39,4 +39,5 @@ return {
     lazy = true,
     event = "BufAdd",
   },
+  { "wakatime/vim-wakatime" }
 }
