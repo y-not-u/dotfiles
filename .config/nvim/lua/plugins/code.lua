@@ -32,6 +32,7 @@ return {
     event = "InsertEnter",
     config = true,
   },
+
   -- auto tag
   {
     "windwp/nvim-ts-autotag",
@@ -39,5 +40,41 @@ return {
     lazy = true,
     event = "BufAdd",
   },
-  { "wakatime/vim-wakatime" }
+
+  -- wakatime
+  { "wakatime/vim-wakatime" },
+
+  -- formmater
+  {
+    'mhartington/formatter.nvim',
+    config = function()
+      require("formatter").setup {
+        -- Enable or disable logging
+        logging = true,
+        -- Set the log level
+        log_level = vim.log.levels.WARN,
+        filetype = {
+          javascipt = { require('formatter.filetypes.javascript').prettier },
+          javasciptreact = { require('formatter.filetypes.javascriptreact').prettier },
+          typescript = { require('formatter.filetypes.typescript').prettier },
+          typescriptreact = { require('formatter.filetypes.typescriptreact').prettier },
+
+          ["*"] = {
+            require("formatter.filetypes.any").remove_trailing_whitespace,
+            function()
+              -- Ignore already configured types.
+              local defined_types = require("formatter.config").values.filetype
+              if defined_types[vim.bo.filetype] ~= nil then
+                return nil
+              end
+              vim.lsp.buf.format({ async = true })
+            end,
+          }
+        }
+      }
+    end,
+    keys = {
+      { "<leader>F", "<cmd>FormatWrite<CR>", desc = "Format Write" },
+    }
+  }
 }
