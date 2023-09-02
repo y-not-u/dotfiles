@@ -2,6 +2,11 @@ local wezterm = require 'wezterm'
 local mux = wezterm.mux
 local act = wezterm.action
 
+wezterm.on('gui-startup', function()
+  local _, _, window = mux.spawn_window{}
+  window:gui_window():maximize()
+end)
+
 return {
   automatically_reload_config = true,
 
@@ -79,7 +84,6 @@ return {
     -- segment_size = 11,
     -- segment_smoothness = 0.0,
   },
-
 
   inactive_pane_hsb = {
     saturation = 0.8,
