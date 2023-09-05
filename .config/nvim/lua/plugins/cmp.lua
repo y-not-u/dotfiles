@@ -1,7 +1,7 @@
 return {
   {
     'hrsh7th/nvim-cmp',
-    event = "VeryLazy",
+    event = { "BufRead", "BufNewFile" },
     commit = "6c84bc75c64f778e9f1dcb798ed41c7fcb93b639", -- lock update (break codeium)
     config = function()
       local cmp = require("cmp")
@@ -23,10 +23,13 @@ return {
           })
         },
         mapping = {
-          ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-          ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+          ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
+          ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
           ['<C-.>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-          ['<Esc>'] = cmp.mapping.close(),
+          ['<Esc>'] = cmp.mapping({
+            i = cmp.mapping.abort(),
+            c = cmp.mapping.close(),
+          }),
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
         }
       })
