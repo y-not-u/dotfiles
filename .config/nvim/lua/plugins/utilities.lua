@@ -1,5 +1,4 @@
 return {
-
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
@@ -36,15 +35,6 @@ return {
   {
     "karb94/neoscroll.nvim",
     config = true
-  },
-
-  -- autosave session
-  {
-    'rmagatti/auto-session',
-    opts = {
-      log_level = "error",
-      auto_session_suppress_dirs = { "~/workspace", "~/Workspace" },
-    }
   },
 
   -- smart column

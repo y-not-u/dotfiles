@@ -2,11 +2,10 @@ return {
   -- git status
   {
     "lewis6991/gitsigns.nvim",
-    config = function()
-      require('gitsigns').setup({
-        current_line_blame = true
-      })
-    end
+    event = { "BufEnter" },
+    opts = {
+      current_line_blame = true
+    }
   },
 
   -- lazygit
