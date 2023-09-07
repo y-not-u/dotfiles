@@ -69,18 +69,18 @@ return {
       vim.notify = notify
     end,
   },
+
   -- status bar
   {
     "nvim-lualine/lualine.nvim",
     config = true
   },
+
   -- display indents
   {
     "lukas-reineke/indent-blankline.nvim",
     event = { 'BufReadPost', 'BufNewFile' },
     config = function()
-      vim.cmd [[highlight IndentBlanklineContextChar guifg=#f97316 gui=nocombine]]
-
       require("indent_blankline").setup({
         filetype_exclude = {
           "help",
@@ -95,12 +95,18 @@ return {
           "markdown",
           "git"
         },
-        show_trailing_blankline_indent = false,
-        show_current_context = true,
+        show_trailing_blankline_indent = true,
+        show_current_context = false,
         show_current_context_start = true,
         show_first_indent_level = true,
       })
     end,
   },
 
+  {
+    "echasnovski/mini.indentscope",
+    event = { 'BufEnter' },
+    version = '*',
+    config = true,
+  },
 }
