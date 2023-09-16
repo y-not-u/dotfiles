@@ -73,7 +73,12 @@ return {
   -- status bar
   {
     "nvim-lualine/lualine.nvim",
-    config = true
+    opts = {
+      icons_enabled = false,
+      theme = 'catppuccin',
+      component_separators = '|',
+      section_separators = '',
+    },
   },
 
   -- display indents

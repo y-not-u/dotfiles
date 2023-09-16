@@ -26,6 +26,8 @@ return {
           ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
           ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
           ['<C-.>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+          ['<C-n>'] = cmp.mapping.select_next_item(),
+          ['<C-p>'] = cmp.mapping.select_prev_item(),
           ['<Esc>'] = cmp.mapping({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),

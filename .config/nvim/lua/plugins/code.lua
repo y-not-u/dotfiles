@@ -44,6 +44,8 @@ return {
   -- wakatime
   { "wakatime/vim-wakatime" },
 
+  { "tpope/vim-sleuth" },
+
   -- formmater
   {
     'mhartington/formatter.nvim',
