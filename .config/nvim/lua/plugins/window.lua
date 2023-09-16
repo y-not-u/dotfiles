@@ -2,6 +2,10 @@ return {
   -- transparent
   {
     "xiyaowong/transparent.nvim",
+    config = function()
+      -- require('transparent').clear_prefix('lualine')
+      require('transparent').clear_prefix('BufferLine')
+    end,
     opts = {
       groups = { -- table: default groups
         'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
@@ -74,10 +78,9 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     opts = {
-      icons_enabled = false,
-      theme = 'catppuccin',
-      component_separators = '|',
-      section_separators = '',
+      options = {
+        theme = 'nord',
+      },
     },
   },
 
