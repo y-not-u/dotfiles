@@ -61,6 +61,7 @@ return {
           typescript = { require('formatter.filetypes.typescript').prettier },
           typescriptreact = { require('formatter.filetypes.typescriptreact').prettier },
           css = { require('formatter.filetypes.css').prettier },
+          scss = { require('formatter.filetypes.css').prettier },
           json = { require('formatter.filetypes.json').prettier },
 
           ["*"] = {
