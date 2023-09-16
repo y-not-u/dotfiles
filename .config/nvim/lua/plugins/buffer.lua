@@ -31,17 +31,20 @@ return {
       },
     },
     keys = {
-      { "<leader>b[", ":bprev<CR>",                  desc = "buffer before" },
-      { "<leader>b]", ":bnext<CR>",                  desc = "buffer next" },
-      { "<leader>bd", ":bdelete!<CR>",               desc = "buffer delete" },
-      { "<leader>x",  ":bdelete!<CR>",               desc = "buffer delete" },
-      { "<leader>b1", ":BufferLineGoToBuffer 1<CR>", desc = "buffer 1" },
-      { "<leader>b2", ":BufferLineGoToBuffer 2<CR>", desc = "buffer 2" },
-      { "<leader>b3", ":BufferLineGoToBuffer 3<CR>", desc = "buffer 3" },
-      { "<leader>b4", ":BufferLineGoToBuffer 4<CR>", desc = "buffer 4" },
-      { "<leader>b5", ":BufferLineGoToBuffer 5<CR>", desc = "buffer 5" },
-      { "<leader>b6", ":BufferLineGoToBuffer 6<CR>", desc = "buffer 6" },
-      { "<leader>b7", ":BufferLineGoToBuffer 7<CR>", desc = "buffer 7" },
+      { "<leader>b[", ":bprev<CR>",                                           desc = "buffer before" },
+      { "<leader>b]", ":bnext<CR>",                                           desc = "buffer next" },
+      { "<leader>bd", ":bdelete!<CR>",                                        desc = "buffer delete" },
+      { "<leader>x",  function()
+        vim.cmd("Neotree close")
+        vim.cmd("bd!")
+      end,                                                                    desc = "buffer delete" },
+      { "<leader>b1", ":BufferLineGoToBuffer 1<CR>",                          desc = "buffer 1" },
+      { "<leader>b2", ":BufferLineGoToBuffer 2<CR>",                          desc = "buffer 2" },
+      { "<leader>b3", ":BufferLineGoToBuffer 3<CR>",                          desc = "buffer 3" },
+      { "<leader>b4", ":BufferLineGoToBuffer 4<CR>",                          desc = "buffer 4" },
+      { "<leader>b5", ":BufferLineGoToBuffer 5<CR>",                          desc = "buffer 5" },
+      { "<leader>b6", ":BufferLineGoToBuffer 6<CR>",                          desc = "buffer 6" },
+      { "<leader>b7", ":BufferLineGoToBuffer 7<CR>",                          desc = "buffer 7" },
     }
   },
 }
