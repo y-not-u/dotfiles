@@ -58,6 +58,8 @@ return {
           javasciptreact = { require('formatter.filetypes.javascriptreact').prettier },
           typescript = { require('formatter.filetypes.typescript').prettier },
           typescriptreact = { require('formatter.filetypes.typescriptreact').prettier },
+          css = { require('formatter.filetypes.css').prettier },
+          json = { require('formatter.filetypes.json').prettier },
 
           ["*"] = {
             require("formatter.filetypes.any").remove_trailing_whitespace,
