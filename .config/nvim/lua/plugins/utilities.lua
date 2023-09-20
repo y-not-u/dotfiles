@@ -130,6 +130,7 @@ return {
     lazy = true,
     event = "BufRead",
   },
+
   -- todo
   {
     "folke/todo-comments.nvim",

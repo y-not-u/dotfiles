@@ -96,8 +96,7 @@ return {
           "dashboard",
           "neo-tree",
           "Trouble",
-          "lazy",
-          "mason",
+          "lazy", "mason",
           "terminal",
           "text",
           "markdown",
@@ -115,6 +114,9 @@ return {
     "echasnovski/mini.indentscope",
     event = { 'BufEnter' },
     version = '*',
-    config = true,
+    config = function()
+      require('mini.indentscope').setup()
+      vim.cmd('au FileType dashboard lua vim.b.miniindentscope_disable = true')
+    end,
   },
 }

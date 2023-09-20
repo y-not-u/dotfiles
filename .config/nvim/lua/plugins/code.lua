@@ -44,6 +44,7 @@ return {
   -- wakatime
   { "wakatime/vim-wakatime" },
 
+  -- shiftwidth
   { "tpope/vim-sleuth" },
 
   -- formmater
