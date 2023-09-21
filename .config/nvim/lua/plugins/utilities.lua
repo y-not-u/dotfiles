@@ -137,4 +137,21 @@ return {
     event = "BufRead",
     config = true
   },
+
+  -- project
+  {
+    "coffebar/neovim-project",
+    opts = {
+      projects = { -- define project roots
+        "~/Workspace/Startup/Reader/*",
+        "~/Workspace/Blog",
+        "~/Workspace/dotfiles"
+      },
+    },
+    keys = {
+      { "<leader>fp", "<cmd>Telescope neovim-project discover<CR>", desc = "find projects" },
+    },
+    dependencies = { "nvim-telescope/telescope.nvim", "Shatur/neovim-session-manager" },
+    priority = 100,
+  },
 }
