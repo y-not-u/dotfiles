@@ -3,7 +3,7 @@ local mux = wezterm.mux
 local act = wezterm.action
 
 wezterm.on('gui-startup', function()
-  local _, _, window = mux.spawn_window{}
+  local _, _, window = mux.spawn_window {}
   window:gui_window():maximize()
 end)
 
@@ -33,7 +33,9 @@ return {
   use_ime = true,
 
   -- window
-  window_background_opacity = 0.9,
+  window_background_opacity = .85,
+  native_macos_fullscreen_mode = true,
+  window_close_confirmation = "NeverPrompt",
   window_background_gradient = {
     -- Can be "Vertical" or "Horizontal".  Specifies the direction
     -- in which the color gradient varies.  The default is "Horizontal",
@@ -92,6 +94,7 @@ return {
 
   use_dead_keys = false,
   scrollback_lines = 5000,
+  enable_scroll_bar = true,
 
   -- keys
   keys = {
@@ -133,7 +136,7 @@ return {
     {
       event = { Up = { streak = 1, button = 'Left' } },
       mods = 'NONE',
-      action = act.CompleteSelection 'ClipboardAndPrimarySelection',
+      action = act.CompleteSelection 'PrimarySelection',
     },
   },
 }
