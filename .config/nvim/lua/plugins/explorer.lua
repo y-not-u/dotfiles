@@ -20,7 +20,8 @@ return {
       },
       close_if_last_window = false,
       window = {
-        width = 30,
+        width = 40,
+        position = "right",
       },
       buffers = {
         follow_current_file = true,
