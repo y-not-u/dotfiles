@@ -2,7 +2,7 @@ return {
   -- search files
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.1',
+    tag = '0.1.4',
     cmd = "Telescope",
     keys = {
       { "<leader>ff", "<cmd>Telescope find_files<CR>",                      desc = "find files" },
