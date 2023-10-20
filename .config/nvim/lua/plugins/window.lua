@@ -85,33 +85,31 @@ return {
   },
 
   -- display indents
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    event = { 'BufReadPost', 'BufNewFile' },
-    main = "ibl",
-    opts = {
-      debounce = 100,
-      indent = { char = "|" },
-      whitespace = { highlight = { "Whitespace", "NonText" } },
-      scope = { exclude = { language = { "lua" } } },
-      -- exclude = {
-      --   "help",
-      --   "alpha",
-      --   "dashboard",
-      --   "neo-tree",
-      --   "Trouble",
-      --   "lazy", "mason",
-      --   "terminal",
-      --   "text",
-      --   "markdown",
-      --   "git"
-      -- },
-      -- show_trailing_blankline_indent = true,
-      -- show_current_context = false,
-      -- show_current_context_start = true,
-      -- show_first_indent_level = true,
-    }
-  },
+  -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   event = { 'BufReadPost', 'BufNewFile' },
+  --   main = "ibl",
+  --   config = function()
+  --     require("indent_blankline").setup({
+  --       filetype_exclude = {
+  --         "help",
+  --         "alpha",
+  --         "dashboard",
+  --         "neo-tree",
+  --         "Trouble",
+  --         "lazy", "mason",
+  --         "terminal",
+  --         "text",
+  --         "markdown",
+  --         "git"
+  --       },
+  --       show_trailing_blankline_indent = true,
+  --       show_current_context = false,
+  --       show_current_context_start = true,
+  --       show_first_indent_level = true,
+  --     })
+  --   end,
+  -- },
 
   {
     "echasnovski/mini.indentscope",
