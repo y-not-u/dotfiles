@@ -1,0 +1,26 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    cwd "~/Workspace/Startup/Reader/"
+    tab name="web" cwd="reader-web" {
+        pane command="bun" {
+            args "run" "start"
+        }
+    }
+    tab name="api" cwd="reader-api" {
+        pane command="bun" {
+            args "run" "start"
+            focus true
+        }
+    }
+    tab name="ios" cwd="reader-ios-app" {
+        pane
+    }
+}
