@@ -6,6 +6,7 @@ alias pn="pnpm"
 alias pnpx="pnpm dlx"
 alias s="proxychains4"
 alias ra="ranger"
+alias jo="joshuto"
 alias ze="zellij"
 alias nv="neovide"
 alias lg='lazygit'
