@@ -69,6 +69,13 @@ return {
           quit = '<Esc>'
         }
       },
+      outline = {
+        detail = false,
+        close_after_jump = true,
+        keys = {
+          jump = '<CR>'
+        }
+      },
       definition = {
         quit = '<Esc>'
       }
