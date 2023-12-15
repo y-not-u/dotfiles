@@ -33,7 +33,8 @@ return {
   use_ime = true,
 
   -- window
-  window_background_opacity = .85,
+  window_background_opacity = 0.80,
+  macos_window_background_blur = 10,
   native_macos_fullscreen_mode = true,
   window_close_confirmation = "NeverPrompt",
   window_background_gradient = {
