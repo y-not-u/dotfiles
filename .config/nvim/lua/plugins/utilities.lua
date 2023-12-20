@@ -32,10 +32,10 @@ return {
   },
 
   -- a smooth scrolling
-  {
-    "karb94/neoscroll.nvim",
-    config = true
-  },
+  -- {
+  --   "karb94/neoscroll.nvim",
+  --   config = true
+  -- },
 
   -- smart column
   {
