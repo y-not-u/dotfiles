@@ -13,10 +13,16 @@ return {
             enable = true,
           },
           center = {
-            { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
             {
-              icon = ' ',
-              icon_hl = '@variable',
+              icon = ' ',
+              desc = 'Temp File',
+              group = 'Label',
+              action = 'tabnew | startinsert',
+              key = 'n'
+            },
+            { icon = ' ', desc = 'Update', group = '@property', action = 'Lazy update', key = 'u' },
+            {
+              icon = ' ',
               desc = 'Files',
               group = 'Label',
               key = 'f',
@@ -39,9 +45,7 @@ return {
               icon = ' ',
               icon_hl = 'Title',
               desc = 'Quit Neovim',
-              desc_hl = 'String',
               key = 'q',
-              key_hl = 'Number',
               action = ':qa',
             },
           },
