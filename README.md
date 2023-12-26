@@ -5,8 +5,8 @@
 
 - OS: ArchLinux
 - Compositor: Hyprland
-- Terminal Emulator: Wezterm
-- Status Bar: waybar
+- Terminal Emulator: Wezterm / Alacritty
+- Status Bar: waybar / gBar
 - App Launcher: Rofi
 - Notification Daemon: SwayNotificationCenter
 - Shell: zsh
@@ -33,7 +33,14 @@ curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
 ```
 
 ### yay
-
+[repo](https://github.com/Jguer/yay)
+```bash
+# installation
+pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+```
 
 ## Dependencies
 `gnome-keyring wlroots python-pip go rust waybar-hyprland otf-font-awesome gvfs-smb bind`
@@ -42,12 +49,21 @@ curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
 `firefox mpv dbeaver-ce wezterm kdeconnect swaync eog freeoffice wlogout swayosd gnome-calculator whitesur-gtk-theme lxappearance nautilus`
 
 ## CLI
-`neofetch lsd cmatrix neovim git mpvpaper ranger telnet btop grim slurp ripgrep fzf lazygit tldr speedtest-rs ncdu`
+`neofetch lsd cmatrix neovim git mpvpaper ranger telnet btop grim slurp ripgrep fzf lazygit tldr speedtest-rs ncdu wl-clipboard`
 
 ## Adition
-- xremap // keymap
+### Keymap
+- xremap
+  > VIM Style
+  > CapsLock -> Super
+  > Super -> CapsLock
 
-## Fonts
+### Clipboard
+- wl-clipboard
+- chiphist
+> wl-paste --watch cliphist store // listen for clipboard changes 
+
+### Fonts
 - noto-fonts-emoji // Emoji
 - ttf-hack-nerd // Hack Nerd Font
 - adobe-source-han-sans-cn-fonts // Chinese font
