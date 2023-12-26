@@ -70,7 +70,7 @@ ZSH_THEME="bureau"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z thefuck)
+plugins=(git z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -115,7 +115,12 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-eval $(thefuck --alias) 
-
 source "$HOME/.cargo/env"
 
+
+# bun completions
+[ -s "/home/egg/.bun/_bun" ] && source "/home/egg/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

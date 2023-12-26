@@ -1,3 +1,4 @@
+alias v='nvim'
 alias ls='lsd'
 alias gpush="git push"
 alias gpull="git pull"

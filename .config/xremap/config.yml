@@ -1,0 +1,15 @@
+modmap:
+  - name: CapsLock -> Ctrl Left
+    remap:
+      CapsLock: Ctrl_L
+  - name: Alt -> Super
+    remap:
+      Alt_L: Super_L
+      Super_L: Alt_L
+keymap:
+  - name: Vim binding
+    remap:
+      C-h: left
+      C-l: right
+      C-k: up
+      C-j: down
