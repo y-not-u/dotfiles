@@ -1,26 +1,17 @@
 [font]
 size = 14.0
 
-[[font.enabled]]
+[font.normal]
+family = "Hack Nerd Font"
+
+[[hints.enabled]]
 command = "xdg-open"
 hyperlinks = true
 post_processing = true
 regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
 
-[font.enabled.binding]
-key = "U"
-mods = "Control|Shift"
-
-[font.enabled.mouse]
-enabled = true
-mods = "Control"
-
-[font.normal]
-family = "Hack Nerd Font"
-
 [window]
 decorations = "none"
-
-[window.padding]
-x = 10
-y = 10
+padding = { x = 3, y = 3 }
+dynamic_padding = true
+opacity = 0.9
