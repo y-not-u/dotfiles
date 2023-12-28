@@ -13,27 +13,32 @@
 - Browser: Firefox
 - Font: Hack Nerd Font
 
+![](screenshots/desktop.png)
+
 ## Prepared
-### go
+
+### Proxy/Mirror
+#### go
 ```bash
 # set go proxy
 export GOPROXY=https://goproxy.io,direct
 ```
 
-### rust
+#### rust
 
 ```bash
-# set cargo proxy and insall rust
+# set cargo proxy
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 ```
 
 ```bash
+# install rust
 curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
 ```
 
 ### yay
-[repo](https://github.com/Jguer/yay)
+[yay repo](https://github.com/Jguer/yay)
 ```bash
 # installation
 pacman -S --needed git base-devel
@@ -53,15 +58,22 @@ makepkg -si
 
 ## Adition
 ### Keymap
-- xremap
+- [xremap](https://github.com/k0kubun/xremap)
   > VIM Style
   > CapsLock -> Super
   > Super -> CapsLock
 
 ### Clipboard
 - wl-clipboard
-- chiphist
-> wl-paste --watch cliphist store // listen for clipboard changes 
+- [chiphist](https://github.com/sentriz/cliphist)
+> wl-paste --watch cliphist store // listen for clipboard changes
+
+### Notification
+- swaync // sway notification center
+
+### Status Bar
+- waybar
+- [gBar](https://github.com/scorpion-26/gBar)
 
 ### Fonts
 - noto-fonts-emoji // Emoji
@@ -69,8 +81,12 @@ makepkg -si
 - adobe-source-han-sans-cn-fonts // Chinese font
 
 ## Web Developing
+- neovim # Editor
+- ranger # File explorer
 - node
 - npm / pnpm
-- bun
+- bun # Run node fastly (only in development)
+- lazygit # Git TUI
+- zellij # like tmux
 
-![](screenshots/desktop.png)
+https://dausruddin.com/how-to-enable-clipboard-and-folder-sharing-in-qemu-kvm-on-windows-guest/
