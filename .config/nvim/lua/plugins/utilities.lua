@@ -31,12 +31,6 @@ return {
     end,
   },
 
-  -- a smooth scrolling
-  -- {
-  --   "karb94/neoscroll.nvim",
-  --   config = true
-  -- },
-
   -- smart column
   {
     "m4xshen/smartcolumn.nvim",
@@ -154,4 +148,13 @@ return {
     dependencies = { "nvim-telescope/telescope.nvim", "Shatur/neovim-session-manager" },
     priority = 100,
   },
+  -- improve yank
+  {
+    "gbprod/yanky.nvim",
+    config = true,
+    opts = {},
+    keys = {
+      { "<leader>p", "<cmd>YankyRingHistory<CR>", desc = "show yank history" },
+    }
+  }
 }

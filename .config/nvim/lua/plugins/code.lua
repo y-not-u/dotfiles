@@ -14,6 +14,12 @@ return {
     config = true
   },
 
+  -- tailwindcss
+  {
+    "roobert/tailwindcss-colorizer-cmp.nvim",
+    config = true
+  },
+
   -- run jest
   {
     "mattkubej/jest.nvim",
