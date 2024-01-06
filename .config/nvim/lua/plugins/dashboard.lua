@@ -15,24 +15,23 @@ return {
           center = {
             {
               icon = ' ',
-              desc = 'Temp File',
+              desc = 'New File',
               group = 'Label',
-              action = 'tabnew | startinsert',
+              action = 'ene | startinsert',
               key = 'n'
             },
             { icon = ' ', desc = 'Update', group = '@property', action = 'Lazy update', key = 'u' },
             {
               icon = ' ',
-              desc = 'Files',
+              desc = 'Find files',
               group = 'Label',
               key = 'f',
               action = 'Telescope find_files',
             },
             {
               icon = ' ',
-              desc = 'Apps',
-              group = 'DiagnosticHint',
-              key = 'a',
+              desc = 'Projects',
+              key = 'p',
               action = 'Telescope projects',
             },
             {

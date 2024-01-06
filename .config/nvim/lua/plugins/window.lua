@@ -2,6 +2,7 @@ return {
   -- transparent
   {
     "xiyaowong/transparent.nvim",
+    enabled = false,
     config = function()
       -- require('transparent').clear_prefix('lualine')
       require('transparent').clear_prefix('BufferLine')
@@ -30,7 +31,7 @@ return {
         "prompt",
         "TelescopePrompt",
         'dashboard',
-        'neo-tree'
+        'neo-tree',
       },
     }
   },
@@ -74,50 +75,85 @@ return {
     end,
   },
 
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    event = "VeryLazy",
+    opts = {
+      indent = {
+        char = "│",
+        tab_char = "│",
+      },
+      scope = { enabled = false },
+      exclude = {
+        filetypes = {
+          "help",
+          "alpha",
+          "dashboard",
+          "neo-tree",
+          "Trouble",
+          "trouble",
+          "lazy",
+          "mason",
+          "notify",
+          "toggleterm",
+          "lazyterm",
+        },
+      },
+    },
+    main = "ibl",
+  },
+
   -- status bar
   {
     "nvim-lualine/lualine.nvim",
+    event = 'VeryLazy',
+    init = function()
+      vim.g.lualine_laststatus = vim.o.laststatus
+      if vim.fn.argc(-1) > 0 then
+        -- set an empty statusline till lualine loads
+        vim.o.statusline = " "
+      else
+        -- hide the statusline on the starter page
+        vim.o.laststatus = 0
+      end
+    end,
     opts = {
       options = {
         theme = 'nord',
+        disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
       },
     },
   },
 
-  -- display indents
-  -- {
-  --   "lukas-reineke/indent-blankline.nvim",
-  --   event = { 'BufReadPost', 'BufNewFile' },
-  --   main = "ibl",
-  --   config = function()
-  --     require("indent_blankline").setup({
-  --       filetype_exclude = {
-  --         "help",
-  --         "alpha",
-  --         "dashboard",
-  --         "neo-tree",
-  --         "Trouble",
-  --         "lazy", "mason",
-  --         "terminal",
-  --         "text",
-  --         "markdown",
-  --         "git"
-  --       },
-  --       show_trailing_blankline_indent = true,
-  --       show_current_context = false,
-  --       show_current_context_start = true,
-  --       show_first_indent_level = true,
-  --     })
-  --   end,
-  -- },
-
+  -- indent
   {
     "echasnovski/mini.indentscope",
     event = { 'BufEnter' },
     version = '*',
-    config = function()
-      require('mini.indentscope').setup()
-      vim.cmd('au FileType dashboard lua vim.b.miniindentscope_disable = true')
+    init = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = {
+          "help",
+          "alpha",
+          "dashboard",
+          "neo-tree",
+          "Trouble",
+          "trouble",
+          "lazy",
+          "mason",
+          "notify",
+          "toggleterm",
+          "lazyterm",
+        },
+        callback = function()
+          vim.b.miniindentscope_disable = true
+        end,
+      })
     end,
+    opts = {
+      -- symbol = "▏",
+      symbol = "│",
+      options = { try_as_border = true },
+    },
   },
 }

@@ -16,7 +16,7 @@ return {
 
   -- font
   font = wezterm.font_with_fallback({
-    "Hack Nerd Font"
+    "FiraCode Nerd Font"
   }),
   font_size = 18,
   line_height = 1.2,
@@ -33,10 +33,16 @@ return {
   use_ime = true,
 
   -- window
-  window_background_opacity = 0.80,
+  window_background_opacity = 0.85,
   macos_window_background_blur = 10,
   native_macos_fullscreen_mode = true,
   window_close_confirmation = "NeverPrompt",
+  window_padding = {
+    left = 2,
+    right = 2,
+    top = 0,
+    bottom = 0,
+  },
   window_background_gradient = {
     -- Can be "Vertical" or "Horizontal".  Specifies the direction
     -- in which the color gradient varies.  The default is "Horizontal",

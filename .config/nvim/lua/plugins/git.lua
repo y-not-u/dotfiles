@@ -2,8 +2,16 @@ return {
   -- git status
   {
     "lewis6991/gitsigns.nvim",
-    event = { "BufEnter" },
+    event = { "VeryLazy" },
     opts = {
+      signs = {
+        add = { text = "▎" },
+        change = { text = "▎" },
+        delete = { text = "" },
+        topdelete = { text = "" },
+        changedelete = { text = "▎" },
+        untracked = { text = "▎" },
+      },
       current_line_blame = true
     }
   },
@@ -12,7 +20,7 @@ return {
   {
     "kdheepak/lazygit.nvim",
     keys = {
-      { "<leader>gg", ":LazyGit<CR>", desc = "Toggle LazyGit" },
+      { "<leader>gg", "<cmd>LazyGit<CR>", desc = "Toggle LazyGit" },
     }
   },
 }
