@@ -4,7 +4,6 @@ return {
     "xiyaowong/transparent.nvim",
     enabled = false,
     config = function()
-      -- require('transparent').clear_prefix('lualine')
       require('transparent').clear_prefix('BufferLine')
     end,
     opts = {
@@ -107,6 +106,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = 'VeryLazy',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     init = function()
       vim.g.lualine_laststatus = vim.o.laststatus
       if vim.fn.argc(-1) > 0 then
@@ -119,9 +119,10 @@ return {
     end,
     opts = {
       options = {
-        theme = 'nord',
+        theme = 'auto',
         disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
       },
+      extensions = {'neo-tree', 'toggleterm', 'lazy', 'trouble'}
     },
   },
 
