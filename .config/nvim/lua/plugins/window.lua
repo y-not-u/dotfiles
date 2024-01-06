@@ -122,8 +122,23 @@ return {
         theme = 'auto',
         disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
       },
-      extensions = {'neo-tree', 'toggleterm', 'lazy', 'trouble'}
+      extensions = { 'neo-tree', 'toggleterm', 'lazy', 'trouble' }
     },
+    sections = {
+      lualine_a = {
+        {
+          'diff',
+          colored = true,
+          diff_color = {
+            added    = 'LuaLineDiffAdd',                            -- Changes the diff's added color
+            modified = 'LuaLineDiffChange',                         -- Changes the diff's modified color
+            removed  = 'LuaLineDiffDelete',                         -- Changes the diff's removed color you
+          },
+          symbols = { added = '+', modified = '~', removed = '-' }, -- Changes the symbols used by the diff.
+          source = nil,                                             -- A function that works as a data source for diff.
+        }
+      }
+    }
   },
 
   -- indent
