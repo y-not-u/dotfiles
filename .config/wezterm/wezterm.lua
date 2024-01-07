@@ -18,7 +18,7 @@ return {
   font = wezterm.font_with_fallback({
     "FiraCode Nerd Font"
   }),
-  font_size = 18,
+  font_size = 20,
   line_height = 1.2,
   cell_width = 0.9,
 
