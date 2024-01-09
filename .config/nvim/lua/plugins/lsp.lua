@@ -147,7 +147,7 @@ return {
       { "K",          ":Lspsaga hover_doc<CR>",             desc = "Toggle hover doc" },
       { "<leader>o",  ":Lspsaga outline<CR>",               desc = "Toggle outline" },
       { "<leader>ca", ":Lspsaga code_action<CR>",           desc = "Code action" },
-      { "<leader>cr", ":Lspsaga rename<CR>",                desc = "Rename" },
+      { "<leader>rn", ":Lspsaga rename<CR>",                desc = "Rename" },
       { "<leader>do", ":Lspsaga show_line_diagnostics<CR>", desc = "Show diagnostics" },
       { "<leader>dd", ":Lspsaga show_buf_diagnostics<CR>",  desc = "Show diagnostics" },
       { "<leader>gd", ":Lspsaga goto_definition<CR>",       desc = "Goto definition" },

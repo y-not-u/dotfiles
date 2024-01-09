@@ -26,17 +26,9 @@ return {
       },
     },
     keys = {
-      { "<leader>b[", ":bprev<CR>",    desc = "buffer before" },
-      { "<leader>b]", ":bnext<CR>",    desc = "buffer next" },
-      { "<leader>bd", ":bdelete!<CR>", desc = "buffer delete" },
-      {
-        "<leader>x",
-        function()
-          vim.cmd("Neotree close")
-          vim.cmd("bd!")
-        end,
-        desc = "buffer delete"
-      },
+      { "<leader>b[", ":bprev<CR>",                      desc = "buffer before" },
+      { "<leader>b]", ":bnext<CR>",                      desc = "buffer next" },
+      { "<leader>bd", ":bdelete!<CR>",                   desc = "buffer delete" },
       { "<leader>b1", "<cmd>BufferLineGoToBuffer 1<CR>", desc = "buffer 1" },
       { "<leader>b2", "<cmd>BufferLineGoToBuffer 2<CR>", desc = "buffer 2" },
       { "<leader>b3", "<cmd>BufferLineGoToBuffer 3<CR>", desc = "buffer 3" },
@@ -44,6 +36,19 @@ return {
       { "<leader>b5", "<cmd>BufferLineGoToBuffer 5<CR>", desc = "buffer 5" },
       { "<leader>b6", "<cmd>BufferLineGoToBuffer 6<CR>", desc = "buffer 6" },
       { "<leader>b7", "<cmd>BufferLineGoToBuffer 7<CR>", desc = "buffer 7" },
+    }
+  },
+  -- remove buffer
+  {
+    'echasnovski/mini.bufremove',
+    version = '*',
+    config = true,
+    keys = {
+      {
+        "<leader>x",
+        "<cmd>lua MiniBufremove.delete()<cr>",
+        desc = "buffer delete"
+      },
     }
   },
 }
