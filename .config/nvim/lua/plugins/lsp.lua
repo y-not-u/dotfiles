@@ -145,13 +145,28 @@ return {
     },
     keys = {
       { "K",          ":Lspsaga hover_doc<CR>",             desc = "Toggle hover doc" },
-      { "<leader>o",  ":Lspsaga outline<CR>",               desc = "Toggle outline" },
+      -- { "<leader>o",  ":Lspsaga outline<CR>",               desc = "Toggle outline" },
       { "<leader>ca", ":Lspsaga code_action<CR>",           desc = "Code action" },
       { "<leader>rn", ":Lspsaga rename<CR>",                desc = "Rename" },
       { "<leader>do", ":Lspsaga show_line_diagnostics<CR>", desc = "Show diagnostics" },
       { "<leader>dd", ":Lspsaga show_buf_diagnostics<CR>",  desc = "Show diagnostics" },
       { "<leader>gd", ":Lspsaga goto_definition<CR>",       desc = "Goto definition" },
       { "<leader>gr", ":Lspsaga finder ref<CR>",            desc = "Show references" }
+    },
+  },
+
+  -- outline
+  {
+    "hedyhli/outline.nvim",
+    lazy = true,
+    cmd = { "Outline", "OutlineOpen" },
+    keys = {
+      { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
+    },
+    opts = {
+      outline_items = {
+        show_symbol_details = false
+      }
     },
   },
 }
