@@ -89,6 +89,7 @@ return {
           "toml",
           "bash",
           "markdown",
+          "markdown_inline",
           "vim",
           "regex"
         },

@@ -59,6 +59,16 @@ return {
           ["cmp.entry.get_documentation"] = true,
         },
       },
+      presets = {
+        bottom_search = true,     -- use a classic bottom cmdline for search
+        command_palette = true,   -- position the cmdline and popupmenu together
+        long_message_to_split = true, -- long messages will be sent to a split
+        inc_rename = false,       -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = false,   -- add a border to hover docs and signature help
+      },
+    },
+    keys = {
+      { "<leader>un", "<cmd>Noice dismiss<CR>", desc = "Dismiss notifications" },
     },
     dependencies = {
       "MunifTanjim/nui.nvim",
@@ -73,13 +83,13 @@ return {
     config = function()
       local notify = require("notify")
       notify.setup({
-        background_colour = "#000000",
         fps = 30,
         level = 2,
-        minimum_width = 50,
-        render = "compact",
-        stages = "fade",
-        timeout = 5000,
+        minimum_width = 40,
+        max_width = 50,
+        stages = "fade_in_slide_out",
+        render = "wrapped-compact",
+        timeout = 3000,
         top_down = true
       })
       vim.notify = notify
