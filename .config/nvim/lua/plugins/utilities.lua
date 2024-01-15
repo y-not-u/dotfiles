@@ -31,12 +31,6 @@ return {
     end,
   },
 
-  -- a smooth scrolling
-  -- {
-  --   "karb94/neoscroll.nvim",
-  --   config = true
-  -- },
-
   -- smart column
   {
     "m4xshen/smartcolumn.nvim",
@@ -45,7 +39,8 @@ return {
         "help", "text", "markdown",
         "NvimTree", "lazy", "mason", "help",
         "neo-tree",
-        "dashboard"
+        "dashboard",
+        "command-line"
       }
     }
   },
@@ -101,27 +96,27 @@ return {
   },
 
   -- jump
-  {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    opts = {},
-    keys = {
-      {
-        "s",
-        mode = { "n", "x", "o" },
-        function()
-          require("flash").jump({
-            search = {
-              mode = function(str)
-                return "\\<" .. str
-              end,
-            },
-          })
-        end,
-        desc = "Flash",
-      },
-    },
-  },
+  -- {
+  --   "folke/flash.nvim",
+  --   event = "VeryLazy",
+  --   opts = {},
+  --   keys = {
+  --     {
+  --       "s",
+  --       mode = { "n", "x", "o" },
+  --       function()
+  --         require("flash").jump({
+  --           search = {
+  --             mode = function(str)
+  --               return "\\<" .. str
+  --             end,
+  --           },
+  --         })
+  --       end,
+  --       desc = "Flash",
+  --     },
+  --   },
+  -- },
 
   -- gcc comment
   {
@@ -154,4 +149,13 @@ return {
     dependencies = { "nvim-telescope/telescope.nvim", "Shatur/neovim-session-manager" },
     priority = 100,
   },
+  -- improve yank
+  {
+    "gbprod/yanky.nvim",
+    config = true,
+    opts = {},
+    keys = {
+      { "<leader>p", "<cmd>YankyRingHistory<CR>", desc = "show yank history" },
+    }
+  }
 }

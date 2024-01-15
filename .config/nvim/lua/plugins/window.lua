@@ -2,8 +2,8 @@ return {
   -- transparent
   {
     "xiyaowong/transparent.nvim",
+    enabled = false,
     config = function()
-      -- require('transparent').clear_prefix('lualine')
       require('transparent').clear_prefix('BufferLine')
     end,
     opts = {
@@ -30,7 +30,7 @@ return {
         "prompt",
         "TelescopePrompt",
         'dashboard',
-        'neo-tree'
+        'neo-tree',
       },
     }
   },
@@ -46,11 +46,33 @@ return {
     opts = {},
   },
 
-  -- nice cmdline
+  -- lazy.nvim
   {
-    "VonHeikemen/fine-cmdline.nvim",
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      lsp = {
+        -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+        override = {
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          ["vim.lsp.util.stylize_markdown"] = true,
+          ["cmp.entry.get_documentation"] = true,
+        },
+      },
+      presets = {
+        bottom_search = true,     -- use a classic bottom cmdline for search
+        command_palette = true,   -- position the cmdline and popupmenu together
+        long_message_to_split = true, -- long messages will be sent to a split
+        inc_rename = false,       -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = false,   -- add a border to hover docs and signature help
+      },
+    },
     keys = {
-      { ":", '<cmd>FineCmdline<CR>', desc = "show cmdline" }
+      { "<leader>un", "<cmd>Noice dismiss<CR>", desc = "Dismiss notifications" },
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
     }
   },
 
@@ -61,63 +83,115 @@ return {
     config = function()
       local notify = require("notify")
       notify.setup({
-        background_colour = "#000000",
         fps = 30,
         level = 2,
-        minimum_width = 50,
-        render = "compact",
-        stages = "fade",
-        timeout = 5000,
+        minimum_width = 40,
+        max_width = 50,
+        stages = "fade_in_slide_out",
+        render = "wrapped-compact",
+        timeout = 3000,
         top_down = true
       })
       vim.notify = notify
     end,
   },
 
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    event = "VeryLazy",
+    opts = {
+      indent = {
+        char = "│",
+        tab_char = "│",
+      },
+      scope = { enabled = false },
+      exclude = {
+        filetypes = {
+          "help",
+          "alpha",
+          "dashboard",
+          "neo-tree",
+          "Trouble",
+          "trouble",
+          "lazy",
+          "mason",
+          "notify",
+          "toggleterm",
+          "lazyterm",
+        },
+      },
+    },
+    main = "ibl",
+  },
+
   -- status bar
   {
     "nvim-lualine/lualine.nvim",
+    event = 'VeryLazy',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    init = function()
+      vim.g.lualine_laststatus = vim.o.laststatus
+      if vim.fn.argc(-1) > 0 then
+        -- set an empty statusline till lualine loads
+        vim.o.statusline = " "
+      else
+        -- hide the statusline on the starter page
+        vim.o.laststatus = 0
+      end
+    end,
     opts = {
       options = {
-        theme = 'nord',
+        theme = 'auto',
+        disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
       },
+      extensions = { 'neo-tree', 'toggleterm', 'lazy', 'trouble' }
     },
+    sections = {
+      lualine_a = {
+        {
+          'diff',
+          colored = true,
+          diff_color = {
+            added    = 'LuaLineDiffAdd',                            -- Changes the diff's added color
+            modified = 'LuaLineDiffChange',                         -- Changes the diff's modified color
+            removed  = 'LuaLineDiffDelete',                         -- Changes the diff's removed color you
+          },
+          symbols = { added = '+', modified = '~', removed = '-' }, -- Changes the symbols used by the diff.
+          source = nil,                                             -- A function that works as a data source for diff.
+        }
+      }
+    }
   },
 
-  -- display indents
-  -- {
-  --   "lukas-reineke/indent-blankline.nvim",
-  --   event = { 'BufReadPost', 'BufNewFile' },
-  --   main = "ibl",
-  --   config = function()
-  --     require("indent_blankline").setup({
-  --       filetype_exclude = {
-  --         "help",
-  --         "alpha",
-  --         "dashboard",
-  --         "neo-tree",
-  --         "Trouble",
-  --         "lazy", "mason",
-  --         "terminal",
-  --         "text",
-  --         "markdown",
-  --         "git"
-  --       },
-  --       show_trailing_blankline_indent = true,
-  --       show_current_context = false,
-  --       show_current_context_start = true,
-  --       show_first_indent_level = true,
-  --     })
-  --   end,
-  -- },
-
+  -- indent
   {
     "echasnovski/mini.indentscope",
     event = { 'BufEnter' },
     version = '*',
-    config = function()
-      require('mini.indentscope').setup()
-      vim.cmd('au FileType dashboard lua vim.b.miniindentscope_disable = true')
+    init = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = {
+          "help",
+          "alpha",
+          "dashboard",
+          "neo-tree",
+          "Trouble",
+          "trouble",
+          "lazy",
+          "mason",
+          "notify",
+          "toggleterm",
+          "lazyterm",
+        },
+        callback = function()
+          vim.b.miniindentscope_disable = true
+        end,
+      })
     end,
+    opts = {
+      -- symbol = "▏",
+      symbol = "│",
+      options = { try_as_border = true },
+    },
   },
 }

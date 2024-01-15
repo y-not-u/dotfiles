@@ -1,10 +1,10 @@
 return {
   {
     "akinsho/bufferline.nvim",
-    event = { "BufEnter" },
+    event = { "VeryLazy" },
     opts = {
       options = {
-        always_show_bufferline = true,
+        always_show_bufferline = false,
         show_close_icon = false,
         show_buffer_close_icons = false,
         separator_style = "thick", -- "slant" | "thick" | "thin" | { 'any', 'any' },
@@ -17,34 +17,38 @@ return {
         offsets = {
           {
             filetype = "neo-tree",
-            text = "EXPLORER",
-            text_align = "center",
-            separator = true, -- set to `true` if clear background of neo-tree
-          },
-          {
-            filetype = "NvimTree",
-            text = "EXPLORER",
-            text_align = "center",
-            separator = true,
+            text = "File Explorer",
+            text_align = "left",
+            highlight = "Directory",
+            -- separator = true, -- set to `true` if clear background of neo-tree
           },
         },
       },
     },
     keys = {
-      { "<leader>b[", ":bprev<CR>",                                           desc = "buffer before" },
-      { "<leader>b]", ":bnext<CR>",                                           desc = "buffer next" },
-      { "<leader>bd", ":bdelete!<CR>",                                        desc = "buffer delete" },
-      { "<leader>x",  function()
-        vim.cmd("Neotree close")
-        vim.cmd("bd!")
-      end,                                                                    desc = "buffer delete" },
-      { "<leader>b1", ":BufferLineGoToBuffer 1<CR>",                          desc = "buffer 1" },
-      { "<leader>b2", ":BufferLineGoToBuffer 2<CR>",                          desc = "buffer 2" },
-      { "<leader>b3", ":BufferLineGoToBuffer 3<CR>",                          desc = "buffer 3" },
-      { "<leader>b4", ":BufferLineGoToBuffer 4<CR>",                          desc = "buffer 4" },
-      { "<leader>b5", ":BufferLineGoToBuffer 5<CR>",                          desc = "buffer 5" },
-      { "<leader>b6", ":BufferLineGoToBuffer 6<CR>",                          desc = "buffer 6" },
-      { "<leader>b7", ":BufferLineGoToBuffer 7<CR>",                          desc = "buffer 7" },
+      { "<leader>b[", ":bprev<CR>",                      desc = "buffer before" },
+      { "<leader>b]", ":bnext<CR>",                      desc = "buffer next" },
+      { "<leader>bd", ":bdelete!<CR>",                   desc = "buffer delete" },
+      { "<leader>b1", "<cmd>BufferLineGoToBuffer 1<CR>", desc = "buffer 1" },
+      { "<leader>b2", "<cmd>BufferLineGoToBuffer 2<CR>", desc = "buffer 2" },
+      { "<leader>b3", "<cmd>BufferLineGoToBuffer 3<CR>", desc = "buffer 3" },
+      { "<leader>b4", "<cmd>BufferLineGoToBuffer 4<CR>", desc = "buffer 4" },
+      { "<leader>b5", "<cmd>BufferLineGoToBuffer 5<CR>", desc = "buffer 5" },
+      { "<leader>b6", "<cmd>BufferLineGoToBuffer 6<CR>", desc = "buffer 6" },
+      { "<leader>b7", "<cmd>BufferLineGoToBuffer 7<CR>", desc = "buffer 7" },
+    }
+  },
+  -- remove buffer
+  {
+    'echasnovski/mini.bufremove',
+    version = '*',
+    config = true,
+    keys = {
+      {
+        "<leader>x",
+        "<cmd>lua MiniBufremove.delete()<cr>",
+        desc = "buffer delete"
+      },
     }
   },
 }

@@ -2,7 +2,6 @@ return {
   {
     'hrsh7th/nvim-cmp',
     event = { "BufRead", "BufNewFile" },
-    commit = "6c84bc75c64f778e9f1dcb798ed41c7fcb93b639", -- lock update (break codeium)
     config = function()
       local cmp = require("cmp")
       cmp.setup({
@@ -16,11 +15,15 @@ return {
         }),
         formatting = {
           format = require('lspkind').cmp_format({
-            mode = "symbol",
+            mode = "symbol_text",
             maxwidth = 50,
             ellipsis_char = '...',
-            symbol_map = { Codeium = "", }
-          })
+            symbol_map = { Codeium = "" },
+            before = function(entry, vim_item)
+              vim_item = require('tailwindcss-colorizer-cmp').formatter(entry, vim_item)
+              return vim_item
+            end
+          }),
         },
         mapping = {
           ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
@@ -48,50 +51,9 @@ return {
   {
     "onsails/lspkind.nvim",
   },
-  -- lsp ui
+
   {
-    "nvimdev/lspsaga.nvim",
-    event = "LspAttach",
-    config = true,
-    opts = {
-      symbol_in_winbar = {
-        enable = false
-      },
-      rename = {
-        in_select = false,
-        keys = {
-          quit = '<Esc>'
-        }
-      },
-      code_action = {
-        show_server_name = true,
-        keys = {
-          quit = '<Esc>'
-        }
-      },
-      outline = {
-        detail = false,
-        close_after_jump = true,
-        keys = {
-          jump = '<CR>'
-        }
-      },
-      definition = {
-        quit = '<Esc>'
-      }
-    },
-    keys = {
-      { "K",          ":Lspsaga hover_doc<CR>",             desc = "Toggle hover doc" },
-      { "<leader>o",  ":Lspsaga outline<CR>",               desc = "Toggle outline" },
-      { "<leader>ca", ":Lspsaga code_action<CR>",           desc = "Code action" },
-      { "<leader>do", ":Lspsaga show_line_diagnostics<CR>", desc = "Show diagnostics" },
-      { "<leader>dd", ":Lspsaga show_buf_diagnostics<CR>",  desc = "Show diagnostics" },
-      { "<leader>rn", ":Lspsaga rename<CR>",                desc = "Rename" },
-      { "<leader>gd", ":Lspsaga goto_definition<CR>",       desc = "Goto definition" }
-    },
-  },
-  {
-    "jcdickinson/codeium.nvim",
+    "Exafunction/codeium.nvim",
     event = "VeryLazy",
     dependencies = {
       "nvim-lua/plenary.nvim",
