@@ -57,6 +57,11 @@ makepkg -si
 `neofetch lsd cmatrix neovim git mpvpaper ranger telnet btop grim slurp ripgrep fzf lazygit tldr speedtest-rs ncdu wl-clipboard`
 
 ## Adition
+
+### System
+- [polkit-gnome](https://wiki.archlinux.org/title/Polkit)
+  an application-level toolkit for defining and handling the policy that allows unprivileged processes to speak to privileged processes
+
 ### Keymap
 - [xremap](https://github.com/k0kubun/xremap)
   > VIM Style
