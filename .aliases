@@ -1,5 +1,6 @@
 alias v='nvim'
-alias ls='lsd'
+alias ls='lsd --header --color=always --group-directories-first'
+alias cp='xcp'
 alias gpush="git push"
 alias gpull="git pull"
 alias unproxy="unset http_proxy https_proxy all_proxy"

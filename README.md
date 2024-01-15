@@ -75,6 +75,9 @@ makepkg -si
 - waybar
 - [gBar](https://github.com/scorpion-26/gBar)
 
+### Locker
+- [Swaylock-effects](https://github.com/mortie/swaylock-effects)
+
 ### Fonts
 - noto-fonts-emoji // Emoji
 - ttf-hack-nerd // Hack Nerd Font
