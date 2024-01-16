@@ -2,7 +2,7 @@
 size = 14.0
 
 [font.normal]
-family = "Hack Nerd Font"
+family = "FiraCode Nerd Font"
 
 [[hints.enabled]]
 command = "xdg-open"

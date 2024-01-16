@@ -86,6 +86,7 @@ makepkg -si
 ### Fonts
 - noto-fonts-emoji // Emoji
 - ttf-hack-nerd // Hack Nerd Font
+- ttf-firacode-nerd // FiraCode Nerd Font
 - adobe-source-han-sans-cn-fonts // Chinese font
 
 ## Web Developing

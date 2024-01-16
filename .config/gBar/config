@@ -141,7 +141,7 @@ CheckUpdateInterval: 300
 # AudioMaxVolume: 120 # Audio can't get above 120%
 
 # The network adapter to use. You can query /sys/class/net for all possible values
-NetworkAdapter: eno1
+NetworkAdapter: wlan0
 
 # Disables the network widget when set to false
 NetworkWidget: true

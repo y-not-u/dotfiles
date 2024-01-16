@@ -6,6 +6,8 @@
 .popup {
   color: #50fa7b;
   background-color: blue;
+  border-radius: 16px;
+  padding: 10px;
 }
 
 .bar, tooltip {
