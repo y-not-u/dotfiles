@@ -60,7 +60,7 @@ makepkg -si
 
 ### System
 - [polkit-gnome](https://wiki.archlinux.org/title/Polkit)
-  an application-level toolkit for defining and handling the policy that allows unprivileged processes to speak to privileged processes
+> an application-level toolkit for defining and handling the policy that allows unprivileged processes to speak to privileged processes
 
 ### Keymap
 - [xremap](https://github.com/k0kubun/xremap)
@@ -88,6 +88,22 @@ makepkg -si
 - ttf-hack-nerd // Hack Nerd Font
 - ttf-firacode-nerd // FiraCode Nerd Font
 - adobe-source-han-sans-cn-fonts // Chinese font
+
+### Input Methods
+> Chinese pinyin input method
+
+```bash
+pacman -Rs $(pacman -Qsq fcitx) # remove fcitx
+pacman -S fcitx5 fcitx5-gtk fcitx5-qt
+pacman -S fcitx5-chinese-addons
+
+fcitx5-configtool # add pinyin into input methods
+
+# set environment variables
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+```
 
 ## Web Developing
 - neovim # Editor
