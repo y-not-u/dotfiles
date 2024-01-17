@@ -8,6 +8,7 @@ family = "FiraCode Nerd Font"
 command = "xdg-open"
 hyperlinks = true
 post_processing = true
+mouse.enabled = true
 regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
 
 [window]

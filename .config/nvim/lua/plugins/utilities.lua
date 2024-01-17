@@ -138,9 +138,7 @@ return {
     "coffebar/neovim-project",
     opts = {
       projects = { -- define project roots
-        "~/Workspace/Startup/Reader/*",
-        "~/Workspace/Blog",
-        "~/Workspace/dotfiles"
+        "~/Workspace/*"
       },
     },
     keys = {
