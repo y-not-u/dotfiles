@@ -32,7 +32,7 @@ return {
               icon = ' ',
               desc = 'Projects',
               key = 'p',
-              action = 'Telescope projects',
+              action = 'Telescope neovim-project discover',
             },
             {
               icon = ' ',

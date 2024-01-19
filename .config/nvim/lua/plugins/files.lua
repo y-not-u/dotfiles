@@ -9,7 +9,8 @@ return {
       { "<leader>fb", "<cmd>Telescope buffers<CR>",                         desc = "find and switch buffers" },
       { "<leader>fg", "<cmd>Telescope live_grep<CR>",                       desc = "find and grep files" },
       { "<leader>fr", "<cmd>Telescope oldfiles<CR>",                        desc = "find recent files" },
-      { "<leader>ft", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME,BUG<CR>", desc = "find and grep files" },
+      { "<leader>ft", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME,BUG<CR>", desc = "find and grep todo things" },
+      { "<leader>fh", "<cmd>Telescope help_tags<CR>",                       desc = "show help tags" },
     },
     opts = {
       defaults = {
@@ -55,5 +56,22 @@ return {
       require("bookmarks").setup()
       require("telescope").load_extension("bookmarks")
     end
-  }
+  },
+
+  -- project
+  {
+    "coffebar/neovim-project",
+    opts = {
+      projects = { -- define project roots
+        "~/Workspace/*"
+      },
+      last_session_on_startup = false,
+    },
+    keys = {
+      { "<leader>fp", "<cmd>Telescope neovim-project discover<CR>", desc = "find projects" },
+    },
+    dependencies = { "nvim-telescope/telescope.nvim", "Shatur/neovim-session-manager" },
+    lazy = false,
+    priority = 100,
+  },
 }

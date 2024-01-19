@@ -133,20 +133,6 @@ return {
     config = true
   },
 
-  -- project
-  {
-    "coffebar/neovim-project",
-    opts = {
-      projects = { -- define project roots
-        "~/Workspace/*"
-      },
-    },
-    keys = {
-      { "<leader>fp", "<cmd>Telescope neovim-project discover<CR>", desc = "find projects" },
-    },
-    dependencies = { "nvim-telescope/telescope.nvim", "Shatur/neovim-session-manager" },
-    priority = 100,
-  },
   -- improve yank
   {
     "gbprod/yanky.nvim",
