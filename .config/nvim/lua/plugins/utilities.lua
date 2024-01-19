@@ -141,5 +141,13 @@ return {
     keys = {
       { "<leader>p", "<cmd>YankyRingHistory<CR>", desc = "show yank history" },
     }
-  }
+  },
+
+  -- auto save
+  {
+    "okuuva/auto-save.nvim",
+    cmd = "ASToggle",                         -- optional for lazy loading on command
+    event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
+    opts = {},
+  },
 }
