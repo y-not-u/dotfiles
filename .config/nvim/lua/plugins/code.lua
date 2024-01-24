@@ -1,9 +1,4 @@
 return {
-  -- comment
-  {
-    "danymat/neogen",
-    config = true,
-  },
   {
     "folke/trouble.nvim",
     cmd = { "TroubleToggle", "Trouble" },
@@ -96,5 +91,12 @@ return {
     keys = {
       { "<leader>F", "<cmd>FormatWrite<CR>", desc = "Format Write" },
     }
+  },
+
+  -- generate annotations
+  {
+    "danymat/neogen",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = true,
   }
 }
