@@ -16,11 +16,12 @@ return {
 
   -- font
   font = wezterm.font_with_fallback({
-    "FiraCode Nerd Font"
+    "FiraCode Nerd Font",
+    "Hack Nerd Font",
   }),
-  font_size = 20,
+  font_size = 14.0,
   line_height = 1.2,
-  cell_width = 0.9,
+  cell_width = 1.0,
 
   -- cursor
   default_cursor_style = "BlinkingBar",
