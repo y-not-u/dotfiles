@@ -62,7 +62,7 @@ return {
     config = function()
       require("formatter").setup {
         -- Enable or disable logging
-        logging = true,
+        logging = false,
         -- Set the log level
         log_level = vim.log.levels.WARN,
         filetype = {
@@ -87,9 +87,18 @@ return {
           }
         }
       }
+
+      local augroup = vim.api.nvim_create_augroup
+      local autocmd = vim.api.nvim_create_autocmd
+      augroup("__formatter__", { clear = true })
+      autocmd("BufWritePost", {
+        group = "__formatter__",
+        command = ":FormatWrite",
+      })
     end,
     keys = {
-      { "<leader>F", "<cmd>FormatWrite<CR>", desc = "Format Write" },
+      { "<leader>f", "<cmd>Format<CR>",      desc = "Format" },
+      { "<leader>F", "<cmd>FormatWrite<CR>", desc = "Format and write" },
     }
   },
 
