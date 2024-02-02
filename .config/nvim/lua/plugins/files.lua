@@ -63,7 +63,8 @@ return {
     "coffebar/neovim-project",
     opts = {
       projects = { -- define project roots
-        "~/Workspace/*"
+        "~/Workspace/*",
+        "~/Workspace/Startup/Reader/*",
       },
       last_session_on_startup = false,
     },

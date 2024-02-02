@@ -169,4 +169,7 @@ return {
       }
     },
   },
+
+  -- for neovim
+  { "folke/neodev.nvim", opts = {} }
 }

@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm'
+local utils = require "utils"
 local mux = wezterm.mux
 local act = wezterm.action
 
@@ -6,6 +7,27 @@ wezterm.on('gui-startup', function()
   local _, _, window = mux.spawn_window {}
   window:gui_window():maximize()
 end)
+
+wezterm.on('update-right-status', function(window, pane)
+  -- "Wed Mar 3 08:14"
+  local date = wezterm.strftime '%a %b %-d %H:%M '
+
+  local bat = ''
+  for _, b in ipairs(wezterm.battery_info()) do
+    bat = '🔋 ' .. string.format('%.0f%%', b.state_of_charge * 100)
+  end
+
+  window:set_right_status(wezterm.format {
+    { Text = bat .. '   ' .. date },
+  })
+end)
+
+local font_size
+if utils.getOS() == 'Darwin' then
+  font_size = 22.0
+else
+  font_size = 14.0
+end
 
 return {
   automatically_reload_config = true,
@@ -19,12 +41,12 @@ return {
     "FiraCode Nerd Font",
     "Hack Nerd Font",
   }),
-  font_size = 14.0,
+  font_size = font_size,
   line_height = 1.2,
   cell_width = 1.0,
 
   -- cursor
-  default_cursor_style = "BlinkingBar",
+  default_cursor_style = "BlinkingBlock",
   cursor_blink_rate = 400,
 
   -- tab bar
