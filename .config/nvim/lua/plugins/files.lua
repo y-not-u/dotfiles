@@ -21,6 +21,7 @@ return {
         file_ignore_patterns = {
           ".idea/",
           ".git/",
+          "coverage/",
           "kitex_gen/",
           "node_modules/",
           "vendor/",
@@ -40,7 +41,18 @@ return {
       },
       pickers = {
         find_files = {
-          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+          find_command = {
+            "rg", "--files", "--hidden", "-u",
+            "-g", "!.git/",
+            "-g", "!node_modules/",
+            "-g", "!dist/",
+            "-g", "!coverage/",
+            "-g", "!build/",
+            "-g", "!vendor/",
+            "-g", "!target/",
+            "-g", "!.idea/",
+            "-g", "!.vscode/",
+          },
         }
       },
     },
