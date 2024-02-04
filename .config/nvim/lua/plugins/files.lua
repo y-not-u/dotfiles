@@ -11,10 +11,12 @@ return {
       { "<leader>fr", "<cmd>Telescope oldfiles<CR>",                        desc = "find recent files" },
       { "<leader>ft", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME,BUG<CR>", desc = "find and grep todo things" },
       { "<leader>fh", "<cmd>Telescope help_tags<CR>",                       desc = "show help tags" },
+      { "<leader>fs", "<cmd>Telescope git_status<CR>",                      desc = "show git status" },
     },
     opts = {
       defaults = {
         prompt_prefix = "🔍 ",
+        path_display = { "smart" },
         dynamic_preview_title = true,
         file_ignore_patterns = {
           ".idea/",
@@ -38,7 +40,7 @@ return {
       },
       pickers = {
         find_files = {
-          find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
+          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
         }
       },
     },
