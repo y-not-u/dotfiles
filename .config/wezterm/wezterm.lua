@@ -8,7 +8,7 @@ wezterm.on('gui-startup', function()
   window:gui_window():maximize()
 end)
 
-wezterm.on('update-right-status', function(window, pane)
+wezterm.on('update-right-status', function(window)
   -- "Wed Mar 3 08:14"
   local date = wezterm.strftime '%a %b %-d %H:%M '
 
@@ -26,7 +26,7 @@ local font_size
 if utils.getOS() == 'Darwin' then
   font_size = 22.0
 else
-  font_size = 14.0
+  font_size = 16.0
 end
 
 return {
@@ -61,8 +61,8 @@ return {
   native_macos_fullscreen_mode = true,
   window_close_confirmation = "NeverPrompt",
   window_padding = {
-    left = 2,
-    right = 2,
+    left = 8,
+    right = 8,
     top = 0,
     bottom = 0,
   },
