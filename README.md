@@ -17,6 +17,16 @@
 
 ## Prepared
 
+### Git
+```bash
+pacman -S git
+```
+
+### Stow
+```bash
+pacman -S stow
+```
+
 ### Proxy/Mirror
 #### go
 ```bash
