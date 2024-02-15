@@ -60,11 +60,11 @@ return {
         },
       },
       presets = {
-        bottom_search = true,     -- use a classic bottom cmdline for search
-        command_palette = true,   -- position the cmdline and popupmenu together
+        bottom_search = true,         -- use a classic bottom cmdline for search
+        command_palette = true,       -- position the cmdline and popupmenu together
         long_message_to_split = true, -- long messages will be sent to a split
-        inc_rename = false,       -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = false,   -- add a border to hover docs and signature help
+        inc_rename = false,           -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = false,       -- add a border to hover docs and signature help
       },
     },
     keys = {
@@ -127,7 +127,6 @@ return {
   -- status bar
   {
     "nvim-lualine/lualine.nvim",
-    event = 'VeryLazy',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     init = function()
       vim.g.lualine_laststatus = vim.o.laststatus
@@ -141,26 +140,26 @@ return {
     end,
     opts = {
       options = {
-        theme = 'auto',
+        theme = 'tokyonight',
         disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
       },
-      extensions = { 'neo-tree', 'toggleterm', 'lazy', 'trouble' }
-    },
-    sections = {
-      lualine_a = {
-        {
-          'diff',
-          colored = true,
-          diff_color = {
-            added    = 'LuaLineDiffAdd',                            -- Changes the diff's added color
-            modified = 'LuaLineDiffChange',                         -- Changes the diff's modified color
-            removed  = 'LuaLineDiffDelete',                         -- Changes the diff's removed color you
-          },
-          symbols = { added = '+', modified = '~', removed = '-' }, -- Changes the symbols used by the diff.
-          source = nil,                                             -- A function that works as a data source for diff.
+      extensions = { 'neo-tree', 'toggleterm', 'lazy', 'trouble' },
+      sections = {
+        lualine_a = {
+          {
+            'diff',
+            colored = true,
+            diff_color = {
+              added    = 'LuaLineDiffAdd',                            -- Changes the diff's added color
+              modified = 'LuaLineDiffChange',                         -- Changes the diff's modified color
+              removed  = 'LuaLineDiffDelete',                         -- Changes the diff's removed color you
+            },
+            symbols = { added = '+', modified = '~', removed = '-' }, -- Changes the symbols used by the diff.
+            source = nil,                                             -- A function that works as a data source for diff.
+          }
         }
       }
-    }
+    },
   },
 
   -- indent
