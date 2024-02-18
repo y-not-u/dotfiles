@@ -9,7 +9,7 @@ modmap:
 keymap:
   - name: Vim binding
     remap:
-      C-h: { with_mark: left }
-      C-j: { with_mark: down }
-      C-k: { with_mark: up }
-      C-l: { with_mark: right }
+      C-h: Left
+      C-j: Down
+      C-k: Up
+      C-l: Right
