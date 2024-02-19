@@ -73,8 +73,8 @@ makepkg -si
 > an application-level toolkit for defining and handling the policy that allows unprivileged processes to speak to privileged processes
 
 ### Keymap
-- [xremap](https://github.com/k0kubun/xremap)
-  > VIM Style
+- [keyd](https://github.com/rvaiya/keyd)
+  > [VIM style](https://github.com/rvaiya/keyd/blob/master/examples/capslock-escape-with-vim-mode.conf)
   > CapsLock -> Super
   > Super -> CapsLock
 
