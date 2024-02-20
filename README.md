@@ -109,7 +109,7 @@ pacman -S fcitx5-chinese-addons
 
 fcitx5-configtool # add pinyin into input methods
 
-# set environment variables
+# set environment variables to /etc/environment
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
