@@ -69,13 +69,16 @@ return {
   background = {
     {
       source = {
-        File = '/home/egg/Pictures/Wallpapers/archlinux.jpg',
+        File = '/home/egg/Pictures/Wallpapers/archlinux.png',
       },
       opacity = 1.0,
       repeat_x = 'NoRepeat',
       repeat_y = 'NoRepeat',
       vertical_align = 'Middle',
       horizontal_align = 'Center',
+      hsb = {
+        brightness = 0.2
+      }
     },
   },
   inactive_pane_hsb = {
