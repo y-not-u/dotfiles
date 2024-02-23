@@ -73,6 +73,7 @@ return {
           css = { require('formatter.filetypes.css').prettier },
           scss = { require('formatter.filetypes.css').prettier },
           json = { require('formatter.filetypes.json').prettier },
+          sh = { require('formatter.filetypes.sh').shfmt },
 
           ["*"] = {
             require("formatter.filetypes.any").remove_trailing_whitespace,
