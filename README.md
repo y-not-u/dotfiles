@@ -58,19 +58,31 @@ makepkg -si
 ```
 
 ## Dependencies
-`gnome-keyring wlroots python-pip go rust waybar-hyprland otf-font-awesome gvfs-smb bind`
-
-## Apps
-`firefox mpv dbeaver-ce wezterm kdeconnect swaync eog freeoffice wlogout swayosd gnome-calculator whitesur-gtk-theme lxappearance nautilus`
+`gnome-keyring wlroots python-pip go rust otf-font-awesome gvfs-smb bind`
 
 ## CLI
 `neofetch lsd cmatrix neovim git mpvpaper ranger telnet btop grim slurp ripgrep fzf lazygit tldr speedtest-rs ncdu wl-clipboard`
 
 ## Adition
 
-### System
-- [polkit-gnome](https://wiki.archlinux.org/title/Polkit)
-> an application-level toolkit for defining and handling the policy that allows unprivileged processes to speak to privileged processes
+### Status Bar
+- eww
+
+### Browser
+- Firefox
+- Chromium
+
+### Terminal
+- Alacritty
+
+### Files
+- fzf
+- ripgrep
+- ranger
+
+### Media
+- mpv
+- Spotify
 
 ### Keymap
 - [keyd](https://github.com/rvaiya/keyd)
@@ -86,20 +98,21 @@ makepkg -si
 ### Notification
 - swaync // sway notification center
 
-### Status Bar
-- waybar
-- [gBar](https://github.com/scorpion-26/gBar)
-
 ### Locker
+- Hypridle
 - [Swaylock-effects](https://github.com/mortie/swaylock-effects)
 
 ### Fonts
 - noto-fonts-emoji // Emoji
-- ttf-hack-nerd // Hack Nerd Font
 - ttf-firacode-nerd // FiraCode Nerd Font
 - adobe-source-han-sans-cn-fonts // Chinese font
 
+### System
+- [polkit-gnome](https://wiki.archlinux.org/title/Polkit)
+> an application-level toolkit for defining and handling the policy that allows unprivileged processes to speak to privileged processes
+
 ### Input Methods
+
 > Chinese pinyin input method
 
 ```bash
@@ -123,5 +136,3 @@ XMODIFIERS=@im=fcitx
 - bun # Run node fastly (only in development)
 - lazygit # Git TUI
 - zellij # like tmux
-
-https://dausruddin.com/how-to-enable-clipboard-and-folder-sharing-in-qemu-kvm-on-windows-guest/
