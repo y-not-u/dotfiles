@@ -17,7 +17,6 @@ regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:
 
 [window]
 startup_mode = "Maximized"
-decorations = "Buttonless"
 padding = { x = 0, y = 0 }
 dynamic_padding = true
 opacity = 0.8
