@@ -35,6 +35,7 @@ return {
             c = cmp.mapping.close(),
           }),
           ["<Tab>"] = cmp.mapping.confirm({ select = true }),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
         }
       })
     end,

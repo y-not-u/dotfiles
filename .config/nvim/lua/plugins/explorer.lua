@@ -79,6 +79,6 @@ return {
   lazy = true,
   cmd = "Neotree",
   keys = {
-    { "<leader>e", ":Neotree action=focus toggle reveal<CR>", desc = "file explor" }
+    { "<leader>e", "<cmd>Neotree action=focus toggle reveal<CR>", desc = "file explor" }
   }
 }
