@@ -17,6 +17,20 @@ return {
     config = true
   },
 
+  -- highlight colors
+  {
+    'echasnovski/mini.hipatterns',
+    version = '*',
+    config = function()
+      local hipatterns = require('mini.hipatterns')
+      hipatterns.setup({
+        highlighters = {
+          hex_color = hipatterns.gen_highlighter.hex_color(),
+        }
+      })
+    end
+  },
+
   -- tailwindcss
   {
     "roobert/tailwindcss-colorizer-cmp.nvim",
