@@ -5,13 +5,12 @@ return {
     config = function()
       local cmp = require("cmp")
       cmp.setup({
-        snippet = { expand = function() end },
         sources = cmp.config.sources({
+          { name = "codeium" },
           { name = "nvim_lsp" },
           { name = "nvim_lua" },
           { name = "buffer" },
           { name = "path" },
-          { name = "codeium" }
         }),
         formatting = {
           format = require('lspkind').cmp_format({
@@ -26,8 +25,8 @@ return {
           }),
         },
         mapping = {
-          ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
-          ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
+          ["<Down>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
+          ["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
           ['<C-.>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
           ['<C-n>'] = cmp.mapping.select_next_item(),
           ['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -35,7 +34,7 @@ return {
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
           }),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+          ["<Tab>"] = cmp.mapping.confirm({ select = true }),
         }
       })
     end,

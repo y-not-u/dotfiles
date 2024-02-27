@@ -1,23 +1,4 @@
 return {
-  -- transparent
-  {
-    "xiyaowong/transparent.nvim",
-    enabled = false,
-    config = function()
-      require('transparent').clear_prefix('BufferLine')
-    end,
-    opts = {
-      groups = { -- table: default groups
-        'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
-        'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
-        'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
-        'SignColumn', 'CursorLineNr', 'EndOfBuffer',
-      },
-      extra_groups = {},   -- table: additional groups that should be cleared
-      exclude_groups = {}, -- table: groups you don't want to clear
-    }
-  },
-
   -- scrollbar
   {
     'petertriho/nvim-scrollbar',
@@ -69,6 +50,7 @@ return {
     },
     keys = {
       { "<leader>un", "<cmd>Noice dismiss<CR>", desc = "Dismiss notifications" },
+      { "<leader>N",  "<cmd>Notifications<CR>", desc = "Show notifications" },
     },
     dependencies = {
       "MunifTanjim/nui.nvim",
@@ -188,7 +170,6 @@ return {
       })
     end,
     opts = {
-      -- symbol = "▏",
       symbol = "│",
       options = { try_as_border = true },
     },
