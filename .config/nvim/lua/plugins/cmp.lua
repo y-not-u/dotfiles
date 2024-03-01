@@ -1,16 +1,16 @@
 return {
   {
     'hrsh7th/nvim-cmp',
-    event = { "BufRead", "BufNewFile" },
+    event = { 'InsertEnter' },
     config = function()
       local cmp = require("cmp")
       cmp.setup({
         sources = cmp.config.sources({
           { name = "codeium" },
           { name = "nvim_lsp" },
-          { name = "nvim_lua" },
-          { name = "buffer" },
+          -- { name = "nvim_lua" },
           { name = "path" },
+          { name = "buffer", keyword_length = 3 },
         }),
         formatting = {
           format = require('lspkind').cmp_format({

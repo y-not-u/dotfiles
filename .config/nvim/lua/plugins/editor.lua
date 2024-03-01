@@ -18,6 +18,43 @@ return {
   },
 
 
+  -- automatic highlighting of word under cursor
+  {
+    'echasnovski/mini.cursorword',
+    version = false,
+    config = true
+  },
+
+
+  {
+    'echasnovski/mini.map',
+    version = false,
+    event = { 'BufEnter' },
+    config = function()
+      local map = require('mini.map')
+      map.setup {
+        integrations = {
+          map.gen_integration.builtin_search(),
+          map.gen_integration.gitsigns(),
+          map.gen_integration.diagnostic(),
+        },
+        symbols = {
+          encode = map.gen_encode_symbols.block('2x1'),
+          scroll_line = '▶',
+          scroll_view = '┋',
+        },
+        window = {
+          winblend = 25,
+          zindex = 1
+        }
+      }
+      map.open()
+    end,
+    keys = {
+      { "<leader>mt", "<cmd>lua MiniMap.toggle()<CR>", 'toggle mini map' },
+    }
+  },
+
   -- vscode like breadcrum
   {
     "utilyre/barbecue.nvim",
@@ -108,49 +145,12 @@ return {
     main = "ibl",
   },
 
-  -- status bar
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    init = function()
-      vim.g.lualine_laststatus = vim.o.laststatus
-      if vim.fn.argc(-1) > 0 then
-        -- set an empty statusline till lualine loads
-        vim.o.statusline = " "
-      else
-        -- hide the statusline on the starter page
-        vim.o.laststatus = 0
-      end
-    end,
-    opts = {
-      options = {
-        theme = 'tokyonight',
-        disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
-      },
-      extensions = { 'neo-tree', 'toggleterm', 'lazy', 'trouble' },
-      sections = {
-        lualine_a = {
-          {
-            'diff',
-            colored = true,
-            diff_color = {
-              added    = 'LuaLineDiffAdd',                            -- Changes the diff's added color
-              modified = 'LuaLineDiffChange',                         -- Changes the diff's modified color
-              removed  = 'LuaLineDiffDelete',                         -- Changes the diff's removed color you
-            },
-            symbols = { added = '+', modified = '~', removed = '-' }, -- Changes the symbols used by the diff.
-            source = nil,                                             -- A function that works as a data source for diff.
-          }
-        }
-      }
-    },
-  },
 
   -- indent
   {
     "echasnovski/mini.indentscope",
     event = { 'BufEnter' },
-    version = '*',
+    version = false,
     init = function()
       vim.api.nvim_create_autocmd("FileType", {
         pattern = {
