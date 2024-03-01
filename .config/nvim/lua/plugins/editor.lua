@@ -17,6 +17,13 @@ return {
     }
   },
 
+  -- comment
+  {
+    'echasnovski/mini.comment',
+    version = false,
+    config = true
+  },
+
   -- surround actions
   {
     'echasnovski/mini.surround',
@@ -31,7 +38,7 @@ return {
     config = true
   },
 
-
+  -- source codes map
   {
     'echasnovski/mini.map',
     version = false,
@@ -54,7 +61,6 @@ return {
           zindex = 1
         }
       }
-      map.open()
     end,
     keys = {
       { "<leader>mt", "<cmd>lua MiniMap.toggle()<CR>", 'toggle mini map' },
@@ -181,5 +187,76 @@ return {
       symbol = "│",
       options = { try_as_border = true },
     },
+  },
+
+  -- todo
+  {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    config = true
+  },
+
+  -- smart column
+  {
+    "m4xshen/smartcolumn.nvim",
+    opts = {
+      disabled_filetypes = {
+        "help", "text", "markdown",
+        "NvimTree", "lazy", "mason", "help",
+        "neo-tree",
+        "dashboard",
+        "command-line"
+      }
+    }
+  },
+
+  -- increase / decrease
+  {
+    "RutaTang/compter.nvim",
+    config = true,
+    opts = {
+      templates = {
+        -- for number
+        {
+          pattern = [[-\?\d\+]],
+          priority = 0,
+          increase = function(content)
+            content = tonumber(content)
+            return content + 1, true
+          end,
+          decrease = function(content)
+            content = tonumber(content)
+            return content - 1, true
+          end,
+        },
+        -- for boolean
+        {
+          pattern = [[\<\(true\|false\|TRUE\|FALSE\|True\|False\)\>]],
+          priority = 100,
+          increase = function(content)
+            local switch = {
+              ["true"] = "false",
+              ["false"] = "true",
+              ["True"] = "False",
+              ["False"] = "True",
+              ["TRUE"] = "FALSE",
+              ["FALSE"] = "TRUE",
+            }
+            return switch[content], true
+          end,
+          decrease = function(content)
+            local switch = {
+              ["true"] = "false",
+              ["false"] = "true",
+              ["True"] = "False",
+              ["False"] = "True",
+              ["TRUE"] = "FALSE",
+              ["FALSE"] = "TRUE",
+            }
+            return switch[content], true
+          end,
+        }
+      }
+    }
   },
 }
