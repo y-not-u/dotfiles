@@ -3,6 +3,7 @@ return {
   {
     'petertriho/nvim-scrollbar',
     config = true,
+    enabled = false,
     opts = {
       excluded_filetypes = {
         "cmp_docs",
@@ -15,6 +16,7 @@ return {
       },
     }
   },
+
 
   -- vscode like breadcrum
   {

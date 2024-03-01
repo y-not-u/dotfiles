@@ -45,9 +45,7 @@ return {
     config = true,
     keys = {
       {
-        "<leader>x",
-        "<cmd>lua MiniBufremove.delete()<cr>",
-        desc = "buffer delete"
+        "<leader>x", "<cmd>lua MiniBufremove.delete()<cr>", desc = "buffer delete"
       },
     }
   },

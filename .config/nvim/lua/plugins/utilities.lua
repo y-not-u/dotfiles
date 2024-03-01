@@ -133,16 +133,6 @@ return {
     config = true
   },
 
-  -- improve yank
-  {
-    "gbprod/yanky.nvim",
-    config = true,
-    opts = {},
-    keys = {
-      { "<leader>p", "<cmd>YankyRingHistory<CR>", desc = "show yank history" },
-    }
-  },
-
   -- auto save
   {
     "okuuva/auto-save.nvim",
