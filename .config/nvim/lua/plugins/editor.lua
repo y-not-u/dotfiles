@@ -17,6 +17,12 @@ return {
     }
   },
 
+  -- surround actions
+  {
+    'echasnovski/mini.surround',
+    version = false,
+    config = true
+  },
 
   -- automatic highlighting of word under cursor
   {
