@@ -17,8 +17,8 @@ mouse.enabled = true
 regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
 
 [window]
-startup_mode = "Maximized"
-padding = { x = 0, y = 0 }
+startup_mode = "Windowed"
+padding = { x = 6, y = 0 }
 dynamic_padding = true
 decorations = "none"
 opacity = 0.7
@@ -28,4 +28,5 @@ blur = true
 save_to_clipboard = true
 
 [cursor]
+style.shape = "Beam"
 style.blinking = "On"

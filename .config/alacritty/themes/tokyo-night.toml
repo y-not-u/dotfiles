@@ -2,6 +2,10 @@
 background = "#1a1b26"
 foreground = "#a9b1d6"
 
+[colors.cursor]
+text = "CellBackground"
+cursor = "CellForeground"
+
 [colors.normal]
 black = "#32344a"
 red = "#f7768e"
@@ -21,4 +25,3 @@ blue = "#7da6ff"
 magenta = "#bb9af7"
 cyan = "#0db9d7"
 white = "#acb0d0"
-
