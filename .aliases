@@ -1,5 +1,5 @@
 alias v='nvim'
-alias ls='lsd --header --color=always --group-directories-first'
+alias ls='eza --header --color=always --icons=always --group-directories-first'
 alias cp='xcp'
 alias gpush="git push"
 alias gpull="git pull"
