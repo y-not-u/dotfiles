@@ -1,4 +1,3 @@
-// If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds {
     normal {
         // uncomment this and adjust key if using copy_on_select=false
@@ -7,8 +6,7 @@ keybinds {
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
     }
-    resize {
-        bind "Ctrl n" { SwitchToMode "Normal"; }
+    resize { bind "Ctrl n" { SwitchToMode "Normal"; }
         bind "h" "Left" { Resize "Increase Left"; }
         bind "j" "Down" { Resize "Increase Down"; }
         bind "k" "Up" { Resize "Increase Up"; }
@@ -229,35 +227,34 @@ plugins {
 //
 // auto_layout true
 
-// Define color themes for Zellij
-// For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
-// Once these themes are defined, one of them should to be selected in the "theme" section of this file
+// Whether sessions should be serialized to the cache folder (including their tabs/panes, cwds and running commands) so that they can later be resurrected
+// Options:
+//   - true (default)
+//   - false
 //
-themes {
-    dracula {
-        fg 248 248 242
-        bg 40 42 54
-        red 255 85 85
-        green 80 250 123
-        yellow 241 250 140
-        blue 98 114 164
-        magenta 255 121 198
-        orange 255 184 108
-        cyan 139 233 253
-        black 0 0 0
-        white 255 255 255
-    }
-}
+// session_serialization false
+
+// Whether pane viewports are serialized along with the session, default is false
+// Options:
+//   - true
+//   - false (default)
+// serialize_pane_viewport true
+
+// Scrollback lines to serialize along with the pane viewport when serializing sessions, 0
+// defaults to the scrollback size. If this number is higher than the scrollback size, it will
+// also default to the scrollback size. This does nothing if `serialize_pane_viewport` is not true.
+//
+// scrollback_lines_to_serialize 10000
 
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "dracula"
+theme "default"
 
 // The name of the default layout to load on startup
 // Default: "default"
 //
-// default_layout "compact"
+default_layout "compact"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -279,7 +276,7 @@ theme "dracula"
 // Valid values: positive integers
 // Default value: 10000
 //
-// scroll_buffer_size 10000
+scroll_buffer_size 10000
 
 // Provide a command to execute when copying text. The text will be piped to
 // the stdin of the program to perform the copy. This can be used with
@@ -317,10 +314,8 @@ theme "dracula"
 //
 // mirror_session true
 
-// The folder in which Zellij will look for layouts
+// Enable or disable the rendering of styled and colored underlines (undercurl).
+// May need to be disabled for certain unsupported terminals
+// Default: true
 //
-// layout_dir "/path/to/my/layout_dir"
-
-// The folder in which Zellij will look for themes
-//
-// theme_dir "/path/to/my/theme_dir"
+// styled_underlines false
