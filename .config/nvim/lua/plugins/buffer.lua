@@ -47,15 +47,12 @@ return {
       { "<leader>b7", "<cmd>BufferLineGoToBuffer 7<CR>", desc = "buffer 7" },
     }
   },
-  -- remove buffer
+  -- buffer delete
   {
-    'echasnovski/mini.bufremove',
-    version = '*',
-    config = true,
+    'famiu/bufdelete.nvim',
     keys = {
-      {
-        "<leader>x", "<cmd>lua MiniBufremove.delete()<cr>", desc = "buffer delete"
-      },
+      { "<leader>x", "<Cmd>Bdelete!<CR>", desc = "buffer delete" },
+      { "<leader>ba", "<Cmd>bufdo bd!<CR>", desc = "buffer all delete" },
     }
   },
 }
