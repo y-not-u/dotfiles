@@ -37,7 +37,6 @@ return {
     keys = {
       { "<leader>b[", ":bprev<CR>",                      desc = "buffer before" },
       { "<leader>b]", ":bnext<CR>",                      desc = "buffer next" },
-      { "<leader>bd", ":bdelete!<CR>",                   desc = "buffer delete" },
       { "<leader>b1", "<cmd>BufferLineGoToBuffer 1<CR>", desc = "buffer 1" },
       { "<leader>b2", "<cmd>BufferLineGoToBuffer 2<CR>", desc = "buffer 2" },
       { "<leader>b3", "<cmd>BufferLineGoToBuffer 3<CR>", desc = "buffer 3" },
@@ -51,7 +50,7 @@ return {
   {
     'famiu/bufdelete.nvim',
     keys = {
-      { "<leader>x", "<Cmd>Bdelete!<CR>", desc = "buffer delete" },
+      { "<leader>bd", "<Cmd>Bdelete<CR>",   desc = "buffer delete" },
       { "<leader>ba", "<Cmd>bufdo bd!<CR>", desc = "buffer all delete" },
     }
   },
