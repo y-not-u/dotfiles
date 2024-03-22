@@ -67,13 +67,12 @@ tooltip {
   padding: 0px 10px;
   margin: 3px 0px;
   margin-top: 10px;
-  border: 1px solid #181825;
+  /* border: 1px solid #181825; */
 }
 
 #tray {
   border-radius: 10px;
   margin-right: 10px;
-  border: 1px solid #3B82F6;
 }
 
 #workspaces {
@@ -82,7 +81,6 @@ tooltip {
   margin-left: 10px;
   padding-right: 0px;
   padding-left: 5px;
-  border: 1px solid #3B82F6;
 }
 
 #custom-caffeine {
@@ -100,32 +98,51 @@ tooltip {
 
 #custom-appmenu {
   color: #f5c2e7;
-  border-left: 0px;
-  border-right: 0px;
   margin-left: 20px;
   border-radius: 10px 10px 10px 10px;
-  border: 1px solid #3B82F6;
 }
+
+/* start border style */
+#custom-checkupdates,
+#cpu,
+#memory,
+#network,
+#pulseaudio
+{
+  border-top: 1px solid #33ccff;
+  border-bottom: 1px solid #33ccff;
+}
+
+#custom-appmenu,
+#window,
+#workspaces,
+#tray,
+#clock
+{
+  border: 1px solid #33ccff;
+}
+#custom-checkupdates {
+  border-left: 1px solid #33ccff;
+}
+#pulseaudio {
+  border-right: 1px solid #33ccff;
+}
+/* end border style */
 
 #custom-checkupdates {
   color: #f5c2e7;
-  border-left: 0px;
-  border-right: 0px;
   border-radius: 10px 0px 0px 10px;
 }
 
 #window {
   border-radius: 10px;
   margin-left: 10px;
-  margin-right: 60px;
-  border: 1px solid #3B82F6;
 }
 
 #clock {
   color: #fab387;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px;
   margin-right: 20px;
-  border: 1px solid #3B82F6;
 }
 
 #network {
@@ -136,8 +153,6 @@ tooltip {
 
 #pulseaudio {
   color: #89b4fa;
-  border-left: 0px;
-  border-right: 0px;
   margin-right: 10px;
   border-radius: 0 10px 10px 0;
 }

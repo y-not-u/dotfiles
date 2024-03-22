@@ -87,12 +87,6 @@
         "interval": 7200,
         "format": " {}"
     },
-    // "custom/language": {
-    //     "exec": "cat /tmp/kb_layout",
-    //     "interval": 3,
-    //     "format": " {}",
-    //     "tooltip": false
-    // },
     "custom/weather" : {
         "tooltip" : true,
         "format" : "{}",
