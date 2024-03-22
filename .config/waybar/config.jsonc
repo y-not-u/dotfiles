@@ -106,7 +106,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{: %d/%m   %R}",
+        "format": " {:%I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "pulseaudio": {
