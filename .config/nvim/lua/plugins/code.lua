@@ -64,9 +64,6 @@ return {
     event = "BufAdd",
   },
 
-  -- wakatime
-  { "wakatime/vim-wakatime" },
-
   -- shiftwidth
   { "tpope/vim-sleuth" },
 

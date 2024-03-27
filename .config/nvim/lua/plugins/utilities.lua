@@ -66,4 +66,47 @@ return {
       debounce_delay = 5000,
     },
   },
+
+  -- url open
+  {
+    "sontungexpt/url-open",
+    branch = "mini",
+    event = "VeryLazy",
+    cmd = "URLOpenUnderCursor",
+    config = function()
+      local status_ok, url_open = pcall(require, "url-open")
+      if not status_ok then
+        return
+      end
+      url_open.setup({})
+    end,
+  },
+
+  -- auto switch input method for fcitx
+  {
+    "h-hg/fcitx.nvim",
+    { "<S-k>", ":lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())<CR>" },
+  },
+
+  -- harpoon
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = true,
+    keys = {
+      { "<leader>a", ":lua require('harpoon'):list():append()<CR>" },
+      { "<C-e>",     ":lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())<CR>" },
+    }
+  },
+
+  -- wakatime
+  { "wakatime/vim-wakatime" },
+
+  -- lorem
+  {
+    "derektata/lorem.nvim",
+    event = "VeryLazy",
+    cmd = "LoremIpsum"
+  }
 }
