@@ -1,3 +1,4 @@
+#!/bin/bash
 alias v='nvim'
 alias ls='eza --header --color=always --icons=always --group-directories-first'
 alias cp='xcp'
@@ -13,7 +14,7 @@ alias ze="zellij"
 alias nv="neovide"
 alias lg='lazygit'
 alias mf='musicfox'
-alias open='xdg-open &>/dev/null'
+#alias open='xdg-open &>/dev/null'
 
 function proxy() {
   export http_proxy=http://127.0.0.1:7890 https_proxy=http://127.0.0.1:7890
