@@ -48,7 +48,7 @@ return {
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
-      "jcdickinson/codeium.nvim",
+      "Exafunction/codeium.nvim",
       "saadparwaiz1/cmp_luasnip",
     }
   },
