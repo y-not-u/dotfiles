@@ -20,14 +20,12 @@ return {
         },
         formatting = {
           format = require('lspkind').cmp_format({
-            mode = "symbol_text",
+            mode = "symbol",
             maxwidth = 50,
             ellipsis_char = '...',
+            show_labelDetails = true,
             symbol_map = { Codeium = "" },
-            before = function(entry, vim_item)
-              vim_item = require('tailwindcss-colorizer-cmp').formatter(entry, vim_item)
-              return vim_item
-            end
+            before = require("tailwind-tools.cmp").lspkind_format
           }),
         },
         mapping = {

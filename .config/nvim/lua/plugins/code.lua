@@ -31,10 +31,10 @@ return {
     end
   },
 
-  -- tailwindcss
   {
-    "roobert/tailwindcss-colorizer-cmp.nvim",
-    config = true
+    "luckasRanarison/tailwind-tools.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = {}
   },
 
   -- run jest
