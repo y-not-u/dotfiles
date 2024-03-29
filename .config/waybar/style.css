@@ -33,19 +33,16 @@ tooltip {
 #workspaces button.focused {
   color: #a6adc8;
   background: #eba0ac;
-  border-radius: 10px;
 }
 
 #workspaces button.urgent {
   color: #11111b;
   background: #a6e3a1;
-  border-radius: 10px;
 }
 
 #workspaces button:hover {
-  background: #11111b;
-  color: #cdd6f4;
-  border-radius: 10px;
+  background: #3F3F46;
+  color: #ffffff;
 }
 
 #custom-language,
@@ -103,7 +100,9 @@ tooltip {
 }
 
 /* start border style */
+/* top and bottom border */
 #custom-checkupdates,
+#custom-weather,
 #cpu,
 #memory,
 #network,
@@ -113,6 +112,7 @@ tooltip {
   border-bottom: 1px solid #33ccff;
 }
 
+/* full border */
 #custom-appmenu,
 #window,
 #workspaces,
@@ -168,10 +168,4 @@ tooltip {
   border-radius: 0 10px 10px 0;
   margin-right: 10px;
   border-left: 0px;
-}
-
-#custom-weather {
-  border-radius: 0px 10px 10px 0px;
-  border-right: 0px;
-  margin-left: 0px;
 }

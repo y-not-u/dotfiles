@@ -18,13 +18,13 @@
         "custom/checkupdates",
         "cpu",
         "memory",
+        "custom/weather",
         // "network",
-        "network#speed",
+        // "network#speed",
         // "custom/language",
         "pulseaudio",
         // "pulseaudio#microphone"
         "clock"
-        // "custom/weather",
     ],
     "hyprland/window": {
         "format": "{}",
@@ -84,7 +84,7 @@
     },
     "custom/checkupdates": {
         "exec": "checkupdates | wc -l",
-        "interval": 7200,
+        "interval": 1800,
         "format": " {}"
     },
     "custom/weather" : {
