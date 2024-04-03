@@ -21,6 +21,7 @@ return {
   {
     'echasnovski/mini.hipatterns',
     version = '*',
+    enabled = false,
     config = function()
       local hipatterns = require('mini.hipatterns')
       hipatterns.setup({
@@ -34,7 +35,14 @@ return {
   {
     "luckasRanarison/tailwind-tools.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
-    opts = {}
+    opts = {
+      document_color = {
+        enabled = true, -- can be toggled by commands
+        kind = "background", -- "inline" | "foreground" | "background"
+        inline_symbol = "󰝤 ", -- only used in inline mode
+        debounce = 500, -- in milliseconds, only applied in insert mode
+      },
+    }
   },
 
   -- run jest
