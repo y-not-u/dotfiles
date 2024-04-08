@@ -35,6 +35,7 @@ return {
       lspconfig.eslint.setup {}
       lspconfig.html.setup {}
       lspconfig.cssls.setup {}
+      lspconfig.gopls.setup {}
     end,
     dependencies = {
       "williamboman/mason-lspconfig.nvim",
