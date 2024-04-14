@@ -33,27 +33,21 @@ return {
   },
 
   -- jump
-  -- {
-  --   "folke/flash.nvim",
-  --   event = "VeryLazy",
-  --   opts = {},
-  --   keys = {
-  --     {
-  --       "s",
-  --       mode = { "n", "x", "o" },
-  --       function()
-  --         require("flash").jump({
-  --           search = {
-  --             mode = function(str)
-  --               return "\\<" .. str
-  --             end,
-  --           },
-  --         })
-  --       end,
-  --       desc = "Flash",
-  --     },
-  --   },
-  -- },
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    opts = {},
+    keys = {
+      {
+        "<leader>s",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").jump()
+        end,
+        desc = "Flash Jump",
+      },
+    },
+  },
 
   -- auto save
   {
