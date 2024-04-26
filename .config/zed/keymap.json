@@ -1,0 +1,60 @@
+[
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in normal & visual mode
+      "shift-k": "editor::Hover",
+      "space F": "editor::Format",
+      "space f f": "file_finder::Toggle",
+      "space w": "workspace::Save",
+      "space e": "workspace::ToggleLeftDock",
+      "space o": "outline::Toggle",
+      "space q": "pane::CloseActiveItem",
+      "space b d": "pane::CloseActiveItem",
+      "space b a": "pane::CloseAllItems",
+      "space r n": "editor::Rename",
+      "space c a": "editor::ToggleCodeActions",
+      "g c c": "editor::ToggleComments",
+      "ctrl-t": "terminal_panel::ToggleFocus",
+      "shift-h": "pane::ActivatePrevItem",
+      "shift-l": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work only in normal mode
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      // visual, visual line & visual block modes
+      "shift-k": "editor::MoveLineUp",
+      "shift-j": "editor::MoveLineDown"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in insert mode
+      // e.g.
+      "j j": "vim::NormalBefore", // remap jj in insert mode to escape.
+      "j k": "vim::NormalBefore" // remap jj in insert mode to escape.
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-t": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock",
+      "r": "project_panel::Rename",
+      "a": "project_panel::NewFile"
+    }
+  }
+]
