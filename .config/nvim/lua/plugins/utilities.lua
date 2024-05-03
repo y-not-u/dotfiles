@@ -97,11 +97,4 @@ return {
 
   -- wakatime
   { "wakatime/vim-wakatime" },
-
-  -- lorem
-  {
-    "derektata/lorem.nvim",
-    event = "VeryLazy",
-    cmd = "LoremIpsum"
-  }
 }

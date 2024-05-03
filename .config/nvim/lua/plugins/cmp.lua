@@ -99,6 +99,9 @@ return {
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
     },
-    config = true
+    config = true,
+    opts = {
+      enable_chat = true
+    },
   },
 }

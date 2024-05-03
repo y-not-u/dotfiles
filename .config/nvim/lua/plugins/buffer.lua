@@ -44,6 +44,8 @@ return {
       { "<leader>b5", "<cmd>BufferLineGoToBuffer 5<CR>", desc = "buffer 5" },
       { "<leader>b6", "<cmd>BufferLineGoToBuffer 6<CR>", desc = "buffer 6" },
       { "<leader>b7", "<cmd>BufferLineGoToBuffer 7<CR>", desc = "buffer 7" },
+      { "<Tab>", "<cmd>BufferLineCycleNext<CR>", desc = "Next" },
+      { "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", desc = "Prev" },
     }
   },
   -- buffer delete

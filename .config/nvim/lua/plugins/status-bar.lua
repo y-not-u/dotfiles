@@ -22,7 +22,9 @@ return {
       },
       extensions = { 'neo-tree', 'toggleterm', 'lazy', 'trouble' },
       sections = {
-        lualine_a = {
+        lualine_a = { 'mode' },
+        lualine_b = { 'branch' },
+        lualine_c = {
           {
             'diff',
             colored = true,
