@@ -4,7 +4,7 @@ local opts = {
 }
 local map = vim.api.nvim_set_keymap
 
-vim.opt.guifont = "Hack Nerd Font:h18"
+vim.opt.guifont = "Hack Nerd Font:h16"
 -- vim.g.neovide_transparency = 0.8
 vim.g.neovide_remember_window_size = true
 vim.g.neovide_floating_blur_amount_x = 2.0

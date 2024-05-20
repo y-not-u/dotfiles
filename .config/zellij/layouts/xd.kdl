@@ -1,0 +1,19 @@
+layout {
+    default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+    }
+
+    tab name="center"{
+        pane {
+            cwd "~/Workspace/center-web/"
+        }
+    }
+    tab name="mini-app-c" {
+        pane {
+            cwd "~/Workspace/exchange-battery-mini-app-customer/"
+        }
+    }
+}

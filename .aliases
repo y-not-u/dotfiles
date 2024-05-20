@@ -1,5 +1,6 @@
 #!/bin/bash
 alias v='nvim'
+alias nv='neovide --fork'
 alias ls='eza --header --color=always --icons=always --group-directories-first'
 alias cp='xcp'
 alias gpush="git push"
@@ -11,10 +12,9 @@ alias s="proxychains4"
 alias ra="ranger"
 alias jo="joshuto"
 alias ze="zellij"
-alias nv="neovide"
 alias lg='lazygit'
 alias mf='musicfox'
-alias s='sgpt'
+alias s='fgpt'
 alias zh="trans :zh-cn"
 
 function proxy() {
