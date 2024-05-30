@@ -8,6 +8,12 @@ size = 14.0
 [font.normal]
 family = "FiraCode Nerd Font"
 style = "Regular"
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Bold"
+[font.italic]
+family = "FiraCode Nerd Font"
+style = "Italic"
 
 [[hints.enabled]]
 command = "xdg-open"
@@ -18,10 +24,10 @@ regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:
 
 [window]
 startup_mode = "Windowed"
-padding = { x = 6, y = 0 }
+padding = { x = 10, y = 10 }
 dynamic_padding = true
-decorations = "none"
-opacity = 0.7
+decorations = "full"
+opacity = 0.8
 blur = true
 
 [selection]
@@ -30,3 +36,6 @@ save_to_clipboard = true
 [cursor]
 style.shape = "Beam"
 style.blinking = "On"
+
+[mouse]
+hide_when_typing = true
