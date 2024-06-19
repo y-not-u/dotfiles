@@ -88,11 +88,11 @@ def format_chances(hour):
     return ", ".join(conditions)
 
 
-data['text'] = weather['nearest_area'][0]['areaName'][0]['value'] + \
-    " "+WEATHER_CODES[weather['current_condition'][0]['weatherCode']] + \
+data['text'] = WEATHER_CODES[weather['current_condition'][0]['weatherCode']] + \
     " "+weather['current_condition'][0]['FeelsLikeC']+"°C"
 
-data['tooltip'] = f"<b>{weather['current_condition'][0]['weatherDesc'][0]['value']} {weather['current_condition'][0]['temp_C']}°C</b>\n"
+data['tooltip'] = f"City: {weather['nearest_area'][0]['areaName'][0]['value']}\n"
+data['tooltip'] += f"{weather['current_condition'][0]['weatherDesc'][0]['value']} {weather['current_condition'][0]['temp_C']}°C\n"
 data['tooltip'] += f"Feels like: {weather['current_condition'][0]['FeelsLikeC']}°C\n"
 data['tooltip'] += f"Wind: {weather['current_condition'][0]['windspeedKmph']}Km/h\n"
 data['tooltip'] += f"Humidity: {weather['current_condition'][0]['humidity']}%\n"
