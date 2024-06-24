@@ -20,6 +20,12 @@
     "font_family": "FiraCode Nerd Font"
   },
   "assistant": {
-    "open_api_url": "https://35.vatery.com/v1"
+    "version": "1",
+    "provider": {
+      "name": "openai",
+      "type": "openai",
+      "default_model": "gpt-4o",
+      "api_url": "https://burn.hair/v1"
+    }
   }
 }
