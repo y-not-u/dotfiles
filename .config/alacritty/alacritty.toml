@@ -3,7 +3,7 @@ import = [
 ]
 
 [font]
-size = 14.0
+size = 16.0
 
 [font.normal]
 family = "FiraCode Nerd Font"
@@ -23,12 +23,13 @@ mouse.enabled = true
 regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
 
 [window]
-startup_mode = "Windowed"
+startup_mode = "Maximized"
 padding = { x = 10, y = 10 }
 dynamic_padding = true
 decorations = "full"
 opacity = 0.8
 blur = true
+option_as_alt = "Both"
 
 [selection]
 save_to_clipboard = true
