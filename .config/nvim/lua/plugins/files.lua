@@ -72,7 +72,7 @@ return {
       { "<leader>fp", "<cmd>Telescope neovim-project discover<CR>", desc = "find projects" },
     },
     dependencies = { "nvim-telescope/telescope.nvim", "Shatur/neovim-session-manager" },
-    lazy = false,
+    lazy = true,
     priority = 100,
   },
 }

@@ -77,22 +77,22 @@ return {
     end,
   },
 
-  -- auto switch input method for fcitx
-  {
-    "h-hg/fcitx.nvim",
-    { "<S-k>", ":lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())<CR>" },
-  },
-
   -- harpoon
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" },
-    config = true,
-    keys = {
-      { "<leader>a", ":lua require('harpoon'):list():append()<CR>" },
-      { "<C-e>",     ":lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())<CR>" },
-    }
+    config = function()
+      local harpoon = require("harpoon")
+      harpoon:setup()
+
+      vim.keymap.set("n", "<leader>ha", function() harpoon:list():append() end)
+      vim.keymap.set("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+    end,
+    -- keys = {
+    --   { "<leader>a", "<cmd>lua require('harpoon'):list():add()<CR>",                                    desc = "Mark file with harpoon" },
+    --   { "<C-e>",     "<cmd>lua require('harpoon.ui'):toggle_quick_menu(require('harpoon'):list())<CR>", desc = "Show harpoon marks" },
+    -- }
   },
 
   -- wakatime
