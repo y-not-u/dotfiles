@@ -1,5 +1,11 @@
 [
   {
+    "context": "Workspace",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock"
+    }
+  },
+  {
     "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
     "bindings": {
       // put key-bindings here if you want them to work in normal & visual mode
@@ -7,7 +13,6 @@
       "space F": "editor::Format",
       "space f f": "file_finder::Toggle",
       "space w": "workspace::Save",
-      "space e": "workspace::ToggleLeftDock",
       "space o": "outline::Toggle",
       "space q": "pane::CloseActiveItem",
       "space b d": "pane::CloseActiveItem",
@@ -52,9 +57,15 @@
   {
     "context": "ProjectPanel && not_editing",
     "bindings": {
-      "space e": "workspace::ToggleLeftDock",
       "r": "project_panel::Rename",
-      "a": "project_panel::NewFile"
+      "a": "project_panel::NewFile",
+      "shift-a": "project_panel::NewDirectory",
+      "d d": "project_panel::Delete",
+      "y": "project_panel::Copy",
+      "y y": "project_panel::Duplicate",
+      "p": "project_panel::Paste",
+      "c": "project_panel::Cut",
+      "/": "project_panel::NewSearchInDirectory"
     }
   }
 ]
