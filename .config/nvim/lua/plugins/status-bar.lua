@@ -16,7 +16,7 @@ return {
     opts = {
       options = {
         theme = 'tokyonight',
-        disabled_filetypes = { statusline = { "dashboard", "alpha", "starter", "NvimTree" } },
+        disabled_filetypes = { statusline = { "neo-tree", "undutree", "dashboard", "alpha", "starter", "NvimTree" } },
         component_separators = '|',
         section_separators = '',
       },
@@ -35,8 +35,20 @@ return {
             },
             symbols = { added = '+', modified = '~', removed = '-' }, -- Changes the symbols used by the diff.
             source = nil,                                             -- A function that works as a data source for diff.
-          }
-        }
+          },
+          'filename',
+          'lsp_progress',
+        },
+        lualine_x = {
+          {
+            require('lazy.status').updates,
+            cond = require('lazy.status').has_updates,
+            --color = { fg = "#a89984" },
+          },
+          'encoding',
+          'fileformat',
+          'filetype',
+        },
       }
     },
   },

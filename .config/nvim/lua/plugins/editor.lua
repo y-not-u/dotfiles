@@ -21,7 +21,8 @@ return {
   {
     'echasnovski/mini.comment',
     version = false,
-    config = true
+    config = true,
+    keys = { 'gc', 'gcc' },
   },
 
   -- surround actions
@@ -192,7 +193,7 @@ return {
   -- todo
   {
     "folke/todo-comments.nvim",
-    event = "BufRead",
+    event = { 'BufRead', 'BufNewFile' },
     config = true
   },
 
@@ -259,4 +260,15 @@ return {
       }
     }
   },
+  {
+    'mbbill/undotree',
+    keys = {
+      {
+        '<leader>u',
+        ':UndotreeToggle<CR>',
+        mode = 'n',
+        desc = 'Toggle Undo Tree',
+      },
+    },
+  }
 }

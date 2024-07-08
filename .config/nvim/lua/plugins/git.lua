@@ -2,7 +2,7 @@ return {
   -- git status
   {
     "lewis6991/gitsigns.nvim",
-    event = { "VeryLazy" },
+    event = { 'BufReadPre', 'BufNewFile' },
     opts = {
       signs = {
         add = { text = "▎" },

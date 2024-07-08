@@ -97,4 +97,29 @@ return {
 
   -- wakatime
   { "wakatime/vim-wakatime" },
+
+  -- vim-sleuth
+  {
+    'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+    event = { 'BufReadPre', 'BufNewFile' },
+  },
+
+  {
+    'LunarVim/bigfile.nvim',
+    event = { "FileReadPre", "BufReadPre", "User FileOpened" },
+    opts = {
+      filesize = 2,      -- size of the file in MiB, the plugin round file sizes to the closest MiB
+      pattern = { "*" }, -- autocmd pattern or function see
+      features = {       -- features to disable
+        "indent_blankline",
+        "illuminate",
+        "lsp",
+        "treesitter",
+        "syntax",
+        "matchparen",
+        "vimopts",
+        "filetype",
+      },
+    },
+  }
 }
