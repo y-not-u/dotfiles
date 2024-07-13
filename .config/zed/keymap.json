@@ -1,6 +1,6 @@
 [
   {
-    "context": "Workspace",
+    "context": "Editor && vim_mode == normal",
     "bindings": {
       "space e": "workspace::ToggleLeftDock"
     }

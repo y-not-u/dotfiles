@@ -104,6 +104,7 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
   },
 
+  -- big file not loading plugins
   {
     'LunarVim/bigfile.nvim',
     event = { "FileReadPre", "BufReadPre", "User FileOpened" },
@@ -121,5 +122,24 @@ return {
         "filetype",
       },
     },
+  },
+
+  -- clipboard history
+  {
+    "AckslD/nvim-neoclip.lua",
+    dependencies = {
+      { 'nvim-telescope/telescope.nvim' },
+    },
+    event = { 'BufReadPre', 'BufNewFile' },
+    keys = {
+      {
+        "<leader>fy",
+        "<cmd>:Telescope neoclip<CR>",
+        desc = "Flash Jump",
+      },
+    },
+    config = function()
+      require('neoclip').setup()
+    end,
   }
 }
