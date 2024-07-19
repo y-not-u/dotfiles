@@ -17,6 +17,17 @@ return {
     }
   },
 
+  {
+    "nvim-pack/nvim-spectre",
+    build = false,
+    cmd = "Spectre",
+    opts = { open_cmd = "noswapfile vnew" },
+    -- stylua: ignore
+    keys = {
+      { "<leader>sr", function() require("spectre").open() end, desc = "Replace in Files (Spectre)" },
+    },
+  },
+
   -- comment
   {
     'echasnovski/mini.comment',
@@ -79,7 +90,6 @@ return {
     opts = {},
   },
 
-  -- lazy.nvim
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -133,6 +143,7 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     event = "VeryLazy",
+    enabled = false,
     opts = {
       indent = {
         char = "│",

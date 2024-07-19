@@ -6,6 +6,8 @@ return {
   },
   config = function()
     require("neo-tree").setup({
+      sources = { "filesystem", "buffers", "git_status" },
+      open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
       default_component_configs = {
         icon = {
           folder_empty = "󰜌",
@@ -24,14 +26,11 @@ return {
         position = "left",
       },
       buffers = {
-        follow_current_file = {
-          enabled = true,
-        },
+        follow_current_file = { enabled = true },
       },
       filesystem = {
-        follow_current_file = {
-          enabled = true,
-        },
+        bind_to_cwd = false,
+        follow_current_file = { enabled = true },
         filtered_items = {
           visible = true,
           show_hidden_count = true,

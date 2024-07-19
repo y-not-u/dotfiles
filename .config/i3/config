@@ -47,7 +47,7 @@ floating_modifier $mod
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+#tiling_drag modifier titlebar
 
 bindsym $mod+d exec --no-startup-id "rofi -modi drun,run,settings:$HOME/.local/bin/rofi-control-center.py -show drun -show-icons"
 # start dmenu (a program launcher)

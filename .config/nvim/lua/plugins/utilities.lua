@@ -133,7 +133,7 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     keys = {
       {
-        "<leader>fy",
+        "<leader>p",
         "<cmd>:Telescope neoclip<CR>",
         desc = "Flash Jump",
       },
