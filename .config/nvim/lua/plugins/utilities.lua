@@ -126,20 +126,10 @@ return {
 
   -- clipboard history
   {
-    "AckslD/nvim-neoclip.lua",
-    dependencies = {
-      { 'nvim-telescope/telescope.nvim' },
-    },
-    event = { 'BufReadPre', 'BufNewFile' },
+    "gbprod/yanky.nvim",
+    opts = {},
     keys = {
-      {
-        "<leader>p",
-        "<cmd>:Telescope neoclip<CR>",
-        desc = "Flash Jump",
-      },
-    },
-    config = function()
-      require('neoclip').setup()
-    end,
+      { "<leader>p", function() require("telescope").extensions.yank_history.yank_history({}) end, desc = "Open Yank History" },
+    }
   }
 }
