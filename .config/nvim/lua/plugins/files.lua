@@ -57,22 +57,4 @@ return {
       },
     },
   },
-
-  -- project
-  {
-    "coffebar/neovim-project",
-    opts = {
-      projects = { -- define project roots
-        "~/Workspace/*",
-        "~/Workspace/Startup/Reader/*",
-      },
-      last_session_on_startup = false,
-    },
-    keys = {
-      { "<leader>fp", "<cmd>Telescope neovim-project discover<CR>", desc = "find projects" },
-    },
-    dependencies = { "nvim-telescope/telescope.nvim", "Shatur/neovim-session-manager" },
-    lazy = true,
-    priority = 100,
-  },
 }

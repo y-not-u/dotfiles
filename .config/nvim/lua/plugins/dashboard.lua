@@ -3,6 +3,7 @@ return {
   {
     'glepnir/dashboard-nvim', -- start dashboard
     event = 'VimEnter',
+    enabled = true,
     keys = { { '<leader>n', '<cmd>Dashboard<CR>', desc = 'Open dashboard-nvim' } },
     config = function()
       require('dashboard').setup {
@@ -32,7 +33,7 @@ return {
               icon = ' ',
               desc = 'Projects',
               key = 'p',
-              action = 'Telescope neovim-project discover',
+              action = 'Telescope session-lens',
             },
             {
               icon = ' ',
@@ -52,5 +53,4 @@ return {
       }
     end
   },
-
 }

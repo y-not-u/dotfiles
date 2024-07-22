@@ -20,7 +20,7 @@ map('n', '<leader>q', '<cmd>q<CR>', opts)
 map('n', '<leader>Q', '<cmd>qa!<CR>', opts)
 
 -- Fast saving
-map('n', '<leader>w', '<cmd>write<CR>', opts)
+map('n', '<leader>w', '<cmd>w!<CR>', opts)
 
 -- Reaload Configuration without restart nvim
 map('n', '<leader>r', '<cmd>so %<CR>', opts)

@@ -7,20 +7,26 @@ return {
       plugins = { spelling = true },
       defaults = {
         mode = { "n", "v" },
-        ["g"] = { name = "+goto" },
-        ["gz"] = { name = "+surround" },
-        ["]"] = { name = "+next" },
-        ["["] = { name = "+prev" },
-        ["<leader><tab>"] = { name = "+tabs" },
-        ["<leader>b"] = { name = "+buffer" },
-        ["<leader>c"] = { name = "+code" },
-        ["<leader>f"] = { name = "+file/find" },
-        ["<leader>g"] = { name = "+git" },
-        ["<leader>q"] = { name = "+quit/session" },
-        ["<leader>s"] = { name = "+search" },
-        ["<leader>u"] = { name = "+ui" },
-        ["<leader>w"] = { name = "+windows" },
-        ["<leader>x"] = { name = "+diagnostics/quickfix" },
+        ["<leader>b"] = { group = "buffer" },
+        ["<leader>c"] = { group = "code" },
+        ["<leader>f"] = { group = "file/find" },
+        ["<leader>g"] = { group = "git" },
+        ["<leader>h"] = { group = "harpoon" },
+        ["<leader>q"] = { group = "Quit" },
+        ["<leader>s"] = { group = "search" },
+        ["<leader>u"] = { group = "ui" },
+        ["<leader>w"] = { group = "Save" },
+        ["<leader>x"] = { group = "diagnostics/quickfix" },
+        f = {
+          name = "file",
+        }
+      },
+      triggers_blacklist = {
+        -- list of mode / prefixes that should never be hooked by WhichKey
+        -- this is mostly relevant for key maps that start with a native binding
+        -- most people should not need to change this
+        i = { "j", "k" },
+        v = { "j", "k" },
       },
     },
     config = function(_, opts)
@@ -131,5 +137,27 @@ return {
     keys = {
       { "<leader>p", function() require("telescope").extensions.yank_history.yank_history({}) end, desc = "Open Yank History" },
     }
+  },
+
+  -- better escape for jk
+  {
+    "max397574/better-escape.nvim",
+    config = function()
+      require("better_escape").setup()
+    end,
+  },
+  {
+    "nathom/filetype.nvim",
+    lazy = true,
+    event = { "BufRead", "BufNewFile" },
+    config = function()
+      require("filetype").setup({
+        overrides = {
+          extensions = {
+            h = "cpp",
+          },
+        }
+      })
+    end
   }
 }
