@@ -81,27 +81,34 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# export
 export PATH="$PATH:$HOME/.local/bin"
-export EDITOR=/usr/bin/nvim
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+export GOPATH="$XDG_DATA_HOME"/go
+export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
+export PKG_CACHE_PATH="$XDG_CACHE_HOME"/pkg-cache
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export VOLTA_HOME="$XDG_DATA_HOME"/volta
+export _Z_DATA="$XDG_DATA_HOME/z"
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
@@ -116,13 +123,8 @@ esac
 
 source "$HOME/.cargo/env"
 
-
 # bun completions
 [ -s "/home/egg/.bun/_bun" ] && source "/home/egg/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 
 # starship
 eval "$(starship init zsh)"

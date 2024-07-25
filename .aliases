@@ -13,6 +13,7 @@ alias ze="zellij"
 alias lg='lazygit'
 alias mf='musicfox'
 alias zh="trans :zh-cn"
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 
 function proxy() {
   export http_proxy=http://127.0.0.1:7890 https_proxy=http://127.0.0.1:7890
