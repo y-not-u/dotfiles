@@ -3,8 +3,6 @@ alias v='nvim'
 alias nv='neovide --fork'
 alias ls='eza --header --color=always --icons=always --group-directories-first'
 alias cp='xcp'
-alias gpush="git push"
-alias gpull="git pull"
 alias unproxy="unset http_proxy https_proxy all_proxy"
 alias pn="pnpm"
 alias pnpx="pnpm dlx"
@@ -14,7 +12,6 @@ alias jo="joshuto"
 alias ze="zellij"
 alias lg='lazygit'
 alias mf='musicfox'
-alias s='fgpt'
 alias zh="trans :zh-cn"
 
 function proxy() {

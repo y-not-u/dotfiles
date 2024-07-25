@@ -12,6 +12,7 @@
       "shift-k": "editor::Hover",
       "space F": "editor::Format",
       "space f f": "file_finder::Toggle",
+      "space f g": "workspace::NewSearch",
       "space w": "workspace::Save",
       "space o": "outline::Toggle",
       "space q": "pane::CloseActiveItem",
@@ -42,10 +43,9 @@
   {
     "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
-      // put key-bindings here if you want them to work in insert mode
-      // e.g.
       "j j": "vim::NormalBefore", // remap jj in insert mode to escape.
-      "j k": "vim::NormalBefore" // remap jj in insert mode to escape.
+      // "j k": "vim::NormalBefore" // remap jj in insert mode to escape.
+      "j k": ["vim::SwitchMode", "Normal"]
     }
   },
   {
@@ -65,7 +65,10 @@
       "y y": "project_panel::Duplicate",
       "p": "project_panel::Paste",
       "c": "project_panel::Cut",
-      "/": "project_panel::NewSearchInDirectory"
+      "z": "project_panel::CollapseSelectedEntry",
+      "/": "project_panel::NewSearchInDirectory",
+      "space": "zed::NoAction",
+      "space e": "workspace::ToggleLeftDock"
     }
   }
 ]
