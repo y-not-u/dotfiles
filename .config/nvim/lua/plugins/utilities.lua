@@ -101,9 +101,6 @@ return {
     -- }
   },
 
-  -- wakatime
-  { "wakatime/vim-wakatime" },
-
   -- vim-sleuth
   {
     'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
