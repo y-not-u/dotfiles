@@ -10,7 +10,7 @@
   "features": {
     "inline_completion_provider": "none"
   },
-  "theme": "Gruvbox Light Hard",
+  "theme": "Catppuccin Latte",
   "telemetry": {
     "diagnostics": false,
     "metrics": false
