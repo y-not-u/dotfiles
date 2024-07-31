@@ -6,7 +6,9 @@ return {
     },
     config = function()
       require('auto-session').setup({
-        auto_session_suppress_dirs = { '~/Workspace', '~/Projects' },
+        auto_session_suppress_dirs = { '~/', '/' },
+        auto_session_allowed_dirs = { '~/Workspace/*', '~/Projects/*' },
+        auto_session_enable_last_session = true,
       })
     end,
     keys = {

@@ -142,8 +142,7 @@ return {
 
   {
     "lukas-reineke/indent-blankline.nvim",
-    event = "VeryLazy",
-    enabled = false,
+    event = { 'BufReadPost', 'BufNewFile' },
     opts = {
       indent = {
         char = "│",

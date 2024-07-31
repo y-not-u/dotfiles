@@ -94,6 +94,7 @@ return {
           "vim",
           "regex"
         },
+        ignore_install = { "java" },
         sync_install = false,
         auto_install = true,
         indent = { enable = true },
@@ -165,8 +166,14 @@ return {
       { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
     },
     opts = {
+      outline_window = {
+        auto_close = true,
+      },
       outline_items = {
         show_symbol_details = false
+      },
+      preview_window = {
+        auto_preview = true
       }
     },
   },

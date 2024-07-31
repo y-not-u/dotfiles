@@ -3,7 +3,6 @@ alias v='nvim'
 alias nv='neovide --fork'
 alias ls='eza --header --color=always --icons=always --group-directories-first'
 alias cp='xcp'
-alias unproxy="unset http_proxy https_proxy all_proxy"
 alias pn="pnpm"
 alias pnpx="pnpm dlx"
 alias s="proxychains4"
@@ -15,6 +14,7 @@ alias mf='musicfox'
 alias zh="trans :zh-cn"
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 
+alias unproxy="unset http_proxy https_proxy all_proxy"
 function proxy() {
   export http_proxy=http://127.0.0.1:7890 https_proxy=http://127.0.0.1:7890
   export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
