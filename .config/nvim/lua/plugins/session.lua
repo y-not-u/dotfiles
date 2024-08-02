@@ -11,8 +11,5 @@ return {
         auto_session_enable_last_session = true,
       })
     end,
-    keys = {
-      { "<leader>fp", "<cmd>Telescope session-lens<CR>", desc = "List sessions" }
-    }
   },
 }

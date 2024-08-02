@@ -87,21 +87,9 @@ return {
       { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
     },
   },
-  -- vscode like icon
+
+-- vscode like icon
   {
     "onsails/lspkind.nvim",
-  },
-
-  {
-    "Exafunction/codeium.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-    config = true,
-    opts = {
-      enable_chat = true
-    },
   },
 }

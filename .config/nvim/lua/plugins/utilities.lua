@@ -58,7 +58,7 @@ return {
   -- auto save
   {
     "okuuva/auto-save.nvim",
-    cmd = "ASToggle",                         -- optional for lazy loading on command
+    -- cmd = "ASToggle",                         -- optional for lazy loading on command
     event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
     opts = {
       execution_message = {
@@ -127,7 +127,6 @@ return {
         mappings = {
           i = {
             j = {
-              -- These can all also be functions
               k = "<Esc>",
               j = "<Esc>",
             },

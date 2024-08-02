@@ -4,7 +4,7 @@ return {
     'glepnir/dashboard-nvim', -- start dashboard
     event = 'VimEnter',
     enabled = true,
-    keys = { { '<leader>n', '<cmd>Dashboard<CR>', desc = 'Open dashboard-nvim' } },
+    keys = { { '<leader>d', '<cmd>Dashboard<CR>', desc = 'Open dashboard-nvim' } },
     config = function()
       require('dashboard').setup {
         theme = 'doom',
