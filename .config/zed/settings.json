@@ -7,6 +7,11 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "language_models": {
+    "openai": {
+      "api_url": "https://burn.hair/v1"
+    }
+  },
   "features": {
     "inline_completion_provider": "none"
   },
@@ -24,12 +29,11 @@
     "font_family": "FiraCode Nerd Font"
   },
   "assistant": {
-    "version": "1",
-    "provider": {
-      "name": "openai",
-      "type": "openai",
-      "default_model": "gpt-4o",
-      "api_url": "https://burn.hair/v1"
-    }
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-4o"
+    },
+    "version": "2",
+    "provider": null
   }
 }
