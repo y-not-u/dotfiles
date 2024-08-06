@@ -46,6 +46,7 @@ return {
       { "<leader>b7", "<cmd>BufferLineGoToBuffer 7<CR>", desc = "buffer 7" },
       { "<Tab>", "<cmd>BufferLineCycleNext<CR>", desc = "Next" },
       { "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", desc = "Prev" },
+      { "<C-P>", "<cmd>Telescope buffers<CR>", desc = "Show buffers" },
     }
   },
   -- buffer delete

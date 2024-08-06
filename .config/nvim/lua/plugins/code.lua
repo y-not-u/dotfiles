@@ -48,9 +48,15 @@ return {
   -- auto pairs
   {
     "windwp/nvim-autopairs",
+    enabled = false,
     lazy = true,
     event = "InsertEnter",
     config = true,
+  },
+
+  {
+    'm4xshen/autoclose.nvim',
+    config = true
   },
 
   -- auto tag
