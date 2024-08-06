@@ -88,10 +88,13 @@ return {
           "lua",
           "html",
           "toml",
+          "yaml",
           "bash",
           "markdown",
           "markdown_inline",
           "vim",
+          "dockerfile",
+          "gitignore",
           "regex"
         },
         modules = {},

@@ -20,7 +20,7 @@ return {
   {
     "kdheepak/lazygit.nvim",
     keys = {
-      { "<leader>gg", "<cmd>LazyGit<CR>", desc = "Toggle LazyGit" },
+      { "<leader>lg", "<cmd>LazyGit<CR>", desc = "Toggle LazyGit" },
     }
   },
 }

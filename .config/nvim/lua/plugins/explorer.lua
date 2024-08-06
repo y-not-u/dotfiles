@@ -4,6 +4,11 @@ return {
   dependencies = {
     "MunifTanjim/nui.nvim",
   },
+  lazy = true,
+  cmd = "Neotree",
+  keys = {
+    { "<leader>e", "<cmd>Neotree action=focus toggle reveal<CR>", desc = "file explor" }
+  },
   config = function()
     require("neo-tree").setup({
       sources = { "filesystem", "buffers", "git_status" },
@@ -22,7 +27,7 @@ return {
       },
       close_if_last_window = false,
       window = {
-        width = 30,
+        width = 35,
         position = "left",
       },
       buffers = {
@@ -45,6 +50,12 @@ return {
             "thumbs.db",
           },
         },
+      },
+      filters = {
+        custom = { ".DS_Store" },
+      },
+      git = {
+        ignore = false,
       },
       document_symbols = {
         kinds = {
@@ -75,9 +86,4 @@ return {
       },
     })
   end,
-  lazy = true,
-  cmd = "Neotree",
-  keys = {
-    { "<leader>e", "<cmd>Neotree action=focus toggle reveal<CR>", desc = "file explor" }
-  }
 }

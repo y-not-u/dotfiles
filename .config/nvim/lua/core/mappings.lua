@@ -10,9 +10,6 @@ local term_opts = { silent = true }
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Lazy
-map('n', '<leader>l', '<cmd>Lazy<CR>', opts)
-
 -- Quit
 map('n', '<leader>q', '<cmd>q<CR>', opts)
 
