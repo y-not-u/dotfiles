@@ -113,6 +113,8 @@ source "$CARGO_HOME/env"
 # bun completions
 [ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
 
+eval "$(zoxide init zsh)"
+
 # starship
 eval "$(starship init zsh)"
 

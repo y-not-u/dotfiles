@@ -3,6 +3,7 @@ alias v='nvim'
 alias nv='neovide --fork'
 alias ls='eza --header --color=always --long --no-time --no-user --no-permissions --no-filesize --icons=always --group-directories-first'
 alias cp='xcp'
+alias cd='z'
 alias pn="pnpm"
 alias pnpx="pnpm dlx"
 alias s="proxychains4"
@@ -21,3 +22,10 @@ function proxy() {
   export all_proxy=socks5://127.0.0.1:7890
   echo -e "🚀 已开启代理",$(curl -s myip.ipip.net)
 }
+
+function transfer() {
+    curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename "$1") | tee /dev/null;
+    echo
+}
+
+alias transfer=transfer
