@@ -126,7 +126,7 @@ return {
     event = { 'BufReadPost', 'BufNewFile' },
     config = function()
       local notify = require("notify")
-      notify.setup({
+      notify.setup {
         fps = 30,
         level = 2,
         minimum_width = 40,
@@ -135,7 +135,7 @@ return {
         render = "wrapped-compact",
         timeout = 3000,
         top_down = true
-      })
+      }
       vim.notify = notify
     end,
   },

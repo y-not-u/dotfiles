@@ -122,5 +122,12 @@ return {
     "danymat/neogen",
     dependencies = "nvim-treesitter/nvim-treesitter",
     config = true,
+  },
+
+  {
+    "utilyre/sentiment.nvim",
+    version = "*",
+    event = "VeryLazy", -- keep for lazy loading
+    opts = {},
   }
 }

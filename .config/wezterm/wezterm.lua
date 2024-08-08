@@ -18,6 +18,7 @@ local function get_font_size()
   end
 end
 
+
 config = {
   automatically_reload_config = true,
 
@@ -57,19 +58,19 @@ config = {
     bottom = 0,
   },
   background = {
-    {
-      source = {
-        File = '~/Pictures/Wallpapers/archlinux.png',
-      },
-      opacity = 1.0,
-      repeat_x = 'NoRepeat',
-      repeat_y = 'NoRepeat',
-      vertical_align = 'Middle',
-      horizontal_align = 'Center',
-      hsb = {
-        brightness = 0.2
-      }
-    },
+    -- {
+    --   source = {
+    --     File = '~/Pictures/Wallpapers/archlinux.png',
+    --   },
+    --   opacity = 1.0,
+    --   repeat_x = 'NoRepeat',
+    --   repeat_y = 'NoRepeat',
+    --   vertical_align = 'Middle',
+    --   horizontal_align = 'Center',
+    --   hsb = {
+    --     brightness = 0.2
+    --   }
+    -- },
   },
   inactive_pane_hsb = {
     saturation = 0.8,
@@ -124,5 +125,11 @@ config = {
     },
   },
 }
+
+if os.getenv("XDG_CURRENT_DESKTOP") == "Hyprland" then
+	config.enable_wayland = false
+else
+	config.enable_wayland = true
+end
 
 return config
