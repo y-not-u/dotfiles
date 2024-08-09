@@ -1,7 +1,7 @@
 #!/bin/bash
 alias v='nvim'
 alias nv='neovide --fork'
-alias ls='eza --header --color=always --long --no-time --no-user --no-permissions --no-filesize --icons=always --group-directories-first'
+alias ls='eza --header --color=always --long --no-time --icons=always --group-directories-first'
 alias cp='xcp'
 alias cd='z'
 alias pn="pnpm"

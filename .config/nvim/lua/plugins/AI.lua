@@ -17,6 +17,6 @@ return {
     keys = {
       { "<leader>a", ":GPTModelsCode<CR>", mode = "v" },
       { "<leader>a", ":GPTModelsCode<CR>", mode = "v" }
-    }
-  }
+    },
+  },
 }

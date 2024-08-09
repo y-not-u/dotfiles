@@ -3,3 +3,4 @@
 .antidote
 .zcompdump*
 .zsh_sessions/*
+.zshenv

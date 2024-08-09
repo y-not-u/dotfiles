@@ -9,6 +9,7 @@
 {
   "language_models": {
     "openai": {
+      "version": "1",
       "api_url": "https://burn.hair/v1"
     }
   },
