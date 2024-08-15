@@ -1,23 +1,6 @@
 return {
   -- scrollbar
   {
-    'petertriho/nvim-scrollbar',
-    config = true,
-    enabled = false,
-    opts = {
-      excluded_filetypes = {
-        "cmp_docs",
-        "cmp_menu",
-        "noice",
-        "prompt",
-        "TelescopePrompt",
-        'dashboard',
-        'neo-tree',
-      },
-    }
-  },
-
-  {
     "nvim-pack/nvim-spectre",
     build = false,
     cmd = "Spectre",

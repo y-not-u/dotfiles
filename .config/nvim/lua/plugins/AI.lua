@@ -9,14 +9,14 @@ return {
     config = true,
   },
   {
-    "Aaronik/GPTModels.nvim",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-telescope/telescope.nvim"
-    },
-    keys = {
-      { "<leader>a", ":GPTModelsCode<CR>", mode = "v" },
-      { "<leader>a", ":GPTModelsCode<CR>", mode = "v" }
-    },
+    "supermaven-inc/supermaven-nvim",
+    config = function()
+      require("supermaven-nvim").setup({
+        keymaps = {
+          accept_suggestion = "<Tab>",
+          clear_suggestion = "<C-]>",
+        },
+      })
+    end,
   },
 }

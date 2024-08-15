@@ -23,4 +23,13 @@ return {
       { "<leader>lg", "<cmd>LazyGit<CR>", desc = "Toggle LazyGit" },
     }
   },
+
+  -- git diff view
+  {
+    "sindrets/diffview.nvim",
+    config = true,
+    cmd = {
+      "Diffviewopen"
+    }
+  }
 }
