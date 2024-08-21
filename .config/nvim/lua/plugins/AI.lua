@@ -1,15 +1,11 @@
 return {
   {
-    "Exafunction/codeium.nvim",
-    event = { "InsertEnter" },
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-    config = true,
+    'Exafunction/codeium.vim',
+    event = 'BufEnter',
   },
   {
     "supermaven-inc/supermaven-nvim",
+    enabled = false,
     config = function()
       require("supermaven-nvim").setup({
         keymaps = {
