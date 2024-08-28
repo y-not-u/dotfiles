@@ -16,7 +16,7 @@
   "features": {
     "inline_completion_provider": "none"
   },
-  "theme": "Catppuccin Latte",
+  "theme": "Catppuccin Mocha",
   "telemetry": {
     "diagnostics": false,
     "metrics": false
@@ -31,8 +31,8 @@
   },
   "assistant": {
     "default_model": {
-      "provider": "openai",
-      "model": "gpt-4o"
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-20240620"
     },
     "version": "2",
     "provider": null

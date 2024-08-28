@@ -27,8 +27,8 @@ return {
       },
       close_if_last_window = false,
       window = {
-        width = 35,
-        position = "left",
+        width = 30,
+        position = "right",
       },
       buffers = {
         follow_current_file = { enabled = true },
@@ -49,6 +49,9 @@ return {
             ".DS_Store",
             "thumbs.db",
           },
+          always_show = {
+            ".env"
+          }
         },
       },
       filters = {

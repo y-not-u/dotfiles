@@ -77,7 +77,7 @@ return {
       local harpoon = require("harpoon")
       harpoon:setup()
 
-      vim.keymap.set("n", "<leader>ha", function() harpoon:list():append() end)
+      vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end)
       vim.keymap.set("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
     end,
     -- keys = {
@@ -142,6 +142,7 @@ return {
   {
     "dstein64/nvim-scrollview",
     event = "VeryLazy",
+    enabled = false,
     opts = {
       winblend = 50,
       signs_on_startup = {

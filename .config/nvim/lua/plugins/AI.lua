@@ -18,12 +18,12 @@ return {
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
-    build = "make",
     opts = {
       provider = "openai",
       openai = {
-        endpoint = "https://burn.hair",
-        model = "gpt-4o",
+        endpoint = "https://burn.hair/v1",
+        model = "gpt-4o-mini",
+        timeout = 30000,
         temperature = 0,
         max_tokens = 4096,
       },
@@ -32,12 +32,7 @@ return {
       "nvim-tree/nvim-web-devicons",
       "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
-      {
-        "grapp-dev/nui-components.nvim",
-        dependencies = {
-          "MunifTanjim/nui.nvim"
-        }
-      },
+      "MunifTanjim/nui.nvim",
     },
   }
 }
