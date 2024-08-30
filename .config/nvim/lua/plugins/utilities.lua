@@ -172,5 +172,10 @@ return {
 
       vim.api.nvim_set_hl(0, "ScrollViewHover", { link = "Search" })
     end,
+  },
+  {
+    'mei28/luminate.nvim',
+    event = { 'VeryLazy' },
+    config = true
   }
 }

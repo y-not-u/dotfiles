@@ -43,7 +43,7 @@ return {
           {
             require('lazy.status').updates,
             cond = require('lazy.status').has_updates,
-            --color = { fg = "#a89984" },
+            -- color = { fg = "#a89984" },
           },
           'encoding',
           'fileformat',

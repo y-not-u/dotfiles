@@ -27,6 +27,9 @@ return {
         temperature = 0,
         max_tokens = 4096,
       },
+      windows = {
+        width = 40
+      }
     },
     dependencies = {
       "nvim-tree/nvim-web-devicons",
