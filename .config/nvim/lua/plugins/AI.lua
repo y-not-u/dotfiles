@@ -1,3 +1,5 @@
+local window = require "utils.window"
+
 return {
   {
     'Exafunction/codeium.vim',
@@ -28,7 +30,11 @@ return {
         max_tokens = 4096,
       },
       windows = {
-        width = 40
+        width = window.side_width,
+        sidebar_header = {
+          align = "right", -- left, center, right for title
+          rounded = false,
+        },
       }
     },
     dependencies = {

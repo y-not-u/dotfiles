@@ -1,3 +1,5 @@
+local window = require "utils.window"
+
 return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
@@ -27,7 +29,7 @@ return {
       },
       close_if_last_window = false,
       window = {
-        width = 30,
+        width = window.side_width,
         position = "right",
       },
       buffers = {

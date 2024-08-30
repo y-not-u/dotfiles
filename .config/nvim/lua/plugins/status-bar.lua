@@ -16,7 +16,12 @@ return {
     opts = {
       options = {
         theme = 'tokyonight',
-        disabled_filetypes = { statusline = { "neo-tree", "undutree", "dashboard", "alpha", "starter", "NvimTree" } },
+        disabled_filetypes = {
+          statusline = {
+            "neo-tree", "undutree", "dashboard", "alpha", "starter", "NvimTree",
+            "AvanteInput"
+          }
+        },
         component_separators = '|',
         section_separators = '',
       },

@@ -10,14 +10,14 @@ startup_mode = "Maximized"
 decorations = "ButtonLess"
 padding = { x = 10, y = 10 }
 dynamic_padding = true
-opacity = 0.8
-blur = true
+opacity = 0.5
+blur = false
 option_as_alt = "Both"
 
 [font]
 normal.family = "FiraCode Nerd Font"
 normal.style = "Regular"
-size = 16.0
+size = 14.0
 
 [[hints.enabled]]
 command = "xdg-open"
@@ -34,4 +34,4 @@ style.shape = "Beam"
 style.blinking = "On"
 
 [mouse]
-hide_when_typing = true
+hide_when_typing = false
