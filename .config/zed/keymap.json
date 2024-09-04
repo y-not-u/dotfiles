@@ -1,8 +1,10 @@
 [
   {
-    "context": "Editor && vim_mode == normal",
+    "context": "(Editor && vim_mode == normal) || EmptyPane || SharedScreen",
     "bindings": {
-      "space e": "workspace::ToggleLeftDock"
+      "space e": "workspace::ToggleLeftDock",
+      "space f f": "file_finder::Toggle",
+      "space f g": "workspace::NewSearch"
     }
   },
   {
@@ -11,8 +13,6 @@
       // put key-bindings here if you want them to work in normal & visual mode
       "shift-k": "editor::Hover",
       "space F": "editor::Format",
-      "space f f": "file_finder::Toggle",
-      "space f g": "workspace::NewSearch",
       "space w": "workspace::Save",
       "space o": "outline::Toggle",
       "space q": "pane::CloseActiveItem",
@@ -20,7 +20,6 @@
       "space b a": "pane::CloseAllItems",
       "space r n": "editor::Rename",
       "space c a": "editor::ToggleCodeActions",
-      "g c c": "editor::ToggleComments",
       "ctrl-t": "terminal_panel::ToggleFocus",
       "shift-h": "pane::ActivatePrevItem",
       "shift-l": "pane::ActivateNextItem"
@@ -41,10 +40,10 @@
     }
   },
   {
-    "context": "Editor && vim_mode == insert && !menu",
+    "context": "vim_mode == insert && !menu",
     "bindings": {
       "j j": "vim::NormalBefore", // remap jj in insert mode to escape.
-      // "j k": "vim::NormalBefore" // remap jj in insert mode to escape.
+      "k j": "vim::NormalBefore", // remap jj in insert mode to escape.
       "j k": ["vim::SwitchMode", "Normal"]
     }
   },
@@ -69,6 +68,35 @@
       "/": "project_panel::NewSearchInDirectory",
       "space": "zed::NoAction",
       "space e": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": [
+        "vim::PushOperator",
+        {
+          "AddSurrounds": {}
+        }
+      ]
+    }
+  },
+  {
+    "context": "VimControl && !menu && vim_mode != operator",
+    "bindings": {
+      "w": "vim::NextSubwordStart",
+      "b": "vim::PreviousSubwordStart",
+      "e": "vim::NextSubwordEnd",
+      "g e": "vim::PreviousSubwordEnd"
     }
   }
 ]

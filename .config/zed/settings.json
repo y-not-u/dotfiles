@@ -7,14 +7,8 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "language_models": {
-    "openai": {
-      "version": "1",
-      "api_url": "https://burn.hair/v1"
-    }
-  },
   "features": {
-    "inline_completion_provider": "none"
+    "inline_completion_provider": "supermaven"
   },
   "theme": "Catppuccin Mocha",
   "telemetry": {
@@ -22,8 +16,12 @@
     "metrics": false
   },
   "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "always",
+    "toggle_relative_line_numbers": true
+  },
   "relative_line_numbers": true,
-  "ui_font_size": 16,
+  "ui_font_size": 18,
   "buffer_font_size": 16,
   "buffer_font_family": "FiraCode Nerd Font",
   "terminal": {
@@ -36,5 +34,15 @@
     },
     "version": "2",
     "provider": null
+  },
+  "JavaScript": {
+    "tab_size": 2,
+    "formatter": {
+      "external": {
+        "command": "prettier",
+        "arguments": ["--stdin-filepath", "{buffer_path}"]
+      }
+    },
+    "format_on_save": true
   }
 }
