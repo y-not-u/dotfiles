@@ -190,16 +190,18 @@ return {
     config = true
   },
 
-  -- smart column
   {
-    "m4xshen/smartcolumn.nvim",
+    "lukas-reineke/virt-column.nvim",
     opts = {
-      disabled_filetypes = {
-        "help", "text", "markdown",
-        "NvimTree", "lazy", "mason", "help",
-        "neo-tree",
+      exclude = {
+        "help", "text", "markdown", "man",
+        "NvimTree", "lazy", "mason", "neo-tree",
         "dashboard",
-        "command-line"
+        "command-line",
+        "checkhealth",
+        "lspinfo",
+        "Trounble",
+        "noice"
       }
     }
   },
