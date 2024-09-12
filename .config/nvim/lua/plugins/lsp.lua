@@ -29,7 +29,7 @@ return {
           },
         },
       }
-      lspconfig.tsserver.setup {}
+      lspconfig.ts_ls.setup {}
       lspconfig.tailwindcss.setup {}
       lspconfig.marksman.setup {}
       lspconfig.eslint.setup {}
@@ -50,7 +50,7 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
-        "tsserver",
+        "ts_ls",
         "cssls",
         "tailwindcss",
         "marksman",
