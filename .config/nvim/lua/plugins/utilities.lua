@@ -59,6 +59,7 @@ return {
   {
     "okuuva/auto-save.nvim",
     -- cmd = "ASToggle",                         -- optional for lazy loading on command
+    enabled = false,
     event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
     opts = {
       execution_message = {
@@ -66,6 +67,12 @@ return {
       },
       debounce_delay = 5000,
     },
+  },
+
+  {
+    "brianhuster/autosave.nvim",
+    event = "InsertEnter",
+    config = true,
   },
 
   -- harpoon
@@ -164,5 +171,11 @@ return {
         mode = { "n", "o", "x" },
       }
     },
+    -- live preivew
+    {
+      'brianhuster/live-preview.nvim',
+      config = true,
+      cmd = { "LivePreview", "StopPreview" },
+    }
   },
 }
