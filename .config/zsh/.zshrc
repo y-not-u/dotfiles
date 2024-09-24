@@ -108,7 +108,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-
 export PATH="$CARGO_HOME/bin:$PATH"
 
 # bun completions
@@ -118,4 +117,3 @@ eval "$(zoxide init zsh)"
 
 # starship
 eval "$(starship init zsh)"
-
