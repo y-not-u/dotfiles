@@ -1,6 +1,8 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" },
+    cmd = { "LspInfo", "LspInstall", "LspUninstall" },
     config = function()
       local lspconfig = require('lspconfig')
       lspconfig.lua_ls.setup {
@@ -43,10 +45,12 @@ return {
   },
   {
     "williamboman/mason.nvim",
+    cmd = "Mason",
     config = true
   },
   {
     "williamboman/mason-lspconfig.nvim",
+    event = { "BufReadPre", "BufNewFile" },
     opts = {
       ensure_installed = {
         "lua_ls",

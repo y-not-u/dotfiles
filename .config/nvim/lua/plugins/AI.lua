@@ -19,7 +19,10 @@ return {
   },
   {
     "yetone/avante.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
+    keys = {
+      { "<leader>aa", "<cmd>AvanteToggle<CR>", desc = "Toggle Avante" },
+    },
     opts = {
       provider = "openai",
       openai = {

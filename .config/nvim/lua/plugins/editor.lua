@@ -23,6 +23,7 @@ return {
   {
     'echasnovski/mini.surround',
     version = false,
+    event = "InsertEnter",
     config = true
   },
 
@@ -33,38 +34,10 @@ return {
     config = true
   },
 
-  -- source codes map
-  {
-    'echasnovski/mini.map',
-    version = false,
-    event = { 'BufEnter' },
-    config = function()
-      local map = require('mini.map')
-      map.setup {
-        integrations = {
-          map.gen_integration.builtin_search(),
-          map.gen_integration.gitsigns(),
-          map.gen_integration.diagnostic(),
-        },
-        symbols = {
-          encode = map.gen_encode_symbols.block('2x1'),
-          scroll_line = '▶',
-          scroll_view = '┋',
-        },
-        window = {
-          winblend = 25,
-          zindex = 1
-        }
-      }
-    end,
-    keys = {
-      { "<leader>mt", "<cmd>lua MiniMap.toggle()<CR>", 'toggle mini map' },
-    }
-  },
-
   -- vscode like breadcrum
   {
     "utilyre/barbecue.nvim",
+    event = { "BufRead" },
     name = "barbecue",
     version = "*",
     dependencies = {
