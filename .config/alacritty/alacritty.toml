@@ -35,3 +35,7 @@ style.blinking = "On"
 
 [mouse]
 hide_when_typing = false
+
+[shell]
+program = "/bin/zsh"
+args = ["-l", "-c", "zellij attach -c Hack || zellij"]
