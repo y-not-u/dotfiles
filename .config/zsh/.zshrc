@@ -84,7 +84,6 @@ fi
 export ARCHFLAGS="-arch x86_64"
 
 export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
@@ -108,7 +107,7 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-export PATH="$CARGO_HOME/bin:$PATH"
+export PATH="$VOLTA_HOME/bin:$CARGO_HOME/bin:$BUN_INSTALL/bin:$PATH"
 
 # bun completions
 [ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
