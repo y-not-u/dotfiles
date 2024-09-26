@@ -41,7 +41,7 @@ return {
   -- jump
   {
     "folke/flash.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     opts = {},
     keys = {
       {
@@ -84,13 +84,14 @@ return {
       local harpoon = require("harpoon")
       harpoon:setup()
 
-      vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end)
-      vim.keymap.set("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+      -- vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end)
+      -- vim.keymap.set("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
     end,
-    -- keys = {
-    --   { "<leader>a", "<cmd>lua require('harpoon'):list():add()<CR>",                                    desc = "Mark file with harpoon" },
-    --   { "<C-e>",     "<cmd>lua require('harpoon.ui'):toggle_quick_menu(require('harpoon'):list())<CR>", desc = "Show harpoon marks" },
-    -- }
+    keys = {
+      { "<leader>ha", function() require("harpoon"):list():add() end,                           desc = "Mark file with harpoon" },
+      { "<leader>hh", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end,   desc = "Show harpoon marks" },
+      -- { "<C-e>",      "<cmd>lua require('harpoon.ui'):toggle_quick_menu(require('harpoon'):list())<CR>", desc = "Show harpoon marks" },
+    }
   },
 
   -- vim-sleuth

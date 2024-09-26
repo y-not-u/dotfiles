@@ -19,6 +19,7 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "marilari88/neotest-vitest",
     },
+    cmd = { "Neotest "},
     opts = {
       adapters = {
         ["neotest-vitest"] = {},

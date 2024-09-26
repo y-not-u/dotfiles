@@ -35,6 +35,7 @@ return {
   {
     "luckasRanarison/tailwind-tools.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
+    ft = { "html", "css", "javascript", "typescript", "typescriptreact", "typescriptreact" },
     opts = {
       document_color = {
         enabled = true, -- can be toggled by commands
@@ -122,6 +123,7 @@ return {
     "danymat/neogen",
     dependencies = "nvim-treesitter/nvim-treesitter",
     config = true,
+    cmd = { "Neogen" },
   },
 
   {
