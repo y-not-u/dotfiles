@@ -112,6 +112,8 @@ export PATH="$VOLTA_HOME/bin:$CARGO_HOME/bin:$BUN_INSTALL/bin:$PATH"
 # bun completions
 [ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
 
+function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}
+
 eval "$(zoxide init zsh)"
 
 # starship

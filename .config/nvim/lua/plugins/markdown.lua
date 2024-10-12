@@ -1,5 +1,4 @@
 return {
-  { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
   {
     'MeanderingProgrammer/render-markdown.nvim',
     opts = {

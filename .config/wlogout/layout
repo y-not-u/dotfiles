@@ -18,7 +18,7 @@
 }
 {
     "label" : "shutdown",
-    "action" : "systemctl poweroff",
+    "action" : "shutdown -h -t 30 now",
     "text" : "Shutdown",
     "keybind" : "s"
 }

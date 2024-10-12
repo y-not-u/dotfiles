@@ -20,6 +20,7 @@ return {
   {
     "yetone/avante.nvim",
     -- event = "VeryLazy",
+    version = false,
     keys = {
       { "<leader>aa", "<cmd>AvanteToggle<CR>", desc = "Toggle Avante" },
     },
@@ -27,7 +28,7 @@ return {
       provider = "openai",
       openai = {
         endpoint = "https://burn.hair/v1",
-        model = "gpt-4o-mini",
+        model = "gpt-4o",
         timeout = 30000,
         temperature = 0,
         max_tokens = 4096,
@@ -41,6 +42,7 @@ return {
       }
     },
     dependencies = {
+      "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
       "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
