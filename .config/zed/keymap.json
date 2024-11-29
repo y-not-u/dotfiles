@@ -3,6 +3,7 @@
     "context": "(Editor && vim_mode == normal) || EmptyPane || SharedScreen",
     "bindings": {
       "space e": "workspace::ToggleLeftDock",
+      "space t": "workspace::NewCenterTerminal",
       "space f f": "file_finder::Toggle",
       "space f g": "workspace::NewSearch"
     }
@@ -20,6 +21,7 @@
       "space b a": "pane::CloseAllItems",
       "space r n": "editor::Rename",
       "space c a": "editor::ToggleCodeActions",
+      "space g d": "editor::ToggleDefinition",
       "ctrl-t": "terminal_panel::ToggleFocus",
       "shift-h": "pane::ActivatePrevItem",
       "shift-l": "pane::ActivateNextItem"
@@ -67,7 +69,8 @@
       "z": "project_panel::CollapseSelectedEntry",
       "/": "project_panel::NewSearchInDirectory",
       "space": "zed::NoAction",
-      "space e": "workspace::ToggleLeftDock"
+      "space e": "workspace::ToggleLeftDock",
+      "escape": "workspace::ToggleLeftDock"
     }
   },
   {

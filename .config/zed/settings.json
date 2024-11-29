@@ -10,7 +10,7 @@
   "features": {
     "inline_completion_provider": "supermaven"
   },
-  "theme": "Catppuccin Mocha",
+  "theme": "One Dark",
   "telemetry": {
     "diagnostics": false,
     "metrics": false

@@ -51,7 +51,6 @@ return {
             cond = require('lazy.status').has_updates,
             -- color = { fg = "#a89984" },
           },
-          require('pomodoro').statusline,
           'encoding',
           'fileformat',
           'filetype',
