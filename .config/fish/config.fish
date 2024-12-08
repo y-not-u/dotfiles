@@ -55,12 +55,18 @@ function gi
     curl -sLw "\n" "https://www.toptal.com/developers/gitignore/api/$argv" 
 end
 
-# zoxide init
-if type -q zoxide
-    zoxide init fish | source
-end
-
 # starship
 if type -q starship
     starship init fish | source
+end
+
+if test (uname) = "Darwin"
+    source ~/.config/fish/config_macos.fish
+else if test (uname) = "Linux"
+    source ~/.config/fish/config_linux.fish
+end
+
+# zoxide init
+if type -q zoxide
+    zoxide init fish | source
 end
