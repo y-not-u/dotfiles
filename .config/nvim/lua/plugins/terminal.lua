@@ -2,6 +2,7 @@
 return {
   {
     'nyngwang/NeoTerm.lua',
+    enabled = false,
     config = function()
       require('neo-term').setup {
         exclude_filetypes = { 'oil' },

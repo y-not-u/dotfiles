@@ -1,5 +1,30 @@
 return {
   {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    enabled = true,
+    opts = {
+      quickfile = { enabled = true },
+      dashboard = {
+        enabled = true,
+        sections = {
+          { section = "header" },
+          { section = "projects", padding = 1 },
+          { section = "keys",     padding = 1 },
+          { section = "startup" },
+        },
+      },
+      terminal = {
+
+      }
+    },
+    keys = {
+      { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git blame Line" },
+      { "<leader>gg", function() Snacks.lazygit() end,        desc = "Lazygit" }
+    }
+  },
+  {
     "folke/which-key.nvim",
     event = "VeryLazy",
     enabled = false,
@@ -55,20 +80,6 @@ return {
     },
   },
 
-  -- auto save
-  {
-    "okuuva/auto-save.nvim",
-    -- cmd = "ASToggle",                         -- optional for lazy loading on command
-    enabled = false,
-    event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
-    opts = {
-      execution_message = {
-        enabled = false
-      },
-      debounce_delay = 5000,
-    },
-  },
-
   {
     "brianhuster/autosave.nvim",
     event = "InsertEnter",
@@ -88,8 +99,8 @@ return {
       -- vim.keymap.set("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
     end,
     keys = {
-      { "<leader>ha", function() require("harpoon"):list():add() end,                           desc = "Mark file with harpoon" },
-      { "<leader>hh", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end,   desc = "Show harpoon marks" },
+      { "<leader>ha", function() require("harpoon"):list():add() end,                                    desc = "Mark file with harpoon" },
+      { "<leader>hh", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end, desc = "Show harpoon marks" },
       -- { "<C-e>",      "<cmd>lua require('harpoon.ui'):toggle_quick_menu(require('harpoon'):list())<CR>", desc = "Show harpoon marks" },
     }
   },
