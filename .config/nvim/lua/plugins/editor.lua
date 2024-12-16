@@ -1,16 +1,4 @@
 return {
-  -- scrollbar
-  {
-    "nvim-pack/nvim-spectre",
-    build = false,
-    cmd = "Spectre",
-    opts = { open_cmd = "noswapfile vnew" },
-    -- stylua: ignore
-    keys = {
-      { "<leader>sr", function() require("spectre").open() end, desc = "Replace in Files (Spectre)" },
-    },
-  },
-
   -- comment
   {
     'echasnovski/mini.comment',
@@ -49,6 +37,7 @@ return {
   {
     "folke/noice.nvim",
     event = "VeryLazy",
+    enabled = false,
     opts = {
       lsp = {
         -- override markdown rendering so that **cmp** and other plugins use **Treesitter**

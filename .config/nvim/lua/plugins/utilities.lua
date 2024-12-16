@@ -15,13 +15,15 @@ return {
           { section = "startup" },
         },
       },
-      terminal = {
-
-      }
+      input = { enabled = true },
+      notifier = { enabled = true },
+      scroll = { enabled = true },
     },
     keys = {
       { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git blame Line" },
-      { "<leader>gg", function() Snacks.lazygit() end,        desc = "Lazygit" }
+      { "<leader>gg", function() Snacks.lazygit() end,        desc = "Lazygit" },
+      { "<leader>z",  function() Snacks.zen() end,            desc = "Toggle Zen Mode" },
+      { "<leader>.",  function() Snacks.scratch() end,        desc = "Toggle Scratch Buffer" },
     }
   },
   {
