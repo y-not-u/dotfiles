@@ -20,10 +20,14 @@ return {
       scroll = { enabled = true },
     },
     keys = {
-      { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git blame Line" },
-      { "<leader>gg", function() Snacks.lazygit() end,        desc = "Lazygit" },
-      { "<leader>z",  function() Snacks.zen() end,            desc = "Toggle Zen Mode" },
-      { "<leader>.",  function() Snacks.scratch() end,        desc = "Toggle Scratch Buffer" },
+      { "<leader>gb", function() Snacks.git.blame_line() end,        desc = "Git blame Line" },
+      { "<leader>gg", function() Snacks.lazygit() end,               desc = "Lazygit" },
+      { "<leader>gl", function() Snacks.lazygit.log() end,           desc = "Lazygit Log (cwd)" },
+      { "<leader>gf", function() Snacks.lazygit.log_file() end,      desc = "Lazygit Current File History" },
+      { "<leader>z",  function() Snacks.zen() end,                   desc = "Toggle Zen Mode" },
+      { "<leader>.",  function() Snacks.scratch() end,               desc = "Toggle Scratch Buffer" },
+      { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
+      { "<leader>un", function() Snacks.notifier.hide() end,         desc = "Dismiss All Notifications" },
     }
   },
   {
@@ -159,11 +163,6 @@ return {
     "NStefan002/screenkey.nvim",
     version = "*",
     cmd = "Screenkey",
-  },
-  {
-    'mei28/luminate.nvim',
-    event = { 'VeryLazy' },
-    config = true
   },
   {
     "chrisgrieser/nvim-spider",
