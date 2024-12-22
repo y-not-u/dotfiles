@@ -2,6 +2,7 @@ return {
   {
     'Exafunction/codeium.vim',
     event = 'BufEnter',
+    enabled = false,
   },
   {
     "supermaven-inc/supermaven-nvim",
@@ -15,4 +16,8 @@ return {
       })
     end,
   },
+  {
+    "github/copilot.vim",
+    config = true,
+  }
 }

@@ -13,7 +13,7 @@
 - Browser: Firefox
 - Font: Hack Nerd Font
 
-![](screenshots/desktop.png)
+![desktop](screenshots/desktop.png)
 
 ## Prepared
 
