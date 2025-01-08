@@ -1,4 +1,4 @@
-alias v='nvim'
+alias v='NVIM_APPNAME=nvim-lazyvim nvim'
 alias nv='neovide --fork'
 alias ls='eza --header --color=always --long --no-time --icons=always --group-directories-first'
 alias cp='xcp'

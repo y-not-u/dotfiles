@@ -1,0 +1,62 @@
+# 'brew tap'
+tap "homebrew/bundle"
+tap "homebrew/services"
+
+# set arguments for all 'brew install --cask' commands
+cask_args appdir: "~/Applications", require_sha: true
+
+# 'brew install'
+brew "mas"
+brew "zellij"
+brew "neovim"
+brew "fzf"
+brew "bat"
+brew "btop"
+brew "mactop"
+brew "eza"
+brew "fd"
+brew "gcc"
+brew "jq"
+brew "lazygit"
+brew "ripgrep"
+brew "volta"
+brew "wget"
+brew "yazi"
+brew "zoxide"
+brew "tlrc"
+
+# 'brew install --cask'
+cask "ghostty"
+cask "itsycal"
+cask "iina"
+cask "clash-verge-rev"
+cask "raycast"
+cask "maczip"
+cask "betterdisplay"
+cask "localsend"
+cask "karabiner-elements"
+cask "notion"
+cask "utm"
+# browser
+cask "firefox"
+cask "orion"
+# editor
+cask "cursor"
+cask "visual-studio-code"
+cask "zed"
+# development
+cask "tableplus"
+cask "fork"
+# font
+cask "font-fira-code-nerd-font"
+
+# 'mas install'
+mas "Things", id: 904280696
+mas "VidHub", id: 1659622164
+mas "WeChat", id: 836500024
+mas "Xcode", id: 497799835
+mas "Jump Desktop", id: 524141863
+mas "Bitwarden", id: 1352778147
+mas "ChatX", id: 6446304087
+mas "DevCleaner", id: 1388020431
+mas "MenubarX", id: 1575588022
