@@ -26,7 +26,6 @@ brew "zoxide"
 brew "tlrc"
 
 # 'brew install --cask'
-cask "ghostty"
 cask "itsycal"
 cask "iina"
 cask "clash-verge-rev"
@@ -47,6 +46,8 @@ cask "zed"
 # development
 cask "tableplus"
 cask "fork"
+cask "orbstack"
+cask "ghostty"
 # font
 cask "font-fira-code-nerd-font"
 
