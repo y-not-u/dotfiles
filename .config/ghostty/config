@@ -1,0 +1,5 @@
+window-decoration = false
+font-family = "FiraCode Nerd Font"
+font-size = 14
+cursor-invert-fg-bg = true
+mouse-hide-while-typing = true
