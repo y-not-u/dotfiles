@@ -21,8 +21,8 @@
       "space b a": "pane::CloseAllItems",
       "space r n": "editor::Rename",
       "space c a": "editor::ToggleCodeActions",
-      "space g d": "editor::ToggleDefinition",
-      "ctrl-t": "terminal_panel::ToggleFocus",
+      "space g d": "editor::GoToDefinition",
+      "ctrl-/": "terminal_panel::ToggleFocus",
       "shift-h": "pane::ActivatePrevItem",
       "shift-l": "pane::ActivateNextItem"
     }
@@ -44,15 +44,15 @@
   {
     "context": "vim_mode == insert && !menu",
     "bindings": {
-      "j j": "vim::NormalBefore", // remap jj in insert mode to escape.
-      "k j": "vim::NormalBefore", // remap jj in insert mode to escape.
+      // "j j": "vim::NormalBefore", // remap jj in insert mode to escape.
+      // "k j": "vim::NormalBefore", // remap jj in insert mode to escape.
       "j k": ["vim::SwitchMode", "Normal"]
     }
   },
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-t": "workspace::ToggleBottomDock"
+      "ctrl-/": "workspace::ToggleBottomDock"
     }
   },
   {
@@ -68,6 +68,7 @@
       "c": "project_panel::Cut",
       "z": "project_panel::CollapseSelectedEntry",
       "/": "project_panel::NewSearchInDirectory",
+      "O": "project_panel::RevealInFileManager",
       "space": "zed::NoAction",
       "space e": "workspace::ToggleLeftDock",
       "escape": "workspace::ToggleLeftDock"
