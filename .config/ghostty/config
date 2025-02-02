@@ -1,9 +1,34 @@
 theme = catppuccin-frappe
 background-opacity = 0.95
-window-decoration = true
 macos-titlebar-style = hidden
+
 font-family = "FiraCode Nerd Font"
 font-size = 14
+
 cursor-invert-fg-bg = true
 mouse-hide-while-typing = true
+
 window-save-state = always
+window-decoration = true
+
+quit-after-last-window-closed=true
+
+shell-integration = fish
+command = /opt/homebrew/bin/fish --login --interactive
+
+keybind = cmd+t=unbind
+keybind = cmd+n=unbind
+keybind = cmd+c=unbind
+keybind = cmd+w=unbind
+keybind = cmd+1=unbind
+keybind = cmd+2=unbind
+keybind = cmd+3=unbind
+keybind = cmd+4=unbind
+keybind = cmd+5=unbind
+keybind = cmd+6=unbind
+keybind = cmd+7=unbind
+keybind = cmd+8=unbind
+keybind = cmd+9=unbind
+keybind = cmd+d=unbind
+keybind = cmd+d=unbind
+keybind = cmd+s=unbind

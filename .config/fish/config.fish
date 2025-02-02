@@ -1,8 +1,15 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
+set fish_greeting
+
+if test (uname) = Darwin
+    source ~/.config/fish/config_macos.fish
+else if test (uname) = Linux
+    source ~/.config/fish/config_linux.fish
 end
 
-set -g fish_greeting ""
+# Start with Zellij
+if status is-interactive
+    source $HOME/.config/fish/functions/zellij.fish
+end
 
 # You may need to manually set your language environment
 set -x LANG en_US.UTF-8
@@ -50,21 +57,11 @@ set -x PATH $VOLTA_HOME/bin $CARGO_HOME/bin $BUN_INSTALL/bin $PATH
 #    source "$BUN_INSTALL/_bun"
 #end
 
-# Functions
-function gi
-    curl -sLw "\n" "https://www.toptal.com/developers/gitignore/api/$argv" 
-end
-
 # starship
 if type -q starship
     starship init fish | source
 end
 
-if test (uname) = "Darwin"
-    source ~/.config/fish/config_macos.fish
-else if test (uname) = "Linux"
-    source ~/.config/fish/config_linux.fish
-end
 
 # zoxide init
 if type -q zoxide
