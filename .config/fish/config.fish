@@ -1,14 +1,9 @@
-set fish_greeting
+set -g fish_greeting
 
 if test (uname) = Darwin
     source ~/.config/fish/config_macos.fish
 else if test (uname) = Linux
     source ~/.config/fish/config_linux.fish
-end
-
-# Start with Zellij
-if status is-interactive
-    source $HOME/.config/fish/functions/zellij.fish
 end
 
 # You may need to manually set your language environment
@@ -56,12 +51,6 @@ set -x PATH $VOLTA_HOME/bin $CARGO_HOME/bin $BUN_INSTALL/bin $PATH
 #if test -s "$BUN_INSTALL/_bun"
 #    source "$BUN_INSTALL/_bun"
 #end
-
-# starship
-if type -q starship
-    starship init fish | source
-end
-
 
 # zoxide init
 if type -q zoxide

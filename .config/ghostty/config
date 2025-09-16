@@ -1,34 +1,24 @@
-theme = catppuccin-frappe
 background-opacity = 0.95
-macos-titlebar-style = hidden
+macos-titlebar-style = tabs
+window-width = 400
+window-height = 300
+window-save-state = always
+window-decoration = true
+quick-terminal-position = center
+initial-window = true
 
 font-family = "FiraCode Nerd Font"
-font-size = 14
+font-size = 16
+font-thicken = true
+clipboard-read = allow
+clipboard-write = allow
+copy-on-select = true
 
 cursor-invert-fg-bg = true
 mouse-hide-while-typing = true
-
-window-save-state = always
-window-decoration = true
+focus-follows-mouse = true
 
 quit-after-last-window-closed=true
 
-shell-integration = fish
-command = /opt/homebrew/bin/fish --login --interactive
-
-keybind = cmd+t=unbind
-keybind = cmd+n=unbind
-keybind = cmd+c=unbind
-keybind = cmd+w=unbind
-keybind = cmd+1=unbind
-keybind = cmd+2=unbind
-keybind = cmd+3=unbind
-keybind = cmd+4=unbind
-keybind = cmd+5=unbind
-keybind = cmd+6=unbind
-keybind = cmd+7=unbind
-keybind = cmd+8=unbind
-keybind = cmd+9=unbind
-keybind = cmd+d=unbind
-keybind = cmd+d=unbind
-keybind = cmd+s=unbind
+keybind = cmd+r=reload_config
+keybind = shift+enter=text:\n

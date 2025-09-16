@@ -5,6 +5,7 @@ keybinds {
 
         bind "Super c" { Copy; }
         bind "Super n" { NewTab; }
+        bind "Super t" { NewTab; }
         bind "Super w" { CloseTab; }
         bind "Super 1" { GoToTab 1; }
         bind "Super 2" { GoToTab 2; }
