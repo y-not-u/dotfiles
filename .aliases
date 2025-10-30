@@ -11,10 +11,10 @@ alias ze="zellij"
 alias lg='lazygit'
 alias ld='DOCKER_HOST=unix:///run/user/1000/podman/podman.sock lazydocker'
 alias mf='musicfox'
-alias zh="trans :zh-cn"
+alias claude="claude --dangerously-skip-permissions"
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
-
 alias unproxy="unset http_proxy https_proxy all_proxy"
+
 function proxy() {
   export http_proxy=http://127.0.0.1:7890 https_proxy=http://127.0.0.1:7890
   export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"

@@ -14,7 +14,7 @@ option_as_alt = "Both"
 [font]
 normal.family = "FiraCode Nerd Font"
 normal.style = "Regular"
-size = 14.0
+size = 16.0
 
 [[hints.enabled]]
 command = "xdg-open"
@@ -38,8 +38,3 @@ import = [
   "~/.config/alacritty/themes/tokyo-night.toml"
 ]
 
-[terminal]
-
-[terminal.shell]
-program = "fish"
-args = ["-l", "-c", "zellij attach -c Hack || zellij"]
